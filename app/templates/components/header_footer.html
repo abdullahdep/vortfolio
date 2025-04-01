@@ -1,0 +1,1091 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load livereload_tags %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        :root {
+            --primary-color: #2196f3;
+            --secondary-color: #ff4081;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            color: var(--primary-color) !important;
+        }
+
+        .navbar-brand img {
+            width: 45px;
+            height: 45px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Search Bar Enhancement */
+        .search-form {
+            width: 300px;
+        }
+
+        .search-form .form-control {
+            border-radius: 20px 0 0 20px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .search-form .btn {
+            border-radius: 0 20px 20px 0;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        /* Dropdown Styling */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(33, 150, 243, 0.1);
+            color: var(--primary-color);
+        }
+
+        /* User Menu Icon */
+        .nav-item .fa-user-circle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item:hover .fa-user-circle {
+            transform: scale(1.1);
+        }
+
+        /* Footer Enhancement */
+        .footer {
+            background-color: var(--light-color);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer h5 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer a {
+            color: var(--dark-color);
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer i {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .search-form {
+                width: 100%;
+                margin: 1rem 0;
+            }
+
+            .navbar-brand img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        /* Add these styles to your existing CSS */
+        .nav-link {
+            padding: 0.5rem 1rem;
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .nav-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Enhanced Responsive Styles */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: white;
+                padding: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                margin: 0.5rem 1rem;
+            }
+
+            .search-form {
+                order: 1;
+                width: 100%;
+                margin: 1rem 0;
+            }
+
+            .navbar-nav {
+                order: 2;
+            }
+
+            .nav-item {
+                width: 100%;
+                margin: 0.2rem 0;
+            }
+
+            .dropdown-menu {
+                border: none;
+                background: #f8f9fa;
+                padding-left: 1rem;
+            }
+
+            .navbar-brand img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .nav-link {
+                padding: 0.8rem 1rem;
+                border-radius: 6px;
+            }
+
+            .nav-link:hover {
+                background: var(--primary-color);
+                color: white !important;
+            }
+        }
+
+        /* Small devices */
+        @media (max-width: 576px) {
+            .footer {
+                text-align: center;
+            }
+
+            .footer-card {
+                margin-bottom: 2rem;
+            }
+
+            .navbar-brand span {
+                font-size: 1.2rem;
+            }
+
+            .carousel-caption {
+                padding: 0.5rem;
+                background: rgba(0, 0, 0, 0.5);
+                border-radius: 8px;
+            }
+
+            .carousel-caption h5 {
+                font-size: 1rem;
+            }
+
+            .carousel-caption p {
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Additional Responsive Enhancements */
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: 2px solid var(--primary-color);
+        }
+
+        /* Smooth height transition for dropdowns */
+        .dropdown-menu {
+            transition: max-height 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+            display: block;
+        }
+
+        .dropdown-menu.show {
+            max-height: 300px;
+        }
+
+        /* Fluid Typography */
+        @media screen and (min-width: 320px) {
+            html {
+                font-size: calc(14px + 2 * ((100vw - 320px) / 680));
+            }
+        }
+
+        @media screen and (min-width: 1000px) {
+            html {
+                font-size: 16px;
+            }
+        }
+
+        /* Enhanced Mobile Navigation */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                max-height: 80vh;
+                overflow-y: auto;
+                scrollbar-width: thin;
+                padding: 1rem;
+            }
+
+            .navbar-collapse::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            .navbar-collapse::-webkit-scrollbar-thumb {
+                background: var(--primary-color);
+                border-radius: 10px;
+            }
+
+            .nav-item {
+                transform: translateX(-10px);
+                opacity: 0;
+                animation: slideIn 0.3s forwards;
+            }
+
+            @keyframes slideIn {
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+
+            .dropdown-menu {
+                margin-left: 1rem;
+                box-shadow: none;
+                border-left: 2px solid var(--primary-color);
+            }
+        }
+
+        /* Better Touch Targets */
+        @media (max-width: 768px) {
+
+            .nav-link,
+            .dropdown-item {
+                padding: 0.8rem 1rem;
+                margin: 0.2rem 0;
+            }
+
+            .navbar-toggler {
+                padding: 0.8rem;
+            }
+
+            .dropdown-toggle::after {
+                float: right;
+                margin-top: 0.8rem;
+            }
+        }
+
+        /* Ultra Mobile Adjustments */
+        @media (max-width: 380px) {
+            .navbar-brand span {
+                display: none;
+            }
+
+            .search-form .form-control {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Improved Grid Layout */
+        .row {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        [class*="col-"] {
+            padding: 10px;
+        }
+
+        /* Touch-friendly Footer */
+        @media (max-width: 768px) {
+            .footer ul li {
+                padding: 0.5rem 0;
+            }
+
+            .footer ul li a {
+                display: inline-block;
+                padding: 0.5rem 0;
+            }
+        }
+
+        /* Enhanced Mobile-First Styles */
+        @media (max-width: 320px) {
+            .navbar-brand {
+                font-size: 1rem;
+                max-width: 120px;
+            }
+
+            .search-form {
+                max-width: 200px;
+            }
+
+            .footer {
+                padding: 30px 15px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 0.6rem 0.8rem;
+            }
+
+            .dropdown-item {
+                font-size: 0.9rem;
+                padding: 0.5rem 0.8rem;
+            }
+
+            .search-form .form-control {
+                height: 35px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 425px) {
+            .navbar-brand img {
+                width: 30px;
+                height: 30px;
+            }
+
+
+            .search-form {
+                margin: 0.5rem 0;
+            }
+
+            .footer h5 {
+                font-size: 1.1rem;
+            }
+
+            .footer p,
+            .footer li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Stack Navigation Items Vertically on Mobile */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                gap: 0.5rem;
+            }
+
+            .nav-item {
+                width: 100%;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-item:last-child {
+                border-bottom: none;
+            }
+
+            /* Compact Dropdowns */
+            .dropdown-menu {
+                padding: 0.5rem 0;
+                margin: 0;
+                border-radius: 4px;
+                background: rgba(33, 150, 243, 0.05);
+            }
+        }
+
+        /* Improved Grid for Small Devices */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .row {
+                margin-left: -8px;
+                margin-right: -8px;
+            }
+
+            [class*="col-"] {
+                padding: 8px;
+            }
+
+            /* Stacked Footer on Mobile */
+            .footer .row>div {
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .footer ul.list-unstyled {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Enhanced Touch Areas */
+        @media (max-width: 991px) {
+
+            .nav-link,
+            .dropdown-item {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+
+            .navbar-toggler {
+                width: 44px;
+                height: 44px;
+                padding: 0.4rem;
+            }
+        }
+
+        /* Enhanced User Menu Styles */
+        .user-menu-mobile {
+            display: none;
+            /* Remove this entire class if not needed */
+        }
+
+        .user-icons-container {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-left: 1rem;
+            position: static;
+            /* Changed from absolute */
+        }
+
+        @media (max-width: 991px) {
+            .user-icons-container {
+                position: static;
+                /* Changed from absolute */
+                margin-right: 3rem;
+                /* Add space for hamburger menu */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .user-icons-container {
+                gap: 0.8rem;
+                margin-right: 2.5rem;
+            }
+        }
+
+        .user-icons-container {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-left: 1rem;
+        }
+
+        .user-icon {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .user-icon i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .user-icon:hover i {
+            transform: scale(1.1);
+        }
+
+        .user-icon .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 0.7rem;
+        }
+
+        @media (max-width: 991px) {
+            .user-icons-container {
+                position: absolute;
+                top: 1rem;
+                right: 4rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .user-icon i {
+                font-size: 1.2rem;
+            }
+
+            .user-icons-container {
+                gap: 0.5rem;
+                right: 3.5rem;
+            }
+        }
+
+        /* Add Scrollable Dropdown Styles */
+        .scrollable-dropdown {
+            max-height: 400px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) #f0f0f0;
+        }
+
+        .scrollable-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .scrollable-dropdown::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+
+        .scrollable-dropdown::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 576px) {
+            .scrollable-dropdown {
+                max-height: 300px;
+            }
+        }
+
+        /* Add these new styles at the end of your existing styles */
+        .custom-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            max-height: 0;
+            transition: all 0.3s ease, max-height 0.3s ease;
+        }
+
+        .user-icon.active .custom-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            max-height: 80vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-dropdown::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+        }
+
+        .custom-dropdown::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .dropdown-inner {
+            padding: 8px 0;
+            scroll-behavior: smooth;
+        }
+
+        .user-icon.active .custom-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(33, 150, 243, 0.1);
+            color: var(--primary-color);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: rgba(0, 0, 0, 0.1);
+            margin: 8px 0;
+        }
+
+        .dropdown-section {
+            padding: 8px 0;
+        }
+
+        .section-header {
+            padding: 8px 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .dropdown-section .dropdown-item {
+            padding-left: 40px;
+        }
+
+        .custom-dropdown::before,
+        .custom-dropdown::after {
+            content: '';
+            position: fixed;
+            left: 0;
+            right: 0;
+            height: 20px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .custom-dropdown::before {
+            top: 0;
+            background: linear-gradient(to bottom, white, transparent);
+        }
+
+        .custom-dropdown::after {
+            bottom: 0;
+            background: linear-gradient(to top, white, transparent);
+        }
+
+        .custom-dropdown.show-top-indicator::before {
+            opacity: 1;
+        }
+
+        .custom-dropdown.show-bottom-indicator::after {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .custom-dropdown {
+                position: fixed;
+                top: auto;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                border-radius: 12px 12px 0 0;
+                transform: translateY(100%);
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+
+            .user-icon.active .custom-dropdown {
+                transform: translateY(0);
+            }
+
+            .dropdown-inner {
+                padding: 16px 0;
+            }
+
+            .dropdown-item {
+                padding: 12px 20px;
+            }
+        }
+
+        /* Section Header Dropdown Styles */
+        .section-header-dropdown {
+            padding: 8px 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .section-header-dropdown:hover {
+            background-color: rgba(33, 150, 243, 0.05);
+        }
+
+        .section-header-dropdown i.fa-chevron-down {
+            transition: transform 0.3s ease;
+        }
+
+        .section-header-dropdown.active i.fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .section-content.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid position-relative ms-3">
+            <!-- Compact navbar brand for mobile -->
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="{% static 'logo.png' %}" alt="Logo" class="me-2">
+                <span class="d-none d-sm-inline">Vortfolio</span>
+                <span class="d-inline d-sm-none">Portfolio</span>
+            </a>
+
+            <!-- Move search form inside collapse on mobile -->
+            <div class="d-lg-none order-lg-2">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <!-- Search form moves here on mobile -->
+                <form class="search-form d-lg-none mb-3">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Search...">
+                        <button class="btn btn-outline-secondary" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- New Navigation Buttons -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/"><i class="fas fa-home me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about"><i class="fas fa-info-circle me-1"></i>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/portfolio"><i class="fas fa-briefcase me-1"></i>Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.youtube.com/@aibytestudio" target="_blank">
+                            <i class="fab fa-youtube me-1"></i>YouTube
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact"><i class="fas fa-envelope me-1"></i>Contact</a>
+                    </li>
+                    <li class="nav-item drp">
+                        <Projects class="nav-link" href="/contact"> <b><i class="fas fa-link me-1"></i></b> Projects <i
+                                class="fa fa-angle-down icon-in-menu"></i>
+                            <ul class="drpd">
+                                <li class="drli">h</li>
+                                <li class="drli">h</li>
+                                <li class="drli">h</li>
+                            </ul>
+                    </li>
+                    <style>
+                        .drpd {
+                            display: none;
+                        }
+
+                        .drpd {
+                            position: absolute;
+                            background-color: #e0e0e0;
+                        }
+
+                        .drp:hover .drpd {
+                            display: block;
+
+                        }
+                    </style>
+            </div>
+
+            <!-- Search form visible only on desktop -->
+            <form class="search-form mx-lg-4 d-none d-lg-block">
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="Search...">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Add User Icons -->
+            <div class="user-icons-container ">
+                <div class="user-icon">
+                    <a class="nav-link" href="#" id="notificationsToggle">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge bg-danger">3</span>
+                    </a>
+                    <div class="custom-dropdown">
+                        <div class="dropdown-inner">
+                            <a href="#" class="dropdown-item">New Message</a>
+                            <a href="#" class="dropdown-item">Project Update</a>
+                            <a href="#" class="dropdown-item">System Alert</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-icon">
+                    <a class="nav-link" href="#" id="userToggle">
+                        <i class="fas fa-user-circle"></i>
+                    </a>
+                    <div class="custom-dropdown">
+                        <div class="dropdown-inner">
+                            {% if user.is_authenticated %}
+                            <a href="register" class="dropdown-item"><i class="fas fa-user me-2"></i>{{
+                                request.user.username }}</a>
+                            {% else %}
+                            <a href="login" class="dropdown-item"><i class="fas fa-user me-2"></i>Login/Signup</a>
+                            {% endif %}
+
+                            {% if user.is_authenticated %}
+                            <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i>Settings</a>
+                            {% endif %}
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-section">
+                                <div class="section-header-dropdown" data-section="projects">
+                                    <span><i class="fas fa-project-diagram me-2"></i>Projects</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="section-content" id="projects-content">
+                                    <a href="#" class="dropdown-item">Web Development</a>
+                                    <a href="#" class="dropdown-item">Mobile Apps</a>
+                                    <a href="#" class="dropdown-item">Design Work</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <div class="section-header-dropdown" data-section="services">
+                                    <span><i class="fas fa-tools me-2"></i>Services</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="section-content" id="services-content">
+                                    <a href="#" class="dropdown-item">Consulting</a>
+                                    <a href="#" class="dropdown-item">Development</a>
+                                    <a href="#" class="dropdown-item">Design</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="logout" class="dropdown-item"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Remove the floating mobile user menu -->
+    <!-- Remove existing user-menu-mobile div and its dropdown -->
+
+    <!-- Content Block -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid ms-5">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>About Us</h5>
+                    <p>Professional portfolio showcasing our best work in web development, design, and digital
+                        solutions.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-decoration-none">Home</a></li>
+                        <li><a href="projects" class="text-decoration-none">Projects</a></li>
+                        <li><a href="services" class="text-decoration-none">Services</a></li>
+                        <li><a href="contact" class="text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i><a
+                                href="mailto:abdullah8j03@gmail.com">abdullah8j03@gmail.com</a></li>
+                        <li><i class="fas fa-phone me-2"></i><a href="tel:03258262310">03258262310</a></li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> <a
+                                href="https://maps.app.goo.gl/z9bK8kntxqz4SfMn9" target="_blank">Lahore,Pakistan</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Portfolio Site. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Replace existing script with this new one -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const userIcons = document.querySelectorAll('.user-icon');
+
+            userIcons.forEach(icon => {
+                const toggle = icon.querySelector('.nav-link');
+                const dropdown = icon.querySelector('.custom-dropdown');
+
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Close all other dropdowns
+                    userIcons.forEach(other => {
+                        if (other !== icon) {
+                            other.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current dropdown
+                    icon.classList.toggle('active');
+
+                    // Check scroll indicators after dropdown is shown
+                    if (icon.classList.contains('active')) {
+                        checkScrollIndicators(dropdown);
+                    }
+                });
+
+                // Add scroll event listener to dropdown
+                if (dropdown) {
+                    dropdown.addEventListener('scroll', () => {
+                        checkScrollIndicators(dropdown);
+                    });
+                }
+            });
+
+            // Function to check and update scroll indicators
+            function checkScrollIndicators(dropdown) {
+                const isScrollable = dropdown.scrollHeight > dropdown.clientHeight;
+                const isAtTop = dropdown.scrollTop <= 0;
+                const isAtBottom = dropdown.scrollHeight - dropdown.scrollTop === dropdown.clientHeight;
+
+                dropdown.classList.toggle('show-top-indicator', isScrollable && !isAtTop);
+                dropdown.classList.toggle('show-bottom-indicator', isScrollable && !isAtBottom);
+            }
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.user-icon')) {
+                    userIcons.forEach(icon => {
+                        icon.classList.remove('active');
+                    });
+                }
+            });
+
+            // Prevent dropdown clicks from closing
+            document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
+                dropdown.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            });
+
+            // Add touch events for mobile
+            if ('ontouchstart' in window) {
+                document.addEventListener('touchstart', (e) => {
+                    if (!e.target.closest('.user-icon')) {
+                        userIcons.forEach(icon => icon.classList.remove('active'));
+                    }
+                });
+            }
+
+            // Add smooth scroll behavior for dropdown items
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', function (e) {
+                    const dropdown = this.closest('.custom-dropdown');
+                    const section = this.closest('.dropdown-section');
+                    if (section) {
+                        e.preventDefault();
+                        section.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                });
+            });
+
+            // Add section header dropdown functionality
+            const sectionHeaders = document.querySelectorAll('.section-header-dropdown');
+
+            sectionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const section = header.dataset.section;
+                    const content = document.getElementById(`${section}-content`);
+
+                    // Toggle active class
+                    header.classList.toggle('active');
+                    content.classList.toggle('active');
+
+                    // Close other sections
+                    sectionHeaders.forEach(otherHeader => {
+                        if (otherHeader !== header) {
+                            const otherSection = otherHeader.dataset.section;
+                            const otherContent = document.getElementById(`${otherSection}-content`);
+                            otherHeader.classList.remove('active');
+                            otherContent.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
+{% livereload_script %}

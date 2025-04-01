@@ -1,0 +1,1143 @@
+{% extends 'components/header_footer.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+<style>
+
+</style>
+<!-- Add these meta tags in the header -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2196f3">
+
+<!-- Modern Hero Carousel -->
+<div id="portfolioCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <!-- Add carousel indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active ">
+            <div class="carousel-overlay "></div>
+            <img src="{% static 'pexels-bri-schneiter-28802-346529.jpg' %}" class="d-block w-100" alt="Project 1">
+
+        </div>
+
+
+        <div class="carousel-item active ">
+            <div class="carousel-overlay "></div>
+            <img src="{% static 'pexels-pixabay-247599.jpg' %}" class="d-block w-100" alt="Project 1">
+
+        </div>
+        <div class="carousel-item active ">
+            <div class="carousel-overlay "></div>
+            <img src="{% static 'pexels-samandgos-709552.jpg' %}" class="d-block w-100" alt="Project 1">
+
+        </div>
+
+
+
+        <!-- <div class="carousel-item">
+            <div class="carousel-overlay"></div>
+            <img src="{% static 'pexels-pixabay-147411.jpg' %}" class="d-block w-100" alt="Project 2">
+            <div class="carousel-caption">
+                <span class="badge bg-primary mb-3">Web Development</span>
+                <h2 class="display-4 fw-bold mb-3">Project 2</h2>
+                <p class="lead mb-4">Description of your second project with modern and clean design.</p>
+                <div class="carousel-buttons">
+                    <a href="#" class="btn btn-primary btn-lg me-3"><i class="fas fa-link me-2"></i>View Project</a>
+                    <a href="#" class="btn btn-outline-light btn-lg"><i class="fas fa-code me-2"></i>Source Code</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-overlay"></div>
+            <img src="{% static 'pexels-pixabay-247599.jpg' %}" class="d-block w-100" alt="Project 3">
+            <div class="carousel-caption">
+                <span class="badge bg-primary mb-3">Web Development</span>
+                <h2 class="display-4 fw-bold mb-3">Project 3</h2>
+                <p class="lead mb-4">Description of your third project with modern and clean design.</p>
+                <div class="carousel-buttons">
+                    <a href="#" class="btn btn-primary btn-lg me-3"><i class="fas fa-link me-2"></i>View Project</a>
+                    <a href="#" class="btn btn-outline-light btn-lg"><i class="fas fa-code me-2"></i>Source Code</a>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+
+
+
+p
+
+
+    <!-- Modern carousel controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+        <span class="control-icon"><i class="fas fa-chevron-left"></i></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+        <span class="control-icon"><i class="fas fa-chevron-right"></i></span>
+    </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="carousel-caption">
+    <span class="badge bg-primary mb-3">Welcome</span>
+    <h2 class="display-4 fw-bold mb-3">We are Providing <b class="designfont" style="border: #1a1a1a;">
+            <span class="type-text"></span> </b> Services</h2>
+    <div class="carousel-buttons">
+        <a href="#" class="btn btn-primary btn-xs me-3"><i class="fas fa-link me-2"></i>View Project</a>
+        <a href="#" class="btn btn-outline-light btn-xs me-3"><i class="fas fa-code me-2"></i>Source
+            Code</a>
+    </div>
+    <div>
+        <p class="mt-3" style="font-size:small; font-weight:500;">Create account to get services</p> <a href="register"
+            class="btn btn-primary btn-xs me-3">Get Started</a>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Modern Skills Section with Accordion -->
+<section class=" py-0.2">
+    <div class="container">
+        <div class="section-header text-center mb-1">
+            <h2 class="display-4 fw-bold">My Skills</h2>
+            <div class="divider mx-auto"></div>
+        </div>
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="fas fa-code me-2 "></i>Web Development
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Replace the existing projects section with this updated version -->
+<section class="projects-section bg-light py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="project-nav sticky-lg-top pt-lg-5" style="top: 2rem;">
+                    <div id="list-example" class="list-group">
+                        <a class="list-group-item list-group-item-action active" href="#web-projects">
+                            <i class="fas fa-laptop-code me-2"></i>Web Projects
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="#mobile-projects">
+                            <i class="fas fa-mobile-alt me-2"></i>Mobile Apps
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="#ui-projects">
+                            <i class="fas fa-paint-brush me-2"></i>UI/UX Design
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="#backend-projects">
+                            <i class="fas fa-server me-2"></i>Backend Development
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div data-bs-spy="scroll" data-bs-target="#list-example"
+                    class="scrollspy-example p-4 rounded-3 bg-white shadow-sm" tabindex="0">
+                    <div id="web-projects" class="project-item mb-5">
+                        <h3 class="mb-4">Web Projects</h3>
+                        <div class="project-content">
+                            <!-- Web project content -->
+                        </div>
+                    </div>
+                    <div id="mobile-projects" class="project-item mb-5">
+                        <h3 class="mb-4">Mobile Apps</h3>
+                        <div class="project-content">
+                            <!-- Mobile project content -->
+                        </div>
+                    </div>
+                    <div id="ui-projects" class="project-item mb-5">
+                        <h3 class="mb-4">UI/UX Design</h3>
+                        <div class="project-content">
+                            <!-- UI/UX project content -->
+                        </div>
+                    </div>
+                    <div id="backend-projects" class="project-item mb-5">
+                        <h3 class="mb-4">Backend Development</h3>
+                        <div class="project-content">
+                            <!-- Backend project content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Loading Animation -->
+<div class="loading-section text-center py-5">
+    <div class="spinner-grow text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+
+    </div>
+    click it
+
+</div>
+
+<!-- Add these styles -->
+<style>
+    /* Modern Carousel Styling */
+    .carousel {
+        position: relative;
+        margin-bottom: 4rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .carousel-inner {
+        border-radius: 15px;
+    }
+
+    .carousel-inner img {
+        height: 80vh;
+        object-fit: cover;
+        filter: brightness(0.9);
+    }
+
+    .carousel-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+        z-index: 1;
+    }
+
+    .carousel-caption {
+        bottom: 50%;
+        transform: translateY(50%);
+        z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .carousel-caption h2 {
+        font-size: 3.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin-bottom: 1.5rem;
+    }
+
+    .carousel-buttons .btn {
+        padding: 0.8rem 2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+    }
+
+    .carousel-buttons .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .control-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .control-icon:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+    }
+
+    .carousel-indicators {
+        bottom: 20px;
+    }
+
+    .carousel-indicators button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin: 0 5px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .carousel-indicators button.active {
+        background-color: #fff;
+        transform: scale(1.2);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .carousel-inner img {
+            height: 60vh;
+        }
+
+        .carousel-caption h2 {
+            font-size: 2rem;
+        }
+
+        .carousel-caption p {
+            font-size: 1rem;
+        }
+
+        .carousel-buttons .btn {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Modern Section Styling */
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .divider {
+        height: 4px;
+        width: 70px;
+        background: var(--primary-color);
+        margin: 1rem auto;
+    }
+
+    /* Custom Accordion Styling */
+    .custom-accordion .accordion-button {
+        padding: 1.2rem;
+        font-weight: 500;
+        border: none;
+        background: white;
+    }
+
+    .custom-accordion .accordion-button:not(.collapsed) {
+        color: var(--primary-color);
+        background: rgba(33, 150, 243, 0.05);
+    }
+
+    .custom-accordion .accordion-body {
+        padding: 1.5rem;
+    }
+
+    /* Progress Bars */
+    .skill-progress {
+        margin-bottom: 1.5rem;
+    }
+
+    .progress {
+        height: 10px;
+        border-radius: 5px;
+    }
+
+    .progress-bar {
+        background-color: var(--primary-color);
+        transition: width 1s ease;
+    }
+
+    /* Modern List Group Styling */
+    .list-group-item {
+        border: none;
+        padding: 1rem 1.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 8px !important;
+        transition: all 0.3s ease;
+    }
+
+    .list-group-item:hover,
+    .list-group-item.active {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateX(5px);
+    }
+
+    /* Scrollspy Enhancement */
+    .scrollspy-example {
+        height: 500px;
+        overflow-y: auto;
+        border-radius: 10px;
+    }
+
+    /* Loading Animation */
+    .spinner-grow {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    /* Smart Animations */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Progress Bar Animation */
+    .progress-bar {
+        width: 0;
+        transition: width 1.5s ease-in-out;
+    }
+
+    /* Typing Effect Cursor */
+    .type-text::after {
+        content: '|';
+        animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    /* Smart Hover Effects */
+    .project-card {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, var(--primary-color), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-card:hover::before {
+        opacity: 0.2;
+    }
+
+    /* Smart Loading State */
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+    }
+
+    .loading-overlay.loaded {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* Parallax Effect */
+    .parallax-section {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<!-- Add this JavaScript before the closing body tag -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var scrollSpy = new bootstrap.ScrollSpy(document.querySelector('.scrollspy-example'), {
+            target: '#list-example'
+        });
+
+        // Update active state on scroll
+        const scrollspyContent = document.querySelector('.scrollspy-example');
+        const navLinks = document.querySelectorAll('.list-group-item');
+
+        scrollspyContent.addEventListener('scroll', function () {
+            const fromTop = scrollspyContent.scrollTop;
+
+            navLinks.forEach(link => {
+                const section = document.querySelector(link.hash);
+
+                if (
+                    section.offsetTop <= fromTop + 100 &&
+                    section.offsetTop + section.offsetHeight > fromTop + 100
+                ) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+
+        // Smooth scroll to section when clicking nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                scrollspyContent.scrollTo({
+                    top: targetSection.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+
+<!-- Add these additional styles -->
+<style>
+    .scrollspy-example {
+        height: 500px;
+        overflow-y: auto;
+        border-radius: 10px;
+        scroll-behavior: smooth;
+        position: relative;
+    }
+
+    .project-item {
+        scroll-margin-top: 20px;
+    }
+
+    .list-group-item.active {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        transform: translateX(5px);
+    }
+
+    .project-content {
+        min-height: 300px;
+        /* Ensure enough content for scrolling */
+    }
+</style>
+
+<!-- Update the existing styles with responsive classes -->
+<style>
+    /* Global Responsive Styles */
+    :root {
+        --header-height: 60px;
+        --section-padding: clamp(3rem, 5vw, 5rem);
+    }
+
+    /* Carousel Responsive Updates */
+    .carousel {
+        margin-bottom: clamp(2rem, 4vw, 4rem);
+    }
+
+    .carousel-inner img {
+        height: clamp(50vh, 60vh, 80vh);
+    }
+
+    .carousel-caption {
+        width: 90%;
+        max-width: 800px;
+        padding: clamp(1rem, 3vw, 2rem);
+    }
+
+    .carousel-caption h2 {
+        font-size: clamp(1.5rem, 4vw, 3.5rem);
+    }
+
+    .carousel-caption p {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    /* Skills Section Responsive Updates */
+    .skills-section {
+        padding: var(--section-padding) 0;
+    }
+
+    .section-header h2 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    /* Projects Section Responsive Updates */
+    .projects-section {
+        padding: var(--section-padding) 0;
+    }
+
+    .project-nav {
+        position: sticky;
+        top: var(--header-height);
+        z-index: 10;
+    }
+
+    .scrollspy-example {
+        height: clamp(400px, 70vh, 600px);
+    }
+
+    /* Responsive Grid Layout */
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* Responsive Buttons */
+    .btn {
+        white-space: nowrap;
+        padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
+    }
+
+    /* Responsive Typography */
+    h1,
+    .h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+    }
+
+    h2,
+    .h2 {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    h3,
+    .h3 {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    p {
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
+    }
+
+    /* Media Queries */
+    @media (max-width: 992px) {
+        .project-nav {
+            position: static;
+            margin-bottom: 2rem;
+        }
+
+        .list-group {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 1rem;
+        }
+
+        .list-group-item {
+            display: inline-block;
+            border-radius: 20px !important;
+            margin-right: 0.5rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .carousel-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .carousel-buttons .btn {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .control-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .custom-accordion .accordion-button {
+            padding: 1rem;
+        }
+
+        .progress {
+            height: 8px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .carousel-caption {
+            width: 95%;
+            padding: 1rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .divider {
+            width: 50px;
+        }
+    }
+
+    /* Touch Device Optimizations */
+    @media (hover: none) {
+        .list-group-item:hover {
+            transform: none;
+        }
+
+        .carousel-buttons .btn:hover {
+            transform: none;
+        }
+
+        .control-icon:hover {
+            transform: none;
+        }
+    }
+
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark) {
+        .bg-light {
+            background-color: #1a1a1a !important;
+        }
+
+        .bg-white {
+            background-color: #242424 !important;
+        }
+
+        .text-dark {
+            color: #f8f9fa !important;
+        }
+
+        .progress {
+            background-color: #333;
+        }
+    }
+</style>
+
+<!-- Add this JavaScript for better mobile experience -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Prevent zoom on double tap for iOS
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Handle scroll position on orientation change
+        window.addEventListener('orientationchange', function () {
+            setTimeout(function () {
+                window.scrollTo(0, window.scrollY);
+            }, 100);
+        });
+
+        // Lazy loading for images
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        if ('loading' in HTMLImageElement.prototype) {
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Fallback for browsers that don't support lazy loading
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+    });
+</script>
+
+<!-- Add this script before the closing body tag -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Reveal animations on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+
+        revealElements.forEach(element => observer.observe(element));
+
+        // Smart progress bars that animate when visible
+        const progressBars = document.querySelectorAll('.progress-bar');
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target;
+                    const targetWidth = progressBar.getAttribute('aria-valuenow') + '%';
+                    progressBar.style.width = targetWidth;
+                }
+            });
+        });
+
+        progressBars.forEach(bar => progressObserver.observe(bar));
+
+        // Dynamic typing effect for hero section
+        const typeTarget = document.querySelector('.type-text');
+        if (typeTarget) {
+            // text repeating in the array
+            const phrases = ['Ai Development', 'UI/UX Designing', ' And Full Stack Development'];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                const currentPhrase = phrases[phraseIndex];
+
+                if (isDeleting) {
+                    typeTarget.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typeTarget.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    isDeleting = true;
+                    setTimeout(type, 200);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, isDeleting ? 100 : 200);
+                }
+            }
+
+            type();
+        }
+    });
+</script>
+
+<!-- Add loading overlay -->
+<div class="loading-overlay">
+    <div class="spinner-grow text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<!-- Add this to your existing DOMContentLoaded event -->
+<script>
+    window.addEventListener('load', () => {
+        document.querySelector('.loading-overlay').classList.add('loaded');
+    });
+
+    // Initialize parallax effect
+    window.addEventListener('scroll', () => {
+        const parallaxElements = document.querySelectorAll('.parallax-section');
+        parallaxElements.forEach(element => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            element.style.transform = `translate3d(0px, ${rate}px, 0px)`;
+        });
+    });
+
+    // Add smooth scrolling for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Reduced Size Variables */
+    :root {
+        --bs-body-font-size: 0.875rem;
+        --bs-border-radius: 0.25rem;
+        --bs-navbar-padding-y: 0.5rem;
+        --section-padding: 2rem;
+        --component-spacing: 0.75rem;
+    }
+
+    /* Reduced Carousel Size */
+    .carousel {
+        margin-bottom: 2rem;
+        border-radius: 0rem;
+    }
+
+    .carousel-inner img {
+        height: 65vh;
+    }
+
+    .carousel-caption {
+        padding: 1rem;
+        bottom: 45%;
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .carousel-buttons .btn {
+        padding: 0.35rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .control-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Reduced Button Sizes */
+    .btn {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .designfont {
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2.0rem;
+
+    }
+
+    .btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    /* Reduced Section Spacing */
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    /* Reduced Accordion Size */
+    /* .accordion-button {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+  }
+  
+  .accordion-body {
+      padding: 0.75rem;
+  } */
+
+    /* Smaller Progress Bars */
+    /* .progress {
+      height: 0.5rem;
+      margin-bottom: 0.5rem;
+  } */
+
+    /* .skill-progress h5 {
+      font-size: 0.85rem;
+      margin-bottom: 0.35rem;
+  } */
+
+    /* Reduced List Group */
+    .list-group-item {
+        padding: 0.5rem 0.75rem;
+        margin-bottom: 0.25rem;
+        font-size: 0.85rem;
+    }
+
+    /* Reduced Scrollspy Height */
+    .scrollspy-example {
+        height: 400px;
+        padding: 0.75rem;
+    }
+
+    /* Reduced Project Items */
+    .project-item {
+        margin-bottom: 1rem;
+    }
+
+    .project-item h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Reduced Badge Size */
+    .badge {
+        padding: 0.35em 0.65em;
+        font-size: 0.75em;
+    }
+
+    /* Reduced Spinner Size */
+    .spinner-grow {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    /* Reduced Container Padding */
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    /* Reduced Typography */
+    h1,
+    .h1 {
+        font-size: 1.75rem;
+    }
+
+    h2,
+    .h2 {
+        font-size: 1.5rem;
+    }
+
+    h3,
+    .h3 {
+        font-size: 1.25rem;
+    }
+
+    h4,
+    .h4 {
+        font-size: 1.125rem;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
+
+    /* Reduced Icon Sizes */
+    .fas,
+    .fab {
+        font-size: 0.9rem;
+    }
+
+    /* Media Queries Adjustments */
+    @media (max-width: 768px) {
+        .carousel-inner img {
+            height: 60vh;
+        }
+
+        .carousel-caption h2 {
+            font-size: 1.5rem;
+        }
+
+        .carousel-buttons .btn {
+            max-width: 200px;
+        }
+
+        .control-icon {
+            width: 25px;
+            height: 25px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .carousel-caption {
+            width: 90%;
+            padding: 0.75rem;
+        }
+
+        .btn {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .section-header {
+            margin-bottom: 1rem;
+        }
+    }
+</style>
+{% endblock content %}

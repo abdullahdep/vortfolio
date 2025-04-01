@@ -1,0 +1,29 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+
+<h1>Dashboard : {{ request.user.username }}</h1>
+<a href="{% url 'logout' %}" class="btn btn-dark">Logout</a>
+
+<!-- if user is Abdullah then show this div -->
+{% if request.user.username == 'abdullah' %}
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Welcome, Abdullah!</h4>
+  <p>You have special access to this dashboard.</p>
+  <hr>
+  <p class="mb-0">Enjoy your time!</p>
+<div></div>
+{% endif %}
+<!-- if user is not Abdullah then show this div -->
+{% if request.user.username != 'abdullah' %}
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Access Denied!</h4>
+  <p>You do not have permission to view this dashboard.</p>
+  <hr>
+  <p class="mb-0">Please contact the administrator.</p>
+<div></div>
+{% endif %}
+
+
+
+{% endblock %}
