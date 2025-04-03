@@ -4,21 +4,25 @@
 {% block content %}
 <div class="portfolio-container">
     <!-- Header Section -->
-    <section class="profile-header text-center py-5">
+    <section class="about-hero py-5 bg-gradient">
         <div class="container">
-            <h1 class="name-title mb-3">Abdullah</h1>
-            <div class="contact-info mb-4">
-                <span><i class="fas fa-map-marker-alt me-2"></i>Lahore, Pakistan</span>
-                <span><i class="fas fa-phone me-2"></i>+92 325 8262-310</span>
-                <span><i class="fas fa-envelope me-2"></i>abdullah8j03@gmail.com</span>
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/abdullah-ai-dev/" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/abdullahdep" target="_blank" class="social-link">
-                    <i class="fab fa-github"></i>
-                </a>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="about-content">
+                        <span class="badge bg-light text-primary mb-3">About Me</span>
+                        <h1 class="display-5 fw-bold mb-4">AI & Full Stack Developer</h1>
+                        <p class="lead mb-4">Dynamic and results-driven AI and Machine Learning professional with expertise in full-stack development. Passionate about creating innovative solutions using cutting-edge technologies.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                            <a href="{% static 'resume.pdf' %}" class="btn btn-outline-light" download>Download CV</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image-wrapper">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczPAIp1R8Z4BR5nocKb50YGczLHOEmWvLw1iv74ws4Zp8FAiT-VXsSEcle9Ub3rSONykg80xFZ-CcD0lpVL4xClHCs3sB72lDxGg6b6JD4RIBrev2ZstGbMn4-OlKeYSIbxdwEPJOyFWZgyGZEptzkE=w950-h633-s-no-gm?authuser=0" class="img-fluid rounded-3 shadow-lg" alt="Profile Picture">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
