@@ -381,5 +381,64 @@
             grid-template-columns: 1fr;
         }
     }
+
+    /* Adjust profile header for mobile */
+    @media (max-width: 576px) {
+        .profile-header {
+            padding: 2rem 1rem;
+        }
+
+        .name-title {
+            font-size: 1.8rem;
+        }
+
+        .contact-info {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .social-links {
+            gap: 0.5rem;
+        }
+
+        .social-link {
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    /* Adjust section titles for mobile */
+    @media (max-width: 576px) {
+        .section-title {
+            font-size: 1.5rem;
+        }
+    }
+
+    /* Improve grid layout for smaller screens */
+    @media (max-width: 576px) {
+        .architecture-grid, .projects-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .arch-card, .project-item {
+            padding: 1rem;
+        }
+
+        .arch-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .arch-icon i {
+            font-size: 1.2rem;
+        }
+    }
+
+    /* Adjust carousel for mobile */
+    @media (max-width: 576px) {
+        .carousel-inner img {
+            height: 30vh; /* Set height to 30vh for mobile screens */
+        }
+    }
 </style>
 {% endblock content %}

@@ -125,6 +125,8 @@ p
 
 
 
+
+
 <!-- Modern Skills Section with Accordion -->
 <section class=" py-0.2">
     <div class="container">
@@ -279,7 +281,7 @@ p
     }
 
     .carousel-inner img {
-        height: 80vh;
+        height: 50vh; /* Reduced from 65vh to 50vh */
         object-fit: cover;
         filter: brightness(0.9);
     }
@@ -361,7 +363,7 @@ p
     /* Responsive Adjustments */
     @media (max-width: 768px) {
         .carousel-inner img {
-            height: 60vh;
+            height: 40vh; /* Reduced from 60vh to 40vh */
         }
 
         .carousel-caption h2 {
@@ -534,6 +536,47 @@ p
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    /* Adjust carousel for mobile */
+    @media (max-width: 576px) {
+        .carousel-inner img {
+            height: 25vh; /* Reduced from 30vh to 25vh */
+        }
+    }
+
+    /* Improve skills section for mobile */
+    @media (max-width: 576px) {
+        .skills-section {
+            padding: 1rem;
+        }
+
+        .accordion-button {
+            font-size: 0.9rem;
+        }
+
+        .accordion-body {
+            font-size: 0.85rem;
+        }
+    }
+
+    /* Adjust project section for mobile */
+    @media (max-width: 576px) {
+        .projects-section {
+            padding: 1rem;
+        }
+
+        .project-nav {
+            margin-bottom: 1rem;
+        }
+
+        .list-group-item {
+            font-size: 0.85rem;
+        }
+
+        .project-item h3 {
+            font-size: 1.2rem;
+        }
     }
 </style>
 

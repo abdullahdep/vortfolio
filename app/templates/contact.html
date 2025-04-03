@@ -351,6 +351,57 @@
                 width: 100%;
             }
         }
+
+        /* Adjust form layout for mobile */
+        @media (max-width: 576px) {
+            .form-container {
+                padding: 1rem;
+            }
+
+            .form-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .form-header h2 {
+                font-size: 1.2rem;
+            }
+
+            .form-header p {
+                font-size: 0.85rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group label {
+                font-size: 0.85rem;
+            }
+
+            .form-control {
+                font-size: 0.85rem;
+            }
+
+            .btn {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        /* Adjust FAQ section for mobile */
+        @media (max-width: 576px) {
+            .faq-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .faq-question {
+                font-size: 0.9rem;
+            }
+
+            .faq-answer {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -542,11 +593,5 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
 
 {% endblock content %}
