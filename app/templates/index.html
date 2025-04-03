@@ -465,6 +465,11 @@
             padding: 0.6rem 1.5rem;
             font-size: 0.9rem;
         }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none;
+        }
     }
 
     /* Modern Section Styling */
@@ -664,6 +669,24 @@
         .project-item h3 {
             font-size: 1.2rem;
         }
+    }
+
+    /* Header Icons Size */
+    .fas,
+    .fab {
+        font-size: 1.5rem !important; /* Increased from 0.9rem to 1.5rem */
+    }
+
+    /* Accordion Header Icons - Keep them at a reasonable size */
+    .accordion-button .fas,
+    .accordion-button .fab {
+        font-size: 1.2rem !important; /* Slightly smaller than header icons */
+    }
+
+    /* List Group Icons - Keep them proportional */
+    .list-group-item .fas,
+    .list-group-item .fab {
+        font-size: 1.2rem !important; /* Match accordion icons */
     }
 </style>
 
@@ -1290,5 +1313,4 @@
             }
 
 </style>
-{{siteName}}
 {% endblock content %}
