@@ -185,6 +185,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
         }
         
         select.form-control {
@@ -230,12 +231,13 @@
             font-size: 16px;
             font-weight: 500;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: transform 0.3s ease, background-color 0.3s ease;
             text-align: center;
             text-decoration: none;
         }
         
         .btn:hover {
+            transform: translateY(-3px);
             background-color: #0052CC;
         }
         
@@ -327,6 +329,13 @@
             padding: 12px 0;
             color: var(--text-light);
             font-size: 14px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.open {
+            max-height: 200px;
         }
         
         @media (max-width: 768px) {
@@ -589,6 +598,16 @@
         document.getElementById('consultation-form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for scheduling a call! We will contact you shortly to confirm your appointment.');
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Toggle FAQ answers
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    answer.classList.toggle('open');
+                });
+            });
         });
     </script>
 </body>
