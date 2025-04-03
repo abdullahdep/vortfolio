@@ -1219,17 +1219,94 @@
                 opacity: 1;
             }
         }
+
+        /* Mobile Header Fixes */
+        @media (max-width: 768px) {
+            .container-fluid {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+
+            .navbar-brand {
+                margin-left: 0 !important;
+            }
+
+            .user-icons-container {
+                right: 60px !important; /* Adjust for hamburger menu */
+                margin-right: 0 !important;
+            }
+
+            .navbar-toggler {
+                margin-right: 0 !important;
+            }
+
+            /* Fix search form alignment */
+            .search-form {
+                margin: 10px 0 !important;
+                width: 100% !important;
+            }
+        }
+
+        /* Mobile Footer Fixes */
+        @media (max-width: 768px) {
+            .footer .container-fluid {
+                margin: 0 !important;
+                padding: 20px 15px !important;
+            }
+
+            .footer .ms-5 {
+                margin-left: 0 !important;
+            }
+
+            .footer .row {
+                margin: 0 !important;
+            }
+
+            .footer .col-md-4 {
+                padding: 0 15px !important;
+                text-align: center !important;
+            }
+
+            .footer ul.list-unstyled {
+                padding: 0 !important;
+            }
+
+            .footer ul.list-unstyled li {
+                justify-content: center !important;
+            }
+
+            .footer ul.list-unstyled li i {
+                margin-right: 8px !important;
+            }
+
+            /* Fix footer text alignment */
+            .footer p, .footer h5, .footer ul {
+                text-align: center !important;
+                margin-left: 0 !important;
+            }
+        }
+
+        /* Additional spacing fixes */
+        @media (max-width: 576px) {
+            .navbar > .container-fluid {
+                padding: 10px 15px !important;
+            }
+
+            .footer {
+                padding: 30px 0 !important;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <div class="container-fluid position-relative ms-3">
+        <div class="container-fluid px-3">
             <!-- Compact navbar brand for mobile -->
             <a class="navbar-brand d-flex align-items-center" href="/">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0" alt="Logo" class="me-2">
-                <span class="d-none d-sm-inline">Vortfolio</span>
+                <span class="d-none d-sm-inline">{{siteName}}</span>
                 <span class="d-inline d-sm-none">Portfolio</span>
             </a>
 
@@ -1415,7 +1492,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container-fluid ms-5">
+        <div class="container-fluid px-3">
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <h5>About Us</h5>
