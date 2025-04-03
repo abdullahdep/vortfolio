@@ -671,22 +671,17 @@
         }
     }
 
-    /* Header Icons Size */
-    .fas,
-    .fab {
-        font-size: 1.5rem !important; /* Increased from 0.9rem to 1.5rem */
-    }
+    /* Mobile-specific icon sizes */
+    @media (max-width: 768px) {
+        .fa-bell, .fa-bars {
+            font-size: 1.5rem !important;  /* Increased size for mobile */
+        }
 
-    /* Accordion Header Icons - Keep them at a reasonable size */
-    .accordion-button .fas,
-    .accordion-button .fab {
-        font-size: 1.2rem !important; /* Slightly smaller than header icons */
-    }
-
-    /* List Group Icons - Keep them proportional */
-    .list-group-item .fas,
-    .list-group-item .fab {
-        font-size: 1.2rem !important; /* Match accordion icons */
+        /* Hide carousel arrows on mobile */
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none !important;
+        }
     }
 </style>
 
@@ -1313,4 +1308,5 @@
             }
 
 </style>
+{{siteName}}
 {% endblock content %}
