@@ -75,7 +75,7 @@
 
 
 
-    p
+p
 
 
     <!-- Modern carousel controls -->
@@ -749,8 +749,8 @@
         .carousel-caption {
             width: 95%;
             padding: 1rem;
-
-
+            
+        
         }
 
         .section-header {
@@ -1124,27 +1124,37 @@
         .section-header h2 {
             font-size: 1.5rem;
         }
+        .carousel-caption {
+            left: 0;
+            right: 0;
+        }
     }
 
     @media (max-width: 576px) {
         .carousel-caption {
             width: 90%;
             padding: 0.75rem;
+           
 
-
-            .btn {
-                padding: 0.25rem 0.5rem;
-                font-size: 0.75rem;
-            }
-
-            .section-header {
-                margin-bottom: 1rem;
-            }
+        .btn {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
         }
 
-        .carousel-caption {
+        .section-header {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .carousel-caption {
             left: 0;
             right: 0;
+            }
         }
+         .carousel-caption {
+            left: 0 !important;
+            right: 0 !important;
+            }
+
 </style>
 {% endblock content %}
