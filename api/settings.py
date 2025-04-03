@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 #    'example',
     "app",
     "auth_app",
-    #'livereload',
+
 ]
 
 MIDDLEWARE = [
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'livereload.middleware.LiveReloadScript',
+   
 ]
 
 ROOT_URLCONF = 'api.urls'

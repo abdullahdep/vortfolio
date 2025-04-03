@@ -155,6 +155,54 @@
     </div>
 </section>
 
+<!-- FAQ Section -->
+<section class="faq-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <!-- Question 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                        What services do you offer?
+                    </button>
+                </h2>
+                <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        I specialize in full-stack development, AI & machine learning solutions, and project management. Additionally, I have expertise in various software architectures like monolithic, microservices, and multi-tenant systems.
+                    </div>
+                </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                        What technologies do you use?
+                    </button>
+                </h2>
+                <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        I work with a wide range of technologies, including React.js, Next.js, Python, Django, TensorFlow, PyTorch, Docker, Kubernetes, and cloud platforms like AWS, Azure, and GCP.
+                    </div>
+                </div>
+            </div>
+            <!-- Question 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                        How can I contact you for a project?
+                    </button>
+                </h2>
+                <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can reach me via email at abdullah8j03@gmail.com or connect with me on LinkedIn. My contact details are also listed in the Hero section above.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <style>
     /* About Page Styles */
     .bg-gradient {
@@ -386,6 +434,32 @@
 
         .arch-icon i {
             font-size: 1.2rem;
+        }
+    }
+
+    /* FAQ Section Styles */
+    .faq-section {
+        background: #f9f9f9;
+        padding: 3rem 0;
+    }
+
+    .accordion-button {
+        background: var(--primary-color);
+        color: white;
+        font-weight: bold;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background: var(--secondary-color);
+    }
+
+    .accordion-body {
+        color: var(--text-color);
+    }
+
+    @media (max-width: 768px) {
+        .faq-section {
+            padding: 2rem 1rem;
         }
     }
 </style>
