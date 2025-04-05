@@ -56,6 +56,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'api.urls'
 
+
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -80,7 +83,29 @@ WSGI_APPLICATION = 'api.wsgi.app'
 # Note: Django modules for using databases are not support in serverless
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
-DATABASES = {}
+DATABASES = {
+
+    'default': {
+
+        # 'ENGINE': 'django.db.backends.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql',
+
+        'NAME': 'railway',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'hCUFKJybaaMvxcaUzVrybMjMuaYUaSqF',
+
+        'HOST': 'postgres.railway.internal',
+
+        'PORT': '5432',
+
+    }
+
+}
+
+
 
 
 # Password validation
