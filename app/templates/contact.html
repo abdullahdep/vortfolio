@@ -440,6 +440,7 @@
             </div>
             
             <form id="consultation-form">
+                {% csrf_token %}
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="firstName">First name*</label>
@@ -450,11 +451,11 @@
                         <input type="text" id="lastName" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="companyEmail">Company email address*</label>
+                        <label for="companyEmail">Email address*</label>
                         <input type="email" id="companyEmail" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="phoneNumber">Company phone number*</label>
+                        <label for="phoneNumber">Phone number*</label>
                         <input type="tel" id="phoneNumber" class="form-control" required>
                     </div>
                     <div class="form-group">
@@ -499,29 +500,29 @@
                 <div class="checkbox-group">
                     <p><strong>How did you hear about us? (Select all that apply)*</strong></p>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="source1" name="source">
+                        <input type="checkbox" id="source1" name="source" >
                         <label for="source1">Need a <strong>Website</strong> for your <b>self/company</b></label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="source2" name="source">
+                        <input type="checkbox" id="source2" name="source" >
                         <label for="source2">Need a <strong>App</strong> for your <b>self/company</b></label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="source3" name="source">
+                        <input type="checkbox" id="source3" name="source" >
                         <label for="source3">For <strong>Learning Web and App</strong> Or <b>AI</b></label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="source4" name="source">
+                        <input type="checkbox" id="source4" name="source" required>
                         <label for="source4">Agree <b> 'Terms & and Condition'</b></label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="source5" name="source">
+                        <input type="checkbox" id="source5" name="source" >
                         <label for="source5">Get updates</label>
                     </div>
                 </div>
                 
                 <div class="form-actions">
-                    <button type="button" class="btn btn-outline">Submit</button>
+                    <button type="submit" class="btn  btn-outline">Submit</button>
                     <button type="submit" class="btn">Book a Call</button>
                 </div>
             </form>
@@ -595,10 +596,65 @@
         });
         
         // Form submission
-        document.getElementById('consultation-form').addEventListener('submit', function(e) {
+        document.getElementById('consultation-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-            alert('Thank you for scheduling a call! We will contact you shortly to confirm your appointment.');
+            
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                companyEmail: document.getElementById('companyEmail').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                companyName: document.getElementById('companyName').value,
+                companyWebsite: document.getElementById('companyWebsite').value,
+                industry: document.getElementById('industry').value,
+                companySize: document.getElementById('companySize').value,
+                goals: document.getElementById('goals').value,
+                source1: document.getElementById('source1').checked,
+                source2: document.getElementById('source2').checked,
+                source3: document.getElementById('source3').checked,
+                source4: document.getElementById('source4').checked,
+                source5: document.getElementById('source5').checked
+            };
+
+            try {
+                const response = await fetch('/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': getCookie('csrftoken')
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    alert('Thank you for scheduling a call! We will contact you shortly to confirm your appointment.');
+                    document.getElementById('consultation-form').reset();
+                } else {
+                    alert('There was an error submitting the form. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error submitting the form. Please try again.');
+            }
         });
+
+        // Add CSRF token helper function
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
 
         document.addEventListener('DOMContentLoaded', function () {
             // Toggle FAQ answers
