@@ -1,29 +1,57 @@
 {% extends 'layouts/app.html' %}
 
 {% block content %}
+{% if request.user.username != 'Admin_Mirzamabdullah12' %}
 
-<h1>Dashboard : {{ request.user.username }}</h1>
+  <header>
+    <h1 class="text-center">Hello {{ request.user.username }}</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  {% endif %}
 <a href="{% url 'logout' %}" class="btn btn-dark">Logout</a>
 
-<!-- if user is Abdullah then show this div -->
-{% if request.user.username == 'abdullah' %}
+
+
+  <!-- if user is Abdullah then show this div -->
+  {% if request.user.username == 'Admin_Mirzamabdullah12' %}
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Welcome, Abdullah!</h4>
+    <p>You have Admin access to this dashboard.</p>
+    <hr>
+    <p class="mb-0">Enjoy your time!</p>
+    <div></div>
+    {% endif %}
+
+  <!-- if user is not Abdullah then show this div
+{% if request.user.username != 'Admin_Mirzamabdullah12' %}
 <div class="alert alert-success" role="alert">
-  <h4 class="alert-heading">Welcome, Abdullah!</h4>
-  <p>You have special access to this dashboard.</p>
-  <hr>
-  <p class="mb-0">Enjoy your time!</p>
-<div></div>
-{% endif %}
-<!-- if user is not Abdullah then show this div -->
-{% if request.user.username != 'abdullah' %}
-<div class="alert alert-danger" role="alert">
-  <h4 class="alert-heading">Access Denied!</h4>
+  <h4 class="alert-heading">Hello {{request.user.username}}</h4>
   <p>You do not have permission to view this dashboard.</p>
   <hr>
   <p class="mb-0">Please contact the administrator.</p>
 <div></div>
-{% endif %}
+{% endif %} -->
 
 
 
-{% endblock %}
+  {% endblock %}
