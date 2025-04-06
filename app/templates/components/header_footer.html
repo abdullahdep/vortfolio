@@ -1390,8 +1390,7 @@
                     <div class="custom-dropdown">
                         <div class="dropdown-inner">
                             {% if user.is_authenticated %}
-                            <a href="register" class="dropdown-item"><i class="fas fa-user me-2"></i>{{
-                                request.user.username }}</a>
+                            <a href="register" class="dropdown-item"><i class="fas fa-user me-2"></i>{{request.user.username}}</a>
                             {% else %}
                             <a href="login" class="dropdown-item"><i class="fas fa-user me-2"></i>Login/Signup</a>
                             {% endif %}
