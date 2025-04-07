@@ -44,8 +44,8 @@
         }
 
         .navbar-brand img {
-            width: 2.8rem;
-            height: 2.8rem;
+            width: 45px;
+            height: 45px;
             transition: transform 0.3s ease;
         }
 
@@ -55,7 +55,7 @@
 
         /* Search Bar Enhancement */
         .search-form {
-            width: 18.75rem;
+            width: 300px;
         }
 
         .search-form .form-control {
@@ -64,7 +64,7 @@
         }
 
         .search-form .btn {
-            border-radius: 0 1.25rem 1.25rem 0;
+            border-radius: 0 20px 20px 0;
             background: var(--primary-color);
             color: white;
             border: none;
@@ -74,7 +74,7 @@
         .dropdown-menu {
             border: none;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 0.5rem;
+            border-radius: 8px;
         }
 
         .dropdown-item:hover {
@@ -96,8 +96,8 @@
         /* Footer Enhancement */
         .footer {
             background-color: var(--light-color);
-            padding: 3.75rem 0 1.875rem;
-            margin-top: 3.75rem;
+            padding: 60px 0 30px;
+            margin-top: 60px;
         }
 
         .footer h5 {
@@ -132,20 +132,8 @@
             }
 
             .navbar-brand img {
-                width: 2.2rem;
-                height: 2.2rem;
-            }
-
-            .navbar-collapse {
-                background: white;
-                padding: 1rem;
-                border-radius: 0.5rem;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                margin: 0.5rem 1rem;
+                width: 35px;
+                height: 35px;
             }
         }
 
@@ -181,19 +169,15 @@
         /* Enhanced Responsive Styles */
         @media (max-width: 991px) {
             .navbar-collapse {
-                max-height: 80vh;
-                overflow-y: auto;
-                scrollbar-width: thin;
+                background: white;
                 padding: 1rem;
-            }
-
-            .navbar-collapse::-webkit-scrollbar {
-                width: 0.3125rem; /* 5px */
-            }
-
-            .navbar-collapse::-webkit-scrollbar-thumb {
-                background: var(--primary-color);
-                border-radius: 10px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                margin: 0.5rem 1rem;
             }
 
             .search-form {
@@ -312,7 +296,7 @@
             }
 
             .navbar-collapse::-webkit-scrollbar {
-                width: 0.3125rem; /* 5px */
+                width: 5px;
             }
 
             .navbar-collapse::-webkit-scrollbar-thumb {
@@ -383,7 +367,7 @@
         }
 
         [class*="col-"] {
-            padding: 0.625rem; /* 10px */
+            padding: 10px;
         }
 
         /* Touch-friendly Footer */
@@ -577,8 +561,8 @@
 
         .user-icon .badge {
             position: absolute;
-            top: -0.3125rem;
-            right: -0.3125rem;
+            top: -5px;
+            right: -5px;
             font-size: 0.7rem;
         }
 
@@ -610,7 +594,7 @@
         }
 
         .scrollable-dropdown::-webkit-scrollbar {
-            width: 0.375rem; /* 6px */
+            width: 6px;
         }
 
         .scrollable-dropdown::-webkit-scrollbar-track {
@@ -637,10 +621,10 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            min-width: 13.75rem; /* 220px */
+            min-width: 220px;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(0.625rem); /* 10px */
+            transform: translateY(10px);
             transition: all 0.3s ease;
             z-index: 1000;
             max-height: 0;
@@ -658,21 +642,21 @@
         }
 
         .custom-dropdown::-webkit-scrollbar {
-            width: 0.375rem; /* 6px */
+            width: 6px;
         }
 
         .custom-dropdown::-webkit-scrollbar-track {
             background: rgba(0, 0, 0, 0.1);
-            border-radius: 0.1875rem; /* 3px */
+            border-radius: 3px;
         }
 
         .custom-dropdown::-webkit-scrollbar-thumb {
             background: var(--primary-color);
-            border-radius: 0.1875rem; /* 3px */
+            border-radius: 3px;
         }
 
         .dropdown-inner {
-            padding: 0.5rem 0; /* 8px 0 */
+            padding: 8px 0;
             scroll-behavior: smooth;
         }
 
@@ -683,7 +667,7 @@
         }
 
         .dropdown-item {
-            padding: 0.5rem 1rem; /* 10px 16px */
+            padding: 8px 16px;
             display: flex;
             align-items: center;
             color: #333;
@@ -697,13 +681,13 @@
         }
 
         .dropdown-divider {
-            height: 0.0625rem; /* 1px */
+            height: 1px;
             background: rgba(0, 0, 0, 0.1);
-            margin: 0.5rem 0; /* 8px 0 */
+            margin: 8px 0;
         }
 
         .dropdown-section {
-            padding: 0.5rem 0; /* 8px 0 */
+            padding: 8px 0;
         }
 
         .section-header {
@@ -723,7 +707,7 @@
             position: fixed;
             left: 0;
             right: 0;
-            height: 1.25rem; /* 20px */
+            height: 20px;
             pointer-events: none;
             z-index: 1;
             opacity: 0;
@@ -755,7 +739,7 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
-                border-radius: 0.75rem 0.75rem 0 0; /* 12px 12px 0 0 */
+                border-radius: 12px 12px 0 0;
                 transform: translateY(100%);
                 max-height: 80vh;
                 overflow-y: auto;
@@ -776,7 +760,7 @@
 
         /* Section Header Dropdown Styles */
         .section-header-dropdown {
-            padding: 0.5rem 1rem; /* 8px 16px */
+            padding: 8px 16px;
             font-weight: 600;
             color: var(--primary-color);
             font-size: 0.9rem;
@@ -813,10 +797,10 @@
             display: block;
             width: 100%;
             list-style-type: none;
-            padding-block: 0.625rem; /* 10px */
-            padding-inline: 0;
+            padding-block: 10px;
+            padding-inline: 0px;
             z-index: 1000;
-            margin-top: 0.3125rem; /* 5px */
+            margin-top: 5px;
         }
 
         .drpd li:hover {
@@ -835,13 +819,22 @@
             position: absolute;
             background-color: var(--light-color);
             border: 1px solid var(--border-color);
-            border-radius: 0.5rem; /* 8px */
+            border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enhanced Dropdown Styles */
+        .drpd {
             display: none;
-            min-width: 13.75rem; /* 220px */
-            padding: 0.5rem 0; /* 8px 0 */
-            transform: translateY(0.625rem); /* 10px */
+            min-width: 220px;
+            background: var(--light-color);
+            border-radius: 8px;
+            padding: 8px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            z-index: 1000;
             opacity: 0;
+            transform: translateY(10px);
             transition: all 0.3s ease;
         }
 
@@ -852,7 +845,7 @@
         }
 
         .drli {
-            padding: 0.625rem 1rem; /* 10px 16px */
+            padding: 10px 16px;
             display: flex;
             align-items: center;
             color: var(--dark-color);
@@ -863,7 +856,7 @@
         }
 
         .drli i {
-            width: 1.25rem; /* 20px */
+            width: 20px;
             color: var(--primary-color);
             transition: transform 0.2s ease;
         }
@@ -879,10 +872,10 @@
 
         .project-count {
             position: absolute;
-            right: 1rem; /* 16px */
+            right: 16px;
             background: rgba(33, 150, 243, 0.1);
-            padding: 0.125rem 0.5rem; /* 2px 8px */
-            border-radius: 0.75rem; /* 12px */
+            padding: 2px 8px;
+            border-radius: 12px;
             font-size: 0.75rem;
             color: var(--primary-color);
         }
@@ -890,11 +883,11 @@
         .dropdown-divider {
             height: 1px;
             background: rgba(0, 0, 0, 0.06);
-            margin: 0.5rem 0; /* 8px 0 */
+            margin: 8px 0;
         }
 
         .view-all {
-            color: var (--primary-color);
+            color: var(--primary-color);
             font-weight: 500;
         }
 
@@ -917,11 +910,11 @@
             }
 
             .drli {
-                padding: 0.5rem 0.75rem; /* 8px 12px */
+                padding: 8px 12px;
             }
 
             .project-count {
-                right: 0.75rem; /* 12px */
+                right: 12px;
             }
         }
 
@@ -982,13 +975,13 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 87.5rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .category-card {
             background: white;
-            border-radius: 0.75rem;
+            border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             padding: 1.5rem;
             transition: transform 0.3s ease;
@@ -1025,7 +1018,7 @@
             color: var(--dark-color);
             text-decoration: none;
             padding: 0.5rem;
-            border-radius: 0.375rem;
+            border-radius: 6px;
             transition: all 0.3s ease;
         }
 
@@ -1078,7 +1071,7 @@
         /* Footer adjustments for mobile */
         @media (max-width: 576px) {
             .footer {
-                padding: 1.875rem 0 !important; /* 30px 0 */
+                padding: 20px 10px;
                 text-align: center;
             }
 
@@ -1230,8 +1223,8 @@
         /* Mobile Header Fixes */
         @media (max-width: 768px) {
             .container-fluid {
-                padding-left: 0.9375rem !important; /* 15px */
-                padding-right: 0.9375rem !important; /* 15px */
+                padding-left: 15px !important;
+                padding-right: 15px !important;
             }
 
             .navbar-brand {
@@ -1258,7 +1251,7 @@
         @media (max-width: 768px) {
             .footer .container-fluid {
                 margin: 0 !important;
-                padding: 1.25rem 0.9375rem !important; /* 20px 15px */
+                padding: 20px 15px !important;
             }
 
             .footer .ms-5 {
@@ -1270,7 +1263,7 @@
             }
 
             .footer .col-md-4 {
-                padding: 0 0.9375rem !important; /* 15px */
+                padding: 0 15px !important;
                 text-align: center !important;
             }
 
@@ -1283,7 +1276,7 @@
             }
 
             .footer ul.list-unstyled li i {
-                margin-right: 0.5rem !important; /* 8px */
+                margin-right: 8px !important;
             }
 
             /* Fix footer text alignment */
@@ -1296,11 +1289,11 @@
         /* Additional spacing fixes */
         @media (max-width: 576px) {
             .navbar > .container-fluid {
-                padding:0rem 1.7375rem !important; /* 10px 15px */
+                padding: 10px 15px !important;
             }
 
             .footer {
-                padding: 1.875rem 0 !important; /* 30px 0 */
+                padding: 30px 0 !important;
             }
         }
         #abd {
@@ -1338,20 +1331,19 @@
                     </div>
                 </form>
 
+                <!-- Replace the existing navigation links with these properly configured ones -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- New Navigation Buttons -->
                     <li class="nav-item">
                         <a class="nav-link active" href="/"><i class="fas fa-home me-1"></i>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about"><i class="fas fa-info-circle me-1"></i>About</a>
+                        <a class="nav-link" href="{% url 'about' %}"><i class="fas fa-info-circle me-1"></i>About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/portfolio"><i class="fas fa-briefcase me-1"></i>Portfolio</a>
+                        <a class="nav-link" href="{% url 'portfolio' %}"><i class="fas fa-briefcase me-1"></i>Portfolio</a>
                     </li>
-                    <!-- Add services link here -->
                     <li class="nav-item">
-                        <a class="nav-link" href="/services"><i class="fas fa-cogs me-1"></i>Services</a>
+                        <a class="nav-link" href="{% url 'services' %}"><i class="fas fa-cogs me-1"></i>Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.youtube.com/@aibytestudio" target="_blank">
@@ -1359,7 +1351,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact"><i class="fas fa-envelope me-1"></i>Contact</a>
+                        <a class="nav-link" href="{% url 'contact' %}"><i class="fas fa-envelope me-1"></i>Contact</a>
                     </li>
                     <li class="nav-item drp">
                         <a class="nav-link" href="#" onclick="toggleFullscreenMenu(event)"> 
@@ -1402,9 +1394,9 @@
                     <div class="custom-dropdown">
                         <div class="dropdown-inner">
                             {% if user.is_authenticated %}
-                            <a href="register" class="dropdown-item"><i class="fas fa-user me-2"></i>{{request.user.username}}</a>
+                            <a href="{% url 'register' %}" class="dropdown-item"><i class="fas fa-user me-2"></i>{{request.user.username}}</a>
                             {% else %}
-                            <a href="login" class="dropdown-item"><i class="fas fa-user me-2"></i>Login/Signup</a>
+                            <a href="{% url 'login' %}" class="dropdown-item"><i class="fas fa-user me-2"></i>Login/Signup</a>
                             {% endif %}
 
                             {% if user.is_authenticated %}
@@ -1434,7 +1426,7 @@
                                 </div>
                             </div>
                             <div class="dropdown-divider"></div>
-                            <a href="logout" class="dropdown-item"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
+                            <a href="{% url 'logout'%}" class="dropdown-item"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
                         </div>
                     </div>
                 </div>
@@ -1517,9 +1509,9 @@
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="/" class="text-decoration-none">Home</a></li>
-                        <li><a href="projects" class="text-decoration-none">Projects</a></li>
-                        <li><a href="services" class="text-decoration-none">Services</a></li>
-                        <li><a href="contact" class="text-decoration-none">Contact</a></li>
+                        <li><a href="{% url 'projects' %}" class="text-decoration-none">Projects</a></li>
+                        <li><a href="{% url 'services' %}" class="text-decoration-none">Services</a></li>
+                        <li><a href="{% url 'contact' %}" class="text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-4">
