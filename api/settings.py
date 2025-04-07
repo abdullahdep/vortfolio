@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 #    'example',
     "app",
     "auth_app",
+    "template_partials",
 
 ]
 
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'api.wsgi.app'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-DATABASE_URL = "postgresql://postgres:hCUFKJybaaMvxcaUzVrybMjMuaYUaSqF@shuttle.proxy.rlwy.net:38169/railway"
+DATABASE_URL = "postgresql://postgres:YevexEPBybGpAMqJYQGnjbJKucLtolxj@nozomi.proxy.rlwy.net:19349/railway"
 # DATABASE_URL = "postgresql://postgres:hCUFKJybaaMvxcaUzVrybMjMuaYUaSqF@postgres.railway.internal:5432/railway"
 DATABASES = {
     'default': dj_database_url.config(
