@@ -1697,7 +1697,7 @@ main{
 /* Adjust layout for mobile screens */
 @media (max-width: 768px) {
     .user-icons-container {
-        gap: 10px; /* Reduce spacing between icons on smaller screens */
+        gap: 25px; /* Reduce spacing between icons on smaller screens */
     }
 
     .navbar-toggler {
@@ -1707,4 +1707,14 @@ main{
     .user-icons-container {
         order: 1; /* Ensure icons appear before the hamburger menu */
     }
+    img{
+        object-fit: fill;
+    }
+}   
+
+.carousel-item img {
+    width: 100%; /* Ensure the image spans the full width of the container */
+    height: 100%; /* Ensure the image spans the full height of the container */
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+    object-position: center; /* Center the image within the container */
 }

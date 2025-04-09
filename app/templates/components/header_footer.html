@@ -13,6 +13,60 @@
 <style>
     /* Ensure proper spacing and alignment for icons */
  
+    /* Downsheet menu styling */
+    .downsheet-menu {
+        position: fixed;
+        bottom: -100%; /* Initially hidden */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        z-index: 1050;
+        transition: bottom 0.3s ease-in-out; /* Smooth slide-up animation */
+        padding: 20px;
+    }
+
+    .downsheet-menu.active {
+        bottom: 0; /* Slide up when active */
+    }
+
+    .downsheet-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .downsheet-header h5 {
+        margin: 0;
+    }
+
+    .downsheet-close {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #000;
+    }
+
+    .downsheet-content {
+        max-height: 50vh; /* Limit height */
+        overflow-y: auto; /* Enable scrolling if content overflows */
+    }
+
+    /* Ensure proper spacing for dropdown items */
+    .downsheet-content .dropdown-item {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 768px) {
+        .downsheet-menu {
+            padding: 15px;
+        }
+    }
 </style>
 <body>
     <!-- Header -->
@@ -102,41 +156,49 @@
             <div class="user-icons-container">
                 <!-- Bell Icon -->
                 <div class="user-icon">
-                    <a class="nav-link" href="#" id="notificationsToggle">
+                    <a class="nav-link" href="#" id="notificationsToggle" onclick="toggleDownsheet('notificationsMenu')">
                         <i class="fas fa-bell"></i>
                         <span class="badge bg-danger">3</span>
                     </a>
-                    <div class="custom-dropdown notifications-dropdown">
-                        <div class="dropdown-inner">
-                            <h6 class="dropdown-header">Notifications</h6>
-                            <a href="#" class="dropdown-item">New Message</a>
-                            <a href="#" class="dropdown-item">Project Update</a>
-                            <a href="#" class="dropdown-item">System Alert</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item text-center view-all">View All Notifications</a>
-                        </div>
+                </div>
+
+                <!-- Notifications Downsheet Menu -->
+                <div class="downsheet-menu" id="notificationsMenu">
+                    <div class="downsheet-header">
+                        <h5>Notifications</h5>
+                        <button class="downsheet-close" onclick="toggleDownsheet('notificationsMenu')">&times;</button>
+                    </div>
+                    <div class="downsheet-content">
+                        <a href="#" class="dropdown-item">New Message</a>
+                        <a href="#" class="dropdown-item">Project Update</a>
+                        <a href="#" class="dropdown-item">System Alert</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item text-center view-all">View All Notifications</a>
                     </div>
                 </div>
 
                 <!-- User Icon -->
                 <div class="user-icon">
-                    <a class="nav-link" href="#" id="userToggle">
+                    <a class="nav-link" href="#" id="userToggle" onclick="toggleDownsheet('userMenu')">
                         <i class="fas fa-user-circle"></i>
                     </a>
-                    <div class="custom-dropdown user-dropdown">
-                        <div class="dropdown-inner">
-                            {% if user.is_authenticated %}
-                            <a href="{% url 'register' %}" class="dropdown-item"><i class="fas fa-user me-2"></i>{{ request.user.username }}</a>
-                            {% else %}
-                            <a href="{% url 'login' %}" class="dropdown-item"><i class="fas fa-user me-2"></i>Login/Signup</a>
-                            {% endif %}
+                </div>
 
-                            {% if user.is_authenticated %}
-                            <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i>Settings</a>
-                            {% endif %}
-                            <div class="dropdown-divider"></div>
-                            <a href="{% url 'logout' %}" class="dropdown-item"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
-                        </div>
+                <!-- User Downsheet Menu -->
+                <div class="downsheet-menu" id="userMenu">
+                    <div class="downsheet-header">
+                        <h5>User Menu</h5>
+                        <button class="downsheet-close" onclick="toggleDownsheet('userMenu')">&times;</button>
+                    </div>
+                    <div class="downsheet-content">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'register' %}" class="dropdown-item"><i class="fas fa-user me-2"></i>{{ request.user.username }}</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i>Settings</a>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="dropdown-item"><i class="fas fa-user me-2"></i>Login/Signup</a>
+                        {% endif %}
+                        <div class="dropdown-divider"></div>
+                        <a href="{% url 'logout' %}" class="dropdown-item"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
                     </div>
                 </div>
             </div>
@@ -243,8 +305,47 @@
         </div>
     </footer>
 <script src="{% static 'js/script.js' %}"></script>
+<script>
+    function toggleDownsheet(menuId) {
+        const menu = document.getElementById(menuId);
+        if (menu.classList.contains('active')) {
+            menu.classList.remove('active'); // Close the menu
+        } else {
+            // Close any other open downsheet menus
+            document.querySelectorAll('.downsheet-menu.active').forEach(activeMenu => {
+                activeMenu.classList.remove('active');
+            });
+            menu.classList.add('active'); // Open the selected menu
+        }
+    }
 
-    <!-- Replace existing script with this new one -->
+    // Close the menu when clicking outside
+    document.addEventListener('click', function (event) {
+        const openMenus = document.querySelectorAll('.downsheet-menu.active');
+        openMenus.forEach(menu => {
+            if (!menu.contains(event.target) && !event.target.closest('.user-icon')) {
+                menu.classList.remove('active');
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    
+</script>
