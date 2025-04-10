@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+import pymysql
+pymysql.install_as_MySQLdb()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'example'
+    'app',  # Custom app for the main functionality
+    'auth_app',  # Custom app for authentication
 ]
 
 MIDDLEWARE = [
@@ -76,9 +78,25 @@ WSGI_APPLICATION = 'api.wsgi.app'
 # Note: Django modules for using databases are not support in serverless
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
-DATABASES = {}
+# ...existing code...
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'test',  # Database name
+        'USER': '3TJFdzBsW6BQcdA.root',  # Username
+        'PASSWORD': '3xv6bY5a4oHNEUhh',  # Password
+        'HOST': 'gateway01.ap-northeast-1.prod.aws.tidbcloud.com',  # Host
+        'PORT': '4000',  # Port
+        'OPTIONS': {
+            'ssl': {
+                'ca': BASE_DIR / 'certs/isrgrootx1.pem',  # Path to the CA certificate
+            },
+        },
+    }
+}
 
+# ...existing code...
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
