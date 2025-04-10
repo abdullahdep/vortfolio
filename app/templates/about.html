@@ -1,0 +1,481 @@
+{% extends 'components/header_footer.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="profile-header text-center py-5">
+    <div class="container">
+        <h1 class="name-title mb-3">Abdullah</h1>
+        <div class="contact-info mb-4">
+            <span><i class="fas fa-map-marker-alt me-2"></i>Lahore, Pakistan</span>
+            <span><i class="fas fa-phone me-2"></i>+92 325 8262-310</span>
+            <span><i class="fas fa-envelope me-2"></i>abdullah8j03@gmail.com</span>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/abdullah-ai-dev/" target="_blank" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/abdullahdep" target="_blank" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section class="experience-section py-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Experience Cards -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="h5 mb-3">Full Stack Development</h3>
+                        <p class="text-muted">Proficient in both front-end and back-end development using modern frameworks and technologies.</p>
+                        <ul class="list-unstyled skill-list">
+                            <li>HTML5, CSS3, JavaScript</li>
+                            <li>React.js, Next.js</li>
+                            <li>Python, Django</li>
+                            <li>MongoDB, PostgreSQL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="h5 mb-3">AI & Machine Learning</h3>
+                        <p class="text-muted">Experienced in developing and implementing machine learning solutions.</p>
+                        <ul class="list-unstyled skill-list">
+                            <li>TensorFlow, PyTorch</li>
+                            <li>Natural Language Processing</li>
+                            <li>Computer Vision</li>
+                            <li>Deep Learning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3 class="h5 mb-3">Project Management</h3>
+                        <p class="text-muted">Strong background in managing and delivering complex technical projects.</p>
+                        <ul class="list-unstyled skill-list">
+                            <li>Agile Methodology</li>
+                            <li>Team Leadership</li>
+                            <li>Problem Solving</li>
+                            <li>Technical Documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add this after your existing Experience Section -->
+<section class="architecture-section py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Architecture Expertise</h2>
+        <div class="row g-4">
+            <!-- Monolithic Architecture -->
+            <div class="col-lg-4 col-md-6">
+                <div class="arch-card h-100">
+                    <div class="arch-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3 class="h5">Monolithic Architecture</h3>
+                    <ul class="feature-list">
+                        <li>Single Codebase Solutions</li>
+                        <li>Integrated Systems</li>
+                        <li>Traditional Development</li>
+                        <li>Simplified Deployment</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Django</span>
+                        <span class="tech-badge">Spring Boot</span>
+                        <span class="tech-badge">Laravel</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Microservices -->
+            <div class="col-lg-4 col-md-6">
+                <div class="arch-card h-100">
+                    <div class="arch-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="h5">Microservices Architecture</h3>
+                    <ul class="feature-list">
+                        <li>Distributed Systems</li>
+                        <li>Service Discovery</li>
+                        <li>API Gateway Integration</li>
+                        <li>Container Orchestration</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Kubernetes</span>
+                        <span class="tech-badge">Spring Cloud</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Multi-tenant -->
+            <div class="col-lg-4 col-md-6">
+                <div class="arch-card h-100">
+                    <div class="arch-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="h5">Multi-tenant Architecture</h3>
+                    <ul class="feature-list">
+                        <li>Shared Infrastructure</li>
+                        <li>Data Isolation</li>
+                        <li>Tenant Management</li>
+                        <li>Resource Optimization</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">Azure</span>
+                        <span class="tech-badge">GCP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <!-- Question 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                        What services do you offer?
+                    </button>
+                </h2>
+                <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        I specialize in full-stack development, AI & machine learning solutions, and project management. Additionally, I have expertise in various software architectures like monolithic, microservices, and multi-tenant systems.
+                    </div>
+                </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                        What technologies do you use?
+                    </button>
+                </h2>
+                <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        I work with a wide range of technologies, including React.js, Next.js, Python, Django, TensorFlow, PyTorch, Docker, Kubernetes, and cloud platforms like AWS, Azure, and GCP.
+                    </div>
+                </div>
+            </div>
+            <!-- Question 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                        How can I contact you for a project?
+                    </button>
+                </h2>
+                <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can reach me via email at abdullah8j03@gmail.com or connect with me on LinkedIn. My contact details are also listed in the Hero section above.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* About Page Styles */
+    .bg-gradient {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+    }
+
+    .about-content {
+        padding-right: 2rem;
+    }
+
+    .about-image-wrapper {
+        position: relative;
+        padding: 1rem;
+    }
+
+    .about-image-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 80%;
+        border: 4px solid rgba(255,255,255,0.2);
+        border-radius: 1rem;
+        transform: translate(1rem, 1rem);
+        z-index: 0;
+    }
+
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: var(--primary-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .icon-box:hover {
+        transform: scale(1.1);
+        background-color: var(--secondary-color);
+    }
+
+    .skill-list li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+    }
+
+    .skill-list li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+    }
+
+    .card {
+        transition: transform 0.3s ease;
+        border-radius: 12px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.5s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+        .about-content {
+            padding-right: 0;
+            text-align: center;
+        }
+
+        .about-image-wrapper {
+            margin-top: 2rem;
+        }
+
+        .about-image-wrapper::before {
+            width: 70%;
+            height: 70%;
+        }
+    }
+
+    .arch-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .arch-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+
+    .arch-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .arch-icon i {
+        font-size: 1.75rem;
+        color: white;
+    }
+
+    .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+    }
+
+    .feature-list li {
+        padding-left: 1.5rem;
+        position: relative;
+        margin-bottom: 0.75rem;
+        color: var(--text-color);
+    }
+
+    .feature-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .tech-badge {
+        background: rgba(33, 150, 243, 0.1);
+        color: var(--primary-color);
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .arch-card {
+            padding: 1.5rem;
+        }
+
+        .arch-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .arch-icon i {
+            font-size: 1.5rem;
+        }
+    }
+
+    /* Combine all @media (max-width: 576px) */
+    @media (max-width: 576px) {
+        .about-hero {
+            padding: 2rem 1rem;
+        }
+
+        .about-content {
+            text-align: center;
+        }
+
+        .about-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .about-content p {
+            font-size: 0.9rem;
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+        }
+
+        .experience-section {
+            padding: 1rem;
+        }
+
+        .card {
+            padding: 1rem;
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+        }
+
+        .icon-box i {
+            font-size: 1.2rem;
+        }
+
+        .architecture-section {
+            padding: 1rem;
+        }
+
+        .arch-card {
+            padding: 1rem;
+        }
+
+        .arch-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .arch-icon i {
+            font-size: 1.2rem;
+        }
+    }
+
+    /* FAQ Section Styles */
+    .faq-section {
+        background: #f9f9f9;
+        padding: 3rem 0;
+    }
+
+    .accordion-button {
+        background: var(--primary-color);
+        color: white;
+        font-weight: bold;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background: #f9f9f9;
+    }
+
+    .accordion-body {
+        color: var(--text-color);
+    }
+
+    @media (max-width: 768px) {
+        .faq-section {
+            padding: 2rem 1rem;
+        }
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Reveal cards on scroll
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        cards.forEach(card => observer.observe(card));
+    });
+</script>
+{% endblock content %}

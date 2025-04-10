@@ -1,0 +1,460 @@
+{% extends 'components/header_footer.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+<!-- Add these meta tags in the header -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2196f3">
+
+<!-- Modern Hero Carousel -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Carousel Items -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOC21vN7RWv410xhpnDzvV6cucXeZfp0_ovUCHKz05x1uylXuV7oVGx6JLjtz9pMLtsrToBBumvU8Wnl4MRKCGVig3LJbVYMCN7XpGzJT1wemgQWO1AXBFzyKIOTjmTrJ6c1geyA5VNCxZgK1_Mbi0=w948-h633-s-no-gm?authuser=0" class="d-block w-100"  alt="Slide 1">
+            <div class="carousel-caption">
+                <span class="badge bg-primary mb-3">Welcome</span>
+                <h2 class="">We are Providing <b class="designfont" style="border: #1a1a1a;">
+                        <span class="type-text"></span> </b> Services</h2>
+                <div class="carousel-buttons">
+                    <a href="#" class="btn btn-primary btn-xs me-3"><i class="fas fa-link me-2"></i>View Project</a>
+                    <a href="#" class="btn btn-outline-light btn-xs me-3"><i class="fas fa-code me-2"></i>Source Code</a>
+                </div>
+                <div>
+                    <p class="mt-3" style="font-size:small; font-weight:500;">Create account to get services</p>
+                    <a href="register" class="btn btn-primary btn-xs me-3">Get Started</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczNYpxXYUPm1Fg31TpYNqZUn7z1Lg3pcxMRAA7lte_EQj8a2aqm1gwMkrpOQ2dTvGLwEd7k1JVOsI1j11NcxWUEYTlsCbZkocI1XwiNGd6p2tpZLx7WWEmvhtWfRnjGsA7zeCjEWCFlHygi7-OmLK9M=w950-h633-s-no-gm?authuser=0" class="d-block w-100" alt="Slide 2">
+            <div class="carousel-caption">
+                <span class="badge bg-primary mb-3">Welcome</span>
+                <h2 class="">We are Providing <b class="designfont" style="border: #1a1a1a;">
+                        <span class="type-text"></span> </b> Services</h2>
+                <div class="carousel-buttons">
+                    <a href="#" class="btn btn-primary btn-xs me-3"><i class="fas fa-link me-2"></i>View Project</a>
+                    <a href="#" class="btn btn-outline-light btn-xs me-3"><i class="fas fa-code me-2"></i>Source Code</a>
+                </div>
+                <div>
+                    <p class="mt-3" style="font-size:small; font-weight:500;">Create account to get services</p>
+                    <a href="register" class="btn btn-primary btn-xs me-3">Get Started</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczPhmH7D-PZ_MRJXLJ1Ht4mjmG8eY1EDtLqwSeZlfxxXsE3dzgYQqJUFhAiNbcdy4EDLYSFR2sUDoujKTN4XCmYwFxUztxFff9u2rexp4XanZpH2wblRLGEuVCIujH1N2VFtTnTzPHds7Pm9bj5yDZY=w950-h633-s-no-gm?authuser=0" class="d-block w-100" alt="Slide 3">
+            <div class="carousel-caption">
+                <span class="badge bg-primary mb-3">Welcome</span>
+                <h2 class="">We are Providing <b class="designfont" style="border: #1a1a1a;">
+                        <span class="type-text"></span> </b> Services</h2>
+                <div class="carousel-buttons">
+                    <a href="#" class="btn btn-primary btn-xs me-3"><i class="fas fa-link me-2"></i>View Project</a>
+                    <a href="#" class="btn btn-outline-light btn-xs me-3"><i class="fas fa-code me-2"></i>Source Code</a>
+                </div>
+                <div>
+                    <p class="mt-3" style="font-size:small; font-weight:500;">Create account to get services</p>
+                    <a href="register" class="btn btn-primary btn-xs me-3">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div>
+
+<div style="margin-inline: 2.5vh;">
+<!-- Modern Skills Section with Accordion -->
+<section class=" py-0.2">
+    <div class="container">
+        <div class="section-header text-center mb-1">
+            <h2 class="display-4 fw-bold">My Skills</h2>
+            <div class="divider mx-auto"></div>
+        </div>
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <i class="fas fa-code me-2"></i>Frontend Development
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Expertise in:</strong> HTML5, CSS3, JavaScript (ES6+), React.js, Vue.js, and modern UI frameworks.
+                        <br><strong>Additional Skills:</strong> 
+                        <ul>
+                            <li>Responsive web design and mobile-first development</li>
+                            <li>Performance optimization and web accessibility</li>
+                            <li>State management (Redux, Vuex)</li>
+                            <li>Modern build tools (Webpack, Vite)</li>
+                            <li>CSS preprocessors (SASS, LESS)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="fas fa-server me-2"></i>Backend Development
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Proficient in:</strong> Python (Django, Flask), Node.js, and database management.
+                        <br><strong>Additional Skills:</strong>
+                        <ul>
+                            <li>RESTful API design and implementation</li>
+                            <li>Database optimization and scaling</li>
+                            <li>Cloud services (AWS, GCP)</li>
+                            <li>Microservices architecture</li>
+                            <li>Docker and container orchestration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <i class="fas fa-paint-brush me-2"></i>UI/UX Design
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Skills include:</strong> UX research, wireframing, and prototyping.
+                        <br><strong>Additional Skills:</strong>
+                        <ul>
+                            <li>User research and persona development</li>
+                            <li>Information architecture</li>
+                            <li>Interactive prototyping</li>
+                            <li>Design systems creation</li>
+                            <li>Usability testing and iteration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <i class="fas fa-brain me-2"></i>AI Development
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Expertise in:</strong> Machine learning and AI development.
+                        <br><strong>Additional Skills:</strong>
+                        <ul>
+                            <li>Deep learning model development</li>
+                            <li>Natural Language Processing</li>
+                            <li>Computer Vision applications</li>
+                            <li>AI model deployment and scaling</li>
+                            <li>MLOps and model monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+  
+</style>
+<!-- Replace the existing projects section with this updated version -->
+<section class="projects-section bg-light py-5">
+    <div class="container-fluid">
+        <div class="row g-4">
+            <!-- Navigation Sidebar -->
+            <div class="col-lg-4">
+                <div class="project-nav sticky-lg-top pt-lg-5" style="top: 2rem;">
+                    <div id="list-example" class="list-group">
+                        <a class="list-group-item list-group-item-action active" href="#web-projects">
+                            <i class="fas fa-laptop-code me-2"></i>Web Projects
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="#mobile-projects">
+                            <i class="fas fa-mobile-alt me-2"></i>Mobile Apps
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="#ui-projects">
+                            <i class="fas fa-paint-brush me-2"></i>UI/UX Design
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="#backend-projects">
+                            <i class="fas fa-server me-2"></i>Backend Development
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="#ai-projects">
+                            <i class="fas fa-brain me-2"></i>AI Development
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="col-lg-8">
+                <div data-bs-spy="scroll" data-bs-target="#list-example"
+                    class="scrollspy-example p-4 rounded-3 bg-white shadow-sm" tabindex="0">
+                    <div id="web-projects" class="project-item mb-5">
+                        <h3 class="mb-4">Web Projects</h3>
+                        <p>Explore my web development projects:</p>
+                        <ul>
+                            <li>E-commerce Platform</li>
+                            <li>Portfolio Website</li>
+                            <li>Content Management System</li>
+                        </ul>
+                    </div>
+                    <div id="mobile-projects" class="project-item mb-5">
+                        <h3 class="mb-4">Mobile Apps</h3>
+                        <p>Explore my mobile app development projects:</p>
+                        <ul>
+                            <li>Fitness Tracker App</li>
+                            <li>Food Delivery App</li>
+                            <li>Social Media App</li>
+                        </ul>
+                    </div>
+                    <div id="ui-projects" class="project-item mb-5">
+                        <h3 class="mb-4">UI/UX Design</h3>
+                        <p>Explore my UI/UX design projects:</p>
+                        <ul>
+                            <li>Wireframing and Prototyping</li>
+                            <li>Design Systems</li>
+                            <li>Usability Testing</li>
+                        </ul>
+                    </div>
+                    <div id="backend-projects" class="project-item mb-5">
+                        <h3 class="mb-4">Backend Development</h3>
+                        <p>Explore my backend development projects:</p>
+                        <ul>
+                            <li>RESTful APIs</li>
+                            <li>Database Management</li>
+                            <li>Microservices Architecture</li>
+                        </ul>
+                    </div>
+                    <div id="ai-projects" class="project-item mb-5">
+                        <h3 class="mb-4">AI Development</h3>
+                        <p>Explore my AI development projects:</p>
+                        <ul></ul>
+                            <li>Machine Learning Models</li>
+                            <li>Natural Language Processing</li>
+                            <li>Computer Vision Applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+</div>
+<!-- Loading Animation -->
+<div class="loading-section text-center py-5"></div>
+    <div class="spinner-grow text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+
+    </div>
+    click it
+
+</div>
+
+
+
+<!-- Add this JavaScript before the closing body tag -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize Bootstrap ScrollSpy
+        var scrollSpy = new bootstrap.ScrollSpy(document.querySelector('.scrollspy-example'), {
+            target: '#list-example'
+        });
+
+        // Smooth scroll to section when clicking nav links
+        const navLinks = document.querySelectorAll('.list-group-item');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+<!-- Add these additional styles -->
+
+
+<!-- Update the existing styles with responsive classes -->
+
+<!-- Add this JavaScript for better mobile experience -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Prevent zoom on double tap for iOS
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Handle scroll position on orientation change
+        window.addEventListener('orientationchange', function () {
+            setTimeout(function () {
+                window.scrollTo(0, window.scrollY);
+            }, 100);
+        });
+
+        // Lazy loading for images
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        if ('loading' in HTMLImageElement.prototype) {
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Fallback for browsers that don't support lazy loading
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+    });
+</script>
+
+<!-- Add this script before the closing body tag -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Reveal animations on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+
+        revealElements.forEach(element => observer.observe(element));
+
+        // Smart progress bars that animate when visible
+        const progressBars = document.querySelectorAll('.progress-bar');
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target;
+                    const targetWidth = progressBar.getAttribute('aria-valuenow') + '%';
+                    progressBar.style.width = targetWidth;
+                }
+            });
+        });
+
+        progressBars.forEach(bar => progressObserver.observe(bar));
+
+        // Dynamic typing effect for hero section
+        const typeTargets = document.querySelectorAll('.type-text'); // Select all type-text elements
+        const phrases = ['AI Development', 'UI/UX Designing', 'And Full Stack Development']; // Text phrases to cycle through
+
+        typeTargets.forEach((typeTarget, index) => {
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                const currentPhrase = phrases[phraseIndex];
+
+                if (isDeleting) {
+                    typeTarget.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typeTarget.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    isDeleting = true;
+                    setTimeout(type, 200);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, isDeleting ? 100 : 200);
+                }
+            }
+
+            // Start typing effect for each type-text element
+            type();
+        });
+    });
+</script>
+
+<!-- Add loading overlay -->
+<div class="loading-overlay">
+    <div class="spinner-grow text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<!-- Add this to your existing DOMContentLoaded event -->
+<script>
+    window.addEventListener('load', () => {
+        document.querySelector('.loading-overlay').classList.add('loaded');
+    });
+
+    // Initialize parallax effect
+    window.addEventListener('scroll', () => {
+        const parallaxElements = document.querySelectorAll('.parallax-section');
+        parallaxElements.forEach(element => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            element.style.transform = `translate3d(0px, ${rate}px, 0px)`;
+        });
+    });
+
+    // Add smooth scrolling for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+
+
+{% endblock content %}
