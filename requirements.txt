@@ -1,4 +1,2 @@
 django
-whitenoise
-mysqlclient
-python-dotenv
+PyMySQL
