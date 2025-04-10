@@ -439,36 +439,36 @@
                 </div>
             </div>
             
-            <form id="consultation-form">
+            <form id="consultation-form" action="{% url 'contact' %}" method="post">
                 {% csrf_token %}
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="firstName">First name*</label>
-                        <input type="text" id="firstName" class="form-control" required>
+                        <input type="text" id="firstName" name="firstName" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last name*</label>
-                        <input type="text" id="lastName" class="form-control" required>
+                        <input type="text" id="lastName" name="lastName" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="companyEmail">Email address*</label>
-                        <input type="email" id="companyEmail" class="form-control" required>
+                        <input type="email" id="companyEmail" name="companyEmail" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="phoneNumber">Phone number*</label>
-                        <input type="tel" id="phoneNumber" class="form-control" required>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="companyName">Company name (optional)</label>
-                        <input type="text" id="companyName" class="form-control" >
+                        <input type="text" id="companyName" name="companyName" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="companyWebsite">Company website URL (optional)</label>
-                        <input type="url" id="companyWebsite" class="form-control" >
+                        <input type="url" id="companyWebsite" name="companyWebsite" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="industry">Industry*</label>
-                        <select id="industry" class="form-control" required>
+                        <select id="industry" name="industry" class="form-control" required>
                             <option value="" selected disabled>Please Select</option>
                             <option value="technology">Technology</option>
                             <option value="healthcare">Healthcare</option>
@@ -481,7 +481,7 @@
                     </div>
                     <div class="form-group">
                         <label for="companySize">Company size*</label>
-                        <select id="companySize" class="form-control" required>
+                        <select id="companySize" name="companySize" class="form-control" required>
                             <option value="" selected disabled>Please Select</option>
                             <option value="1-10">1-10 employees</option>
                             <option value="11-50">11-50 employees</option>
@@ -491,41 +491,42 @@
                         </select>
                     </div>
                 </div>
-                
+            
                 <div class="form-group">
                     <label for="goals">What are your biggest sales and marketing challenges?*</label>
-                    <textarea id="goals" class="form-control" required></textarea>
+                    <textarea id="goals" name="goals" class="form-control" required></textarea>
                 </div>
-                
+            
                 <div class="checkbox-group">
                     <p><strong>How did you hear about us? (Select all that apply)*</strong></p>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="source1" name="source" >
+                        <input type="checkbox" id="source1" name="sources[]" value="website">
                         <label for="source1">Need a <strong>Website</strong> for your <b>self/company</b></label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="source2" name="source" >
+                        <input type="checkbox" id="source2" name="sources[]" value="app">
                         <label for="source2">Need a <strong>App</strong> for your <b>self/company</b></label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="source3" name="source" >
+                        <input type="checkbox" id="source3" name="sources[]" value="learning">
                         <label for="source3">For <strong>Learning Web and App</strong> Or <b>AI</b></label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="source4" name="source" required>
+                        <input type="checkbox" id="source4" name="agreeTerms" required>
                         <label for="source4">Agree <b> 'Terms & and Condition'</b></label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="source5" name="source" >
+                        <input type="checkbox" id="source5" name="getUpdates">
                         <label for="source5">Get updates</label>
                     </div>
                 </div>
-                
+            
                 <div class="form-actions">
-                    <button type="submit" class="btn  btn-outline">Submit</button>
-                    <button type="submit" class="btn">Book a Call</button>
+                    <button type="submit" name="action" value="submit" class="btn btn-outline">Submit</button>
+                    <button type="submit" name="action" value="book_call" class="btn">Book a Call</button>
                 </div>
             </form>
+            
         </div>
         
         <div class="testimonial">

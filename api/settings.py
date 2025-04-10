@@ -84,8 +84,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test',  # Database name
-        'USER': '3sZwGmGioJhN7q4.root',  # Username
-        'PASSWORD': 'YKzYqdVcqbeHWF5H',  # Password
+        'USER': '3TJFdzBsW6BQcdA.root',  # Username
+        'PASSWORD': '3xv6bY5a4oHNEUhh',  # Password
         'HOST': 'gateway01.ap-northeast-1.prod.aws.tidbcloud.com',  # Host
         'PORT': '4000',  # Port
         'OPTIONS': {
