@@ -398,8 +398,19 @@ a {
     }
 
     /* Improved Grid for Small Devices */
-    
-
+    @media (max-width: 576px){
+        .user-icons-container {
+            right: 100px !important;
+            margin-right: 0 !important;
+        }
+    }
+    @media (max-width: 786px){
+        .user-icons-container {
+            right: 100px !important;
+            margin-right: 0 !important;
+        }
+    }
+    /* E
     /* Enhanced Touch Areas */
     @media (max-width: 991px) {
 
@@ -1652,4 +1663,72 @@ main{
         font-size: 0.6rem;
         padding: 1px 4px;
     }
+}
+
+
+
+
+.user-icons-container {
+    right: 100px !important;
+    margin-right: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align icons to the right */
+    gap: 15px; /* Add spacing between icons */
+}
+
+.user-icon {
+    position: relative; /* For badge positioning */
+}
+
+.user-icon a {
+    font-size: 1.5rem; /* Adjust icon size */
+    color: #007bff; /* Ensure consistent color */
+}
+
+.user-icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 0.75rem; /* Adjust badge size */
+    padding: 2px 5px; /* Adjust padding for better appearance */
+}
+
+/* Adjust layout for mobile screens */
+@media (max-width: 768px) {
+    .user-icons-container {
+        gap: 25px; /* Reduce spacing between icons on smaller screens */
+    }
+
+    .navbar-toggler {
+        margin-left: auto; /* Ensure the hamburger menu stays on the far right */
+    }
+
+    .user-icons-container {
+        order: 1; /* Ensure icons appear before the hamburger menu */
+    }
+    img{
+        object-fit: fill;
+    }
+}   
+
+.carousel-item img {
+    width: 100%; /* Ensure the image spans the full width of the container */
+    height: 100%; /* Ensure the image spans the full height of the container */
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+    object-position: center; /* Center the image within the container */
+}
+@media (max-width: 768px) {
+    .carousel-inner {
+        height: 50vh; /* Set carousel height to 50% of the viewport height for mobile screens */
+    }
+
+    .carousel-item img {
+        object-fit: cover; /* Ensure the image maintains its aspect ratio and fills the container */
+        height: 100%; /* Ensure the image spans the full height of the carousel */
+    }
+}
+.carousel-item img {
+    width: 100%;
+    height: max(400px, 50vh); /* Set a minimum height for the carousel images */
 }
