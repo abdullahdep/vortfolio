@@ -3,5 +3,5 @@ dj-database-url
 whitenoise
 django-template-partials
 django-livereload-server
-psycopg2-binary
+PyMySQL
 
