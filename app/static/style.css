@@ -1573,11 +1573,7 @@ main{
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
     border-radius: 10px; /* Optional: Add rounded corners */
 }
-@media (max-width: 576px){
-    .carousel-inner{
-        height:40vh;
-    }
-}
+
 
 /* General Dropdown Styles */
 .custom-dropdown {
