@@ -187,7 +187,53 @@
     </div>
 </section>
 <style>
-  
+/* Main Content Styling */
+main {
+    margin-top: 80px; /* Adjust this value based on your navbar height */
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 80px); /* Adjust this value based on your navbar height */
+}
+
+/* Carousel Styling */
+.carousel-caption {
+    position: absolute;
+    top: 34%; /* Center vertically */
+    left: 0%; /* Center horizontally */
+    transform: translate(-15%, -50%); /* Adjust for centering */
+    z-index: 2; /* Ensure it appears above the carousel image */
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); /* Optional: Add text shadow for readability */
+    width: 98%; /* Ensure it spans the width of the carousel */
+    padding: 1rem; /* Add some padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.carousel-inner {
+    height: 60vh; /* Full height of the viewport */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+/* Section Styling */
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.divider {
+    height: 4px;
+    width: 70px;
+    background: #007bff;
+    margin: 1rem auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 0.9rem;
+    }
+}
 </style>
 <!-- Replace the existing projects section with this updated version -->
 <section class="projects-section bg-light py-5">

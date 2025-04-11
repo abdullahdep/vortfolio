@@ -11,63 +11,89 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <style>
-    /* Ensure proper spacing and alignment for icons */
+    /* Navbar Styling */
+    .nav1 {
+        z-index: 1000;
+        height: 70px;
+        width: 100%;
+        position: fixed;
+        background-color: #f8f9fa !important;
+        border-radius: 100px;
+        border: 1px solid black;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+        padding: 10px 20px;
+        margin: 10px 0;
+    }
+
+    /* User Icons */
     .user-icons-container {
         display: flex;
         align-items: center;
-        justify-content: flex-end; /* Align icons to the right */
-        gap: 15px; /* Add spacing between icons */
+        justify-content: flex-end;
+        gap: 15px;
     }
 
     .user-icon {
-        position: relative; /* For badge positioning */
+        position: relative;
     }
 
     .user-icon a {
-        font-size: 1.5rem; /* Adjust icon size */
-        color: #007bff; /* Ensure consistent color */
+        font-size: 1.5rem;
+        color: #007bff;
     }
 
     .user-icon .badge {
         position: absolute;
         top: -5px;
         right: -5px;
-        font-size: 0.75rem; /* Adjust badge size */
-        padding: 2px 5px; /* Adjust padding for better appearance */
+        font-size: 0.75rem;
+        padding: 2px 5px;
     }
 
     /* Adjust layout for mobile screens */
     @media (max-width: 768px) {
         .user-icons-container {
-            gap: 10px; /* Reduce spacing between icons on smaller screens */
+            gap: 10px;
         }
 
         .navbar-toggler {
-            margin-left: auto; /* Ensure the hamburger menu stays on the far right */
+            margin-left: auto;
         }
 
         .user-icons-container {
-            order: 1; /* Ensure icons appear before the hamburger menu */
+            order: 1;
         }
+    }
+
+    /* Footer Styling */
+    .footer {
+        background-color: #f8f9fa;
+        padding: 60px 0 30px;
+        margin-top: 60px;
+    }
+
+    .footer h5 {
+        color: #007bff;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer ul li {
+        margin-bottom: 0.8rem;
+    }
+
+    .footer a:hover {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .footer i {
+        color: #007bff;
     }
 </style>
 <body>
     <!-- Header -->
-    <nav class="nav1 navbar navbar-expand-lg navbar-light bg-light sticky-top" >
-        <style>
-            .nav1{ 
-                z-index: 1000;
-                height: 70px;
-                width: 100%;
-                position: fixed;
-                background-color: #f8f9fa !important;
-                border-radius: 100px;
-                border: 1px solid black;
-                box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
-                padding: 10px 20px;
-                margin: 10px 0;
-            }
-        </style>
+    <nav class="nav1 navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid px-3">
             <!-- Compact navbar brand for mobile -->
             <a class="navbar-brand d-flex align-items-center" href="/">
