@@ -1575,7 +1575,7 @@ main{
 }
 @media (max-width: 576px){
     .carousel-inner{
-        border-radius: 0;
+        height:40vh;
     }
 }
 
