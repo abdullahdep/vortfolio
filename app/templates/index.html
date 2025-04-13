@@ -2,17 +2,22 @@
 {% load static %}
 
 {% block content %}
-
+<head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 <link href="{% static 'css/style.css' %}" rel="stylesheet">
 <style>
-    
+    .accordion-item {
+        border: none !important;
+    }
 </style>
 <!-- Add these meta tags in the header -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#2196f3">
+</head>
+
+
 
 <!-- Modern Hero Carousel -->
 <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -95,11 +100,7 @@
             <h2 class="display-4 fw-bold">My Skills</h2>
             <div class="divider mx-auto"></div>
         </div>
-<style>
-    .accordion-item {
-        border: none !important;
-    }
-</style>
+
 
         <div class="accordion" id="accordionExample">
             <div class="accordion-item col-mb-12">
@@ -194,9 +195,7 @@
     </div>
 </section>
 </div>
-<style>
-  
-</style>
+
 <!-- Replace the existing projects section with this updated version -->
 <section class="projects-section bg-light py-5">
     <div class="container-fluid">
