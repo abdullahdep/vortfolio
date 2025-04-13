@@ -1536,15 +1536,8 @@ a {
         .projects-section { padding: 1rem; }
         .project-nav { margin-bottom: 1rem; }
         .list-group-item { font-size: 0.85rem; }
-        .project-item h3 { font-size: 1.2rem; }
-    
-        /* Carousel Caption Adjustments */
-        
+        .project-item h3 { font-size: 1.2rem; }    
     }
-    
-   
-          
-
 
 main{
     margin-top: 80px; /* Adjust this value based on your navbar height */
