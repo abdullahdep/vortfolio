@@ -86,3 +86,6 @@ def contact(request):
 
 def portfolio(request):
     return render(request, "portfolio.html", siteName)
+
+def custom_404_view(request, exception):
+    return render(request, '404.html', status=404)
