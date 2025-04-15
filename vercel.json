@@ -7,6 +7,10 @@
     ],
     "routes": [
         {
+            "src": "/ads.txt",
+            "dest": "/app/templates/ads.txt"
+        },
+        {
             "src": "/(.*)",
             "dest": "api/wsgi.py"
         }
