@@ -109,7 +109,6 @@
                 position: fixed;
                 background-color: #f8f9fa !important;
                 border-radius: 100px;
-                border: 1px solid black;
                 box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
                 padding: 10px 20px;
                 margin: 10px 20px; /* Add horizontal margin */
@@ -140,6 +139,19 @@
                     margin: 0 20px;
                 }
             }
+            @media (min-width: 0px) and (max-width: 991px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 7px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin: 0;
+    }
+}
         </style>
         <div class="container-fluid px-3">
             <!-- Compact navbar brand for mobile -->
@@ -151,7 +163,7 @@
 
             <!-- Move search form inside collapse on mobile -->
             <div class="d-lg-none order-lg-2">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" style="border:none">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
