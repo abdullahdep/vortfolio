@@ -1,0 +1,731 @@
+{% extends 'components/header_footer.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="share-container">
+        <button id="shareButton" class="share-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            Share this roadmap
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="mb-4">🌐 Complete Web Development Roadmap: Beginner to Pro</h1>
+            <p class="lead mb-5">This comprehensive roadmap guides you through all the essential skills needed to become a professional web developer. Each step builds upon the previous one, creating a solid foundation for your web development career.</p>
+
+            <section class="mb-5">
+                <h2 class="section-title">Step 1: HTML & CSS Foundations</h2>
+                <h3>HTML - The Structure</h3>
+                <p>HTML (HyperText Markup Language) forms the skeleton of every website.</p>
+                <p><strong>Key Skills:</strong></p>
+                <ul>
+                    <li><strong>Semantic HTML5 Elements</strong>: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code></li>
+                    <li><strong>Forms</strong>: Create user input interfaces with various input types, validation, and submission</li>
+                    <li><strong>Tables</strong>: Structure and present data in organized formats</li>
+                    <li><strong>Accessibility</strong>: Write HTML that works for everyone, including screen readers</li>
+                </ul>
+                <p><strong>Practice Project:</strong> Create a personal portfolio page with proper semantic structure, contact form, and responsive design.</p>
+                <h3>CSS - The Style</h3>
+                <p>CSS (Cascading Style Sheets) transforms plain HTML into visually appealing websites.</p>
+                <p><strong>Key Skills:</strong></p>
+                <ul>
+                    <li><strong>Selectors & Specificity</strong>: Target the right elements without code conflicts</li>
+                    <li><strong>Box Model</strong>: Understand margins, padding, borders, and content areas</li>
+                    <li><strong>Flexbox</strong>: Create one-dimensional layouts for components like navigation bars and card rows</li>
+                    <li><strong>Grid</strong>: Design two-dimensional layouts for entire page structures</li>
+                    <li><strong>Media Queries</strong>: Make your designs responsive across all device sizes</li>
+                    <li><strong>Animations & Transitions</strong>: Add movement and visual feedback to improve UX</li>
+                </ul>
+                <p><strong>Practice Project:</strong> Style your portfolio with a responsive design that works on mobile, tablet, and desktop.</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="section-title">Step 2: JavaScript Fundamentals</h2>
+                <p>JavaScript brings websites to life by adding interactivity and dynamic functionality.</p>
+                <p><strong>Key Skills:</strong></p>
+                <ul>
+                    <li><strong>Syntax Basics</strong>: Variables, data types, operators, and control flow</li>
+                    <li><strong>Functions</strong>: Declarations, expressions, arrow functions, and scope</li>
+                    <li><strong>DOM Manipulation</strong>: Select, modify, and create HTML elements</li>
+                    <li><strong>Events</strong>: Respond to user actions like clicks, form submissions, and keyboard input</li>
+                    <li><strong>ES6+ Features</strong>: Modern JS with <code>let</code>, <code>const</code>, template literals, destructuring, and more</li>
+                    <li><strong>Asynchronous JS</strong>: Callbacks, Promises, and async/await for handling operations like API calls</li>
+                </ul>
+                <p><strong>Practice Project:</strong> Add interactive elements to your portfolio—a theme switcher, form validation, and an interactive gallery.</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="section-title">Step 3: UI/UX Development</h2>
+                <p>Learn to design and implement user interfaces that are both visually appealing and functional, while focusing on the user experience.</p>
+                <p><strong>Key Skills:</strong></p>
+                <ul>
+                    <li><strong>Figma</strong>: Industry-standard design tool for creating wireframes, prototypes, and design systems<ul>
+                        <li>Create wireframes and mockups</li>
+                        <li>Build interactive prototypes</li>
+                        <li>Design system management</li>
+                        <li>Collaborative design workflow</li>
+                        <li>Developer handoff with CSS export</li>
+                    </ul>
+                    </li>
+                    <li><strong>Design Principles</strong>: Color theory, typography, visual hierarchy, and accessibility</li>
+                    <li><strong>User Experience</strong>: User research, information architecture, and usability testing</li>
+                    <li><strong>Responsive Design Implementation</strong>: Convert designs to responsive code</li>
+                    <li><strong>Component Design</strong>: Create reusable UI components with consistent styling</li>
+                    <li><strong>Design-to-Code Workflow</strong>: Efficiently transform Figma designs into HTML/CSS/JS</li>
+                    <li><strong>Chrome Extensions</strong>: Develop browser extensions using JavaScript and manifest files</li>
+                    <li><strong>Animation & Microinteractions</strong>: Enhance user experience with subtle animations</li>
+                    <li><strong>Design Systems</strong>: Implement consistent UI patterns across applications</li>
+                </ul>
+                <p><strong>Practice Projects:</strong></p>
+                <ol>
+                    <li>Design a mobile app interface in Figma and create an interactive prototype</li>
+                    <li>Convert a Figma design into a fully responsive webpage with CSS</li>
+                    <li>Build a Chrome extension with a well-designed user interface</li>
+                </ol>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="section-title">Step 4: Git & Version Control</h2>
+                <p>Git is essential for tracking changes and collaborating with other developers.</p>
+                <p><strong>Key Skills:</strong></p>
+                <ul>
+                    <li><strong>Basic Commands</strong>: <code>init</code>, <code>add</code>, <code>commit</code>, <code>push</code>, <code>pull</code>, <code>clone</code></li>
+                    <li><strong>Branching Strategy</strong>: Create feature branches, bugfix branches</li>
+                    <li><strong>Merging & Pull Requests</strong>: Combine code changes and review them</li>
+                    <li><strong>Resolving Conflicts</strong>: Handle competing changes to the same files</li>
+                    <li><strong>GitHub/GitLab</strong>: Use these platforms for hosting code and collaboration</li>
+                    <li><strong>Git Workflows</strong>: Learn Gitflow or trunk-based development</li>
+                </ul>
+                <p><strong>Best Practices:</strong></p>
+                <ul>
+                    <li>Write meaningful commit messages</li>
+                    <li>Commit often with logical units of work</li>
+                    <li>Use branches for features and experiments</li>
+                    <li>Review code before merging to main branches</li>
+                </ul>
+                <p><strong>Practice Project:</strong> Set up a GitHub repository for your portfolio with proper README and contributing guidelines.</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="section-title">Step 5: Choose Your Tech Stack</h2>
+                <p>At this point, you'll want to specialize in a framework or library that enhances your development workflow.</p>
+                <h3>Option A: React Stack (JavaScript)</h3>
+                <ul>
+                    <li><strong>React</strong>: Component-based UI library with virtual DOM</li>
+                    <li><strong>Next.js</strong>: React framework with server-side rendering, routing, and more</li>
+                    <li><strong>Redux/Context API</strong>: State management solutions</li>
+                    <li><strong>Nest.js</strong>: Backend framework using TypeScript and Node.js</li>
+                </ul>
+                <h3>Option B: Django Stack (Python) ✅ Recommended</h3>
+                <ul>
+                    <li><strong>Django</strong>: Full-stack framework with "batteries included"</li>
+                    <li><strong>Django Templates</strong>: Server-side rendering</li>
+                    <li><strong>Django REST Framework</strong>: API development</li>
+                    <li><strong>Built-in Admin Panel</strong>: Ready-to-use administrative interface</li>
+                </ul>
+                <p><strong>Decision Factors:</strong></p>
+                <ul>
+                    <li>JavaScript path: Better for frontend-heavy applications, SPAs, and JavaScript-focused careers</li>
+                    <li>Python/Django path: Better for rapid development, backend-heavy apps, and Python-focused careers</li>
+                </ul>
+                <p><strong>Practice Project:</strong> Convert your portfolio to your chosen framework, implementing routing and component-based architecture.</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="section-title">Step 6: Databases & ORM</h2>
+                <p>Data persistence is crucial for any serious web application.</p>
+                <p><strong>Key Skills:</strong></p>
+                <ul>
+                    <li><strong>Database Types</strong>:<ul>
+                        <li><strong>SQL</strong>: PostgreSQL, MySQL - Relational databases with structured data</li>
+                        <li><strong>NoSQL</strong>: MongoDB - Document-based storage for flexible schemas</li>
+                    </ul>
+                    </li>
+                    <li><strong>ORM (Object-Relational Mapping)</strong>:<ul>
+                        <li><strong>Django ORM</strong> (Python)</li>
+                        <li><strong>Sequelize</strong> (JavaScript)</li>
+                        <li><strong>TypeORM</strong> (Nest.js)</li>
+                    </ul>
+                    </li>
+                    <li><strong>CRUD Operations</strong>: Create, Read, Update, Delete - the foundation of data manipulation</li>
+                    <li><strong>Data Modeling</strong>: Design efficient database schemas</li>
+                    <li><strong>Migrations</strong>: Manage database schema changes over time</li>
+                    <li><strong>Redis Cache</strong>: In-memory data structure store for caching, session management, and real-time applications<ul>
+                        <li>Basic Redis operations</li>
+                        <li>Implementing caching strategies</li>
+                        <li>Rate limiting</li>
+                        <li>Session storage</li>
+                        <li>Pub/Sub messaging</li>
+                    </ul>
+                    </li>
+                </ul>
+                <p><strong>Practice Projects:</strong></p>
+                <ol>
+                    <li>Create a content management system with proper database design</li>
+                    <li>Implement Redis caching to improve application performance</li>
+                </ol>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="section-title">Step 7: Real-World Security Requirements</h2>
+                <p>Security is paramount in modern web applications. Learn to protect your applications and user data.</p>
+                <p><strong>Key Security Components:</strong></p>
+                <ul>
+                    <li><strong>Authentication</strong>: Secure user identification methods<ul>
+                        <li>Password hashing and salting (bcrypt, Argon2)</li>
+                        <li>JWT (JSON Web Tokens)</li>
+                        <li>OAuth 2.0 and OpenID Connect</li>
+                        <li>Multi-factor authentication</li>
+                    </ul>
+                    </li>
+                    <li><strong>Authorization</strong>: Role-based access control (RBAC)<ul>
+                        <li>Permission systems</li>
+                        <li>Content-based access control</li>
+                        <li>API access restrictions</li>
+                    </ul>
+                    </li>
+                    <li><strong>Data Protection</strong>:<ul>
+                        <li>Input validation and sanitization</li>
+                        <li>Protection against SQL injection</li>
+                        <li>XSS (Cross-Site Scripting) prevention</li>
+                        <li>CSRF (Cross-Site Request Forgery) protection</li>
+                        <li>Secure cookies and localStorage usage</li>
+                    </ul>
+                    </li>
+                    <li><strong>API Security</strong>:<ul>
+                        <li>Rate limiting</li>
+                        <li>API keys and secrets management</li>
+                        <li>CORS (Cross-Origin Resource Sharing) configuration</li>
+                    </ul>
+                    </li>
+                    <li><strong>Secure Coding Practices</strong>:<ul>
+                        <li>OWASP Top 10 vulnerabilities awareness</li>
+                        <li>Code reviews focused on security</li>
+                        <li>Security testing (SAST, DAST)</li>
+                    </ul>
+                    </li>
+                    <li><strong>Compliance Considerations</strong>:<ul>
+                        <li>GDPR principles</li>
+                        <li>HIPAA (for healthcare applications)</li>
+                        <li>PCI DSS (for payment processing)</li>
+                    </ul>
+                    </li>
+                </ul>
+                <p><strong>Practice Project:</strong> Perform a security audit on your existing project and implement necessary security measures.</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="section-title">Step 8: Linux & Command Line</h2>
+                <p>Most web servers run on Linux, making these skills invaluable for deployment and server management.</p>
+                <p><strong>Key Skills:</strong></p>
+                <ul>
+                    <li><strong>Basic Commands</strong>: <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>rm</code>, <code>cp</code>, <code>mv</code>, <code>cat</code>, <code>grep</code></li>
+                    <li><strong>File Permissions</strong>: Use <code>chmod</code> and understand user/group permissions</li>
+                    <li><strong>Package Management</strong>: Install and update software with <code>apt</code> or <code>yum</code></li>
+                    <li><strong>SSH</strong>: Connect to remote servers securely</li>
+                    <li><strong>Environment Variables</strong>: Configure application settings</li>
+                    <li><strong>Process Management</strong>: Monitor and control running processes</li>
+                    <li><strong>Shell Scripting</strong>: Automate repetitive tasks</li>
+                </ul>
+                <p><strong>Practice Project:</strong> Set up a local development environment using Linux (or WSL on Windows) and write shell scripts to automate common development tasks.</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="section-title">Step 9: Deployment & Professional Skills</h2>
+                <p>The final step covers getting your applications to production and professional development practices.</p>
+                <p><strong>Key Skills:</strong></p>
+                <ul>
+                    <li><strong>Deployment Platforms</strong>:<ul>
+                        <li>Frontend: Netlify, Vercel</li>
+                        <li>Backend: Render, Railway, DigitalOcean, AWS</li>
+                    </ul>
+                    </li>
+                    <li><strong>CI/CD</strong>: Continuous Integration and Deployment with GitHub Actions or similar tools</li>
+                    <li><strong>Domain Configuration</strong>: Set up DNS and domains for your applications</li>
+                    <li><strong>SSL Certificates</strong>: Secure your sites with HTTPS</li>
+                    <li><strong>Monitoring & Logging</strong>: Track application performance and errors</li>
+                    <li><strong>API Integration</strong>: Connect to third-party services and LLMs</li>
+                    <li><strong>Docker</strong>: Containerize applications for consistent deployment</li>
+                    <li><strong>Testing</strong>: Write unit and integration tests</li>
+                </ul>
+                <p><strong>Professional Development:</strong></p>
+                <ul>
+                    <li>Build a strong portfolio showcasing your projects</li>
+                    <li>Contribute to open source projects</li>
+                    <li>Participate in coding communities</li>
+                    <li>Keep learning new tools and techniques</li>
+                    <li>Practice technical interview skills</li>
+                </ul>
+                <p><strong>Practice Project:</strong> Deploy your full-stack application with CI/CD pipeline, proper logging, and monitoring.</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="section-title">Additional Learning Resources</h2>
+                <h3>Online Learning Platforms</h3>
+                <ul>
+                    <li>freeCodeCamp - Free, comprehensive curriculum</li>
+                    <li>MDN Web Docs - Detailed reference materials</li>
+                    <li>Codecademy - Interactive learning</li>
+                    <li>Udemy/Coursera - Structured courses</li>
+                </ul>
+                <h3>YouTube Channels</h3>
+                <ul>
+                    <li>Traversy Media</li>
+                    <li>The Net Ninja</li>
+                    <li>Web Dev Simplified</li>
+                    <li>Coding Phase</li>
+                    <li>CS50 (Harvard's computer science course)</li>
+                </ul>
+                <h3>Blogs & Documentation</h3>
+                <ul>
+                    <li>CSS-Tricks</li>
+                    <li>Smashing Magazine</li>
+                    <li>dev.to</li>
+                    <li>Framework-specific documentation</li>
+                </ul>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="section-title">Roadmap Summary</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Progress</th>
+                                <th>Learning Path</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>HTML, CSS (Forms, Tables, Flexbox, Grid, Media Queries)</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>JavaScript (Basic to ES6+, Async, DOM, JSON)</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>UI/UX Development (Figma, Design Principles, Components)</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Git: Version Control, GitHub, Collaboration</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Choose: React (Next/Nest) or Django (Recommended)</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Databases, ORM, and Redis Caching</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Real-World Security Requirements</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Linux: Command Line, Server Management, SSH</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Deployment, CI/CD, Professional Practices</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="section-title">Final Tips for Success</h2>
+                <ol class="final-tips">
+                    <li><strong>Build real projects</strong> - Theory alone won't make you a developer</li>
+                    <li><strong>Learn by doing</strong> - Code every day, even if it's just for 30 minutes</li>
+                    <li><strong>Don't get stuck in tutorial hell</strong> - Start your own projects early</li>
+                    <li><strong>Embrace debugging</strong> - Problem-solving is the most valuable skill</li>
+                    <li><strong>Share your work</strong> - Get feedback from others to improve</li>
+                    <li><strong>Network with other developers</strong> - Join communities and attend meetups</li>
+                    <li><strong>Stay curious</strong> - The field evolves constantly, be ready to learn new things</li>
+                    <li><strong>Remember the basics</strong> - Strong fundamentals matter more than trendy tools</li>
+                </ol>
+            </section>
+        </div>
+    </div>
+</div>
+
+<div id="toastNotification" class="toast-notification">
+    <span id="toastMessage"></span>
+</div>
+
+<style>
+    /* Huawei-inspired color palette and design system */
+    :root {
+        --huawei-primary: #00b3e3;
+        --huawei-secondary: #2d2d2d;
+        --huawei-gray: #f4f6f9;
+        --huawei-text: #333333;
+        --huawei-light: #ffffff;
+        --huawei-accent: #00c8ff;
+        --huawei-gradient: linear-gradient(135deg, #00b3e3 0%, #00c8ff 100%);
+    }
+
+    body {
+        color: var(--huawei-text);
+        background-color: var(--huawei-gray);
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: var(--huawei-light);
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+    }
+
+    /* Modern headings */
+    h1, h2, h3 {
+        color: var(--huawei-secondary);
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+
+    .section-title {
+        color: var(--huawei-secondary);
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--huawei-primary);
+        font-size: 1.75rem;
+    }
+
+    /* Card-like sections */
+    section {
+        background: var(--huawei-light);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s ease;
+    }
+
+    section:hover {
+        transform: translateY(-2px);
+    }
+
+    /* Lists styling */
+    ul, ol {
+        padding-left: 1.5rem;
+    }
+
+    ul li, ol li {
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+    }
+
+    /* Code blocks */
+    code {
+        background: var(--huawei-gray);
+        color: var(--huawei-primary);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.9em;
+    }
+
+    /* Table styling */
+    .table-responsive {
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        margin: 2rem 0;
+    }
+
+    .table {
+        margin-bottom: 0;
+        background: var(--huawei-light);
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+    }
+
+    .table th {
+        background: var(--huawei-gradient);
+        color: var(--huawei-light);
+        font-weight: 500;
+        padding: 1rem 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.875rem;
+    }
+
+    .table td {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--huawei-gray);
+        font-size: 0.95rem;
+    }
+
+    .table tbody tr {
+        transition: all 0.2s ease;
+    }
+
+    .table tbody tr:hover {
+        background: var(--huawei-gray);
+    }
+
+    /* Progress column styling */
+    .table td:first-child {
+        color: var(--huawei-primary);
+        font-weight: 600;
+        width: 80px;
+    }
+
+    /* Final tips section */
+    .final-tips {
+        background: var(--huawei-gray);
+        padding: 2rem;
+        border-radius: 12px;
+        list-style-position: inside;
+    }
+
+    .final-tips li {
+        background: var(--huawei-light);
+        padding: 1rem 1.5rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Buttons and interactive elements */
+    .btn {
+        background: var(--huawei-gradient);
+        color: var(--huawei-light);
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        border: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 179, 227, 0.3);
+    }
+
+    /* Share button styles */
+    .share-container {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 1000;
+    }
+
+    .share-button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--huawei-gradient);
+        color: var(--huawei-light);
+        padding: 0.75rem 1.25rem;
+        border-radius: 50px;
+        border: none;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 179, 227, 0.3);
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .share-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 179, 227, 0.4);
+    }
+
+    .share-button:active {
+        transform: translateY(0);
+    }
+
+    .share-button::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translate(-50%, -50%) scale(0);
+        border-radius: 50%;
+        transition: transform 0.4s ease;
+    }
+
+    .share-button:active::after {
+        transform: translate(-50%, -50%) scale(2);
+    }
+
+    .share-button.loading {
+        pointer-events: none;
+        opacity: 0.8;
+    }
+
+    .share-button.loading svg {
+        animation: rotate 1s linear infinite;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    /* Toast notification styling */
+    .toast-notification {
+        position: fixed;
+        bottom: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--huawei-secondary);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: bottom 0.3s ease;
+        z-index: 1001;
+        font-weight: 500;
+    }
+
+    .toast-notification.show {
+        bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .share-container {
+            bottom: 1rem;
+            right: 1rem;
+        }
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .container {
+            padding: 1rem;
+            border-radius: 0;
+        }
+
+        section {
+            padding: 1.5rem;
+        }
+
+        .table th,
+        .table td {
+            padding: 0.75rem 1rem;
+        }
+
+        .final-tips li {
+            padding: 1rem;
+        }
+    }
+</style>
+
+<script>
+    class ShareManager {
+        constructor() {
+            this.button = document.getElementById('shareButton');
+            this.toast = document.getElementById('toastNotification');
+            this.toastMessage = document.getElementById('toastMessage');
+            this.originalButtonContent = this.button.innerHTML;
+            
+            this.init();
+        }
+
+        init() {
+            this.button.addEventListener('click', () => this.handleShare());
+        }
+
+        async handleShare() {
+            const shareData = {
+                title: 'Web Development Roadmap',
+                text: 'Check out this comprehensive web development roadmap for becoming a professional developer!',
+                url: window.location.href
+            };
+
+            try {
+                this.setLoading(true);
+
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                    this.showToast('Thanks for sharing! 🎉');
+                } else {
+                    await this.copyToClipboard(window.location.href);
+                    this.showToast('Link copied to clipboard! 📋');
+                }
+            } catch (err) {
+                console.error('Error sharing:', err);
+                this.showToast('Oops! Something went wrong 😕');
+            } finally {
+                this.setLoading(false);
+            }
+        }
+
+        async copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(text);
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Error copying text:', err);
+                    throw err;
+                } finally {
+                    textArea.remove();
+                }
+            }
+        }
+
+        setLoading(isLoading) {
+            if (isLoading) {
+                this.button.classList.add('loading');
+                this.button.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                    Sharing...`;
+            } else {
+                setTimeout(() => {
+                    this.button.classList.remove('loading');
+                    this.button.innerHTML = this.originalButtonContent;
+                }, 1000);
+            }
+        }
+
+        showToast(message) {
+            this.toastMessage.textContent = message;
+            this.toast.classList.add('show');
+            
+            setTimeout(() => {
+                this.toast.classList.remove('show');
+            }, 3000);
+        }
+    }
+
+    // Initialize share functionality when document is ready
+    document.addEventListener('DOMContentLoaded', () => {
+        new ShareManager();
+    });
+</script>
+{% endblock content %}
