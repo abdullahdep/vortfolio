@@ -170,7 +170,7 @@ a {
             top: 100%;
             left: 0;
             right: 0;
-            margin: 0.5rem 1rem;
+            margin: 0;
         }
 
         .search-form {
@@ -263,7 +263,7 @@ a {
 
         .navbar-collapse::-webkit-scrollbar-thumb {
             background: var(--primary-color);
-            border-radius: 10px;
+            border-radius: 7px;
         }
 
         .nav-item {
@@ -1541,7 +1541,7 @@ a {
 
 main{
     margin-top: 80px; /* Adjust this value based on your navbar height */
-    padding: 20px;
+    padding: 0;
     background-color: #f8f9fa;
     min-height: calc(100vh - 80px); /* Adjust this value based on your navbar height */
 }
