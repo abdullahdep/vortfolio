@@ -90,4 +90,5 @@ def portfolio(request):
 def custom_404_view(request, exception):
     return render(request, '404.html', status=404)
 def learn(request):
-    return render(request, "Services\learn.html", siteName)
+    # Fix the template path by using forward slashes and removing the backslash
+    return render(request, "Services/learn.html", siteName)
