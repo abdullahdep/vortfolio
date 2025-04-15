@@ -92,3 +92,9 @@ def custom_404_view(request, exception):
 def learn(request):
     # Fix the template path by using forward slashes and removing the backslash
     return render(request, "Services/learn.html", siteName)
+
+
+from django.http import HttpResponse
+def ads_txt(request):
+    content = "google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0"
+    return HttpResponse(content, content_type='text/plain')    
