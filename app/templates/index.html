@@ -4,10 +4,11 @@
 {% block content %}
 
 <head>
+    {% block meta %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- <link href="{% static 'css/style.css' %}" rel="stylesheet"> -->
     <title> {{title}} </title>
     <!-- SEO Meta Tags -->
     <meta name="description" content="{{description}}">
@@ -34,6 +35,7 @@
     <meta name="twitter:image" content="twitter_image">
     <meta name="twitter:url" content="{{twitter_url}}">
 
+    {% endblock %}
 
 
 
