@@ -1,7 +1,6 @@
 # filepath: /workspaces/vortfolio/app/sitemaps.py
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
-from .models import ConsultationRequest
 
 class StaticViewSitemap(Sitemap):
     priority = 0.8

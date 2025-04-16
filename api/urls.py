@@ -18,7 +18,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from django.conf.urls import handler404
 from app import views  # Import the custom 404 view from the app
-from app.sitemaps import StaticViewSitemap, ConsultationRequestSitemap
+from app.sitemaps import StaticViewSitemap
 from app.views import robots_txt
 
 handler404 = views.custom_404_view
