@@ -1,134 +1,126 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block meta %}{% endblock %}
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Vortfolio - Professional portfolio platform specializing in web development, AI solutions, and digital innovations. Experience next-generation digital solutions with Vortfolio's expert services.">
-    <meta name="keywords" content="Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development">
-    <meta name="author" content="Vortfolio">
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Vortfolio | Professional Web Development & Digital Solutions">
-    <meta property="og:description" content="Vortfolio delivers cutting-edge web development, AI integration, and digital solutions. Transform your digital presence with Vortfolio's innovative platform.">
-    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0">
-    <meta property="og:url" content="https://vortfolio.icu">
-    <meta property="og:site_name" content="Vortfolio">
-    <meta property="og:type" content="website">
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Vortfolio | Professional Web Development & Digital Solutions">
-    <meta name="twitter:description" content="Vortfolio - Your gateway to professional web development and AI solutions. Experience innovation with Vortfolio's comprehensive digital services.">
-    
-    <title>Vortfolio - Professional Web Development, AI & Digital Solutions Platform</title>
+
+
+
     <script defer src="https://va.vercel-scripts.com/script.js"></script>
 
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4959773968938981"
-     crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-4959773968938981">
-    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0" type="image/x-icon">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4959773968938981"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4959773968938981">
+    <link rel="shortcut icon" href="{{logo}}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-    /* Ensure proper spacing and alignment for icons */
- 
-    /* Downsheet menu styling */
-    .downsheet-menu {
-        position: fixed;
-        bottom: -100%; /* Initially hidden */
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        z-index: 1050;
-        transition: bottom 0.3s ease-in-out; /* Smooth slide-up animation */
-        padding: 20px;
-    }
+        /* Ensure proper spacing and alignment for icons */
 
-    .downsheet-menu.active {
-        bottom: 0; /* Slide up when active */
-    }
-
-    .downsheet-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-
-    .downsheet-header h5 {
-        margin: 0;
-    }
-
-    .downsheet-close {
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        color: #000;
-    }
-
-    .downsheet-content {
-        max-height: 50vh; /* Limit height */
-        overflow-y: auto; /* Enable scrolling if content overflows */
-    }
-
-    /* Ensure proper spacing for dropdown items */
-    .downsheet-content .dropdown-item {
-        padding: 10px 15px;
-        font-size: 1rem;
-    }
-
-    /* Mobile-specific adjustments */
-    @media (max-width: 768px) {
+        /* Downsheet menu styling */
         .downsheet-menu {
-            padding: 15px;
+            position: fixed;
+            bottom: -100%;
+            /* Initially hidden */
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            z-index: 1050;
+            transition: bottom 0.3s ease-in-out;
+            /* Smooth slide-up animation */
+            padding: 20px;
         }
-    }
 
-    /* Add this CSS in your existing style section */
-    .carousel-indicators [data-bs-target] {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin: 0 6px;
-        background-color: #fff;
-        border: none;
-        opacity: 0.5;
-        transition: opacity 0.3s ease;
-    }
+        .downsheet-menu.active {
+            bottom: 0;
+            /* Slide up when active */
+        }
 
-    .carousel-indicators .active {
-        opacity: 1;
-        background-color: #fff;
-    }
-</style>
+        .downsheet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .downsheet-header h5 {
+            margin: 0;
+        }
+
+        .downsheet-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #000;
+        }
+
+        .downsheet-content {
+            max-height: 50vh;
+            /* Limit height */
+            overflow-y: auto;
+            /* Enable scrolling if content overflows */
+        }
+
+        /* Ensure proper spacing for dropdown items */
+        .downsheet-content .dropdown-item {
+            padding: 10px 15px;
+            font-size: 1rem;
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .downsheet-menu {
+                padding: 15px;
+            }
+        }
+
+        /* Add this CSS in your existing style section */
+        .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 6px;
+            background-color: #fff;
+            border: none;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-indicators .active {
+            opacity: 1;
+            background-color: #fff;
+        }
+    </style>
 
 </head>
 
 <body>
     <!-- Header -->
-    <nav class="nav1 navbar navbar-expand-lg navbar-light bg-light sticky-top" >
+    <nav class="nav1 navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <style>
-            .nav1 { 
+            .nav1 {
                 z-index: 1000;
                 height: 70px;
-                width: calc(100% - 40px); /* Subtract margin from width */
+                width: calc(100% - 40px);
+                /* Subtract margin from width */
                 position: fixed;
                 background-color: #f8f9fa !important;
                 border-radius: 100px;
                 box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
                 padding: 10px 20px;
-                margin: 10px 20px; /* Add horizontal margin */
+                margin: 10px 20px;
+                /* Add horizontal margin */
                 top: 0;
                 left: 0;
             }
@@ -143,41 +135,44 @@
             }
 
             /* Fix navbar collapse behavior */
-          
+
             @media (min-width: 0px) and (max-width: 991px) {
-                main{
+                main {
                     padding: 0;
                     margin-top: 82px;
 
                 }
+
                 .carousel-control-prev,
-     .carousel-control-next {
-         display: none;
-     }
-    .navbar-collapse {
-        position: absolute;
-        top: 75px;
-        left: 0;
-        right: 0;
-        background: #f8f9fa;
-        padding: 1.5rem;
-        border-radius: 7px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        margin: 0;
-    }
-}
+                .carousel-control-next {
+                    display: none;
+                }
+
+                .navbar-collapse {
+                    position: absolute;
+                    top: 75px;
+                    left: 0;
+                    right: 0;
+                    background: #f8f9fa;
+                    padding: 1.5rem;
+                    border-radius: 7px;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                    margin: 0;
+                }
+            }
         </style>
         <div class="container-fluid px-3">
             <!-- Compact navbar brand for mobile -->
             <a class="navbar-brand d-flex align-items-center" href="/">
-                <img class=" abd" src="https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0" alt="Logo" class="me-2">
+                <img class=" abd" src="{{logo}}" alt="Logo" class="me-2">
                 <span class="abd d-none d-sm-inline">{{siteName}}</span>
                 <span class="abd d-inline d-sm-none">{{siteName}}</span>
             </a>
 
             <!-- Move search form inside collapse on mobile -->
             <div class="d-lg-none order-lg-2">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" style="border:none">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    style="border:none">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
@@ -202,7 +197,8 @@
                         <a class="nav-link" href="{% url 'about' %}"><i class="fas fa-info-circle me-1"></i>About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'portfolio' %}"><i class="fas fa-briefcase me-1"></i>Portfolio</a>
+                        <a class="nav-link" href="{% url 'portfolio' %}"><i
+                                class="fas fa-briefcase me-1"></i>Portfolio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'services' %}"><i class="fas fa-cogs me-1"></i>Services</a>
@@ -216,8 +212,8 @@
                         <a class="nav-link" href="{% url 'contact' %}"><i class="fas fa-envelope me-1"></i>Contact</a>
                     </li>
                     <li class="nav-item drp">
-                        <a class="nav-link" href="#" onclick="toggleFullscreenMenu(event)"> 
-                            <i class="fas fa-link me-1"></i> Projects 
+                        <a class="nav-link" href="#" onclick="toggleFullscreenMenu(event)">
+                            <i class="fas fa-link me-1"></i> Projects
                             <i class="fa fa-angle-down icon-in-menu"></i>
                         </a>
                     </li>
@@ -238,7 +234,8 @@
             <div class="user-icons-container">
                 <!-- Bell Icon -->
                 <div class="user-icon">
-                    <a class="nav-link" href="#" id="notificationsToggle" onclick="toggleDownsheet('notificationsMenu')">
+                    <a class="nav-link" href="#" id="notificationsToggle"
+                        onclick="toggleDownsheet('notificationsMenu')">
                         <i class="fas fa-bell"></i>
                         <span class="badge bg-danger">3</span>
                     </a>
@@ -274,13 +271,16 @@
                     </div>
                     <div class="downsheet-content">
                         {% if user.is_authenticated %}
-                        <a href="{% url 'register' %}" class="dropdown-item"><i class="fas fa-user me-2"></i>{{ request.user.username }}</a>
+                        <a href="{% url 'register' %}" class="dropdown-item"><i class="fas fa-user me-2"></i>{{
+                            request.user.username }}</a>
                         <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i>Settings</a>
                         {% else %}
-                        <a href="{% url 'login' %}" class="dropdown-item"><i class="fas fa-user me-2"></i>Login/Signup</a>
+                        <a href="{% url 'login' %}" class="dropdown-item"><i
+                                class="fas fa-user me-2"></i>Login/Signup</a>
                         {% endif %}
                         <div class="dropdown-divider"></div>
-                        <a href="{% url 'logout' %}" class="dropdown-item"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
+                        <a href="{% url 'logout' %}" class="dropdown-item"><i
+                                class="fas fa-sign-out-alt me-2"></i>Logout</a>
                     </div>
                 </div>
             </div>
@@ -344,12 +344,14 @@
 
     <!-- Remove the floating mobile user menu -->
     <!-- Remove existing user-menu-mobile div and its dropdown -->
-<main>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Content Block -->
-    {% block content %}
-    {% endblock %}
-</main>
+    <main>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet">
+        <!-- Content Block -->
+        {% block content %}
+        {% endblock %}
+    </main>
     <!-- Footer -->
     <footer class="footer">
         <div class="container-fluid px-3">
@@ -386,44 +388,32 @@
             </div>
         </div>
     </footer>
-<script src="{% static 'js/script.js' %}"></script>
-<script>
-    function toggleDownsheet(menuId) {
-        const menu = document.getElementById(menuId);
-        if (menu.classList.contains('active')) {
-            menu.classList.remove('active'); // Close the menu
-        } else {
-            // Close any other open downsheet menus
-            document.querySelectorAll('.downsheet-menu.active').forEach(activeMenu => {
-                activeMenu.classList.remove('active');
-            });
-            menu.classList.add('active'); // Open the selected menu
-        }
-    }
-
-    // Close the menu when clicking outside
-    document.addEventListener('click', function (event) {
-        const openMenus = document.querySelectorAll('.downsheet-menu.active');
-        openMenus.forEach(menu => {
-            if (!menu.contains(event.target) && !event.target.closest('.user-icon')) {
-                menu.classList.remove('active');
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        function toggleDownsheet(menuId) {
+            const menu = document.getElementById(menuId);
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active'); // Close the menu
+            } else {
+                // Close any other open downsheet menus
+                document.querySelectorAll('.downsheet-menu.active').forEach(activeMenu => {
+                    activeMenu.classList.remove('active');
+                });
+                menu.classList.add('active'); // Open the selected menu
             }
+        }
+
+        // Close the menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const openMenus = document.querySelectorAll('.downsheet-menu.active');
+            openMenus.forEach(menu => {
+                if (!menu.contains(event.target) && !event.target.closest('.user-icon')) {
+                    menu.classList.remove('active');
+                }
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
