@@ -1541,7 +1541,7 @@ a {
 
 main{
     margin-top: 80px; /* Adjust this value based on your navbar height */
-    padding: 0px;
+    padding: 20px;
     background-color: #f8f9fa;
     min-height: calc(100vh - 80px); /* Adjust this value based on your navbar height */
 }
@@ -1659,6 +1659,12 @@ main{
         font-size: 0.6rem;
         padding: 1px 4px;
     }
+
+
+
+
+
+    
 }
 
 
