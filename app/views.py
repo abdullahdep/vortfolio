@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -252,4 +252,8 @@ def learn(request):
 from django.http import HttpResponse
 def ads_txt(request):
     content = "google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0"
-    return HttpResponse(content, content_type='text/plain')    
+    return HttpResponse(content, content_type='text/plain')
+
+def consultation_detail(request, id):
+    consultation = get_object_or_404(ConsultationRequest, id=id)
+    return render(request, 'consultation_detail.html', {'consultation': consultation})

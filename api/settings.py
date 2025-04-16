@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     "auth_app",
     "template_partials",
     'livereload',
-
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,6 @@
-
 # Create your models here.
 from django.db import models
+from django.urls import reverse
 
 class ConsultationRequest(models.Model):
     first_name = models.CharField(max_length=100)
@@ -22,3 +22,7 @@ class ConsultationRequest(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} - {self.company_email}"
+
+    def get_absolute_url(self):
+        # Replace 'consultation_detail' with the name of the URL pattern for viewing a single ConsultationRequest
+        return reverse('consultation_detail', args=[self.id])
