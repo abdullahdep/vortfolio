@@ -18,19 +18,21 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from django.conf.urls import handler404
 from app import views  # Import the custom 404 view from the app
-from app.sitemaps import StaticViewSitemap
+from app.sitemaps import StaticViewSitemap, ConsultationRequestSitemap
 from app.views import robots_txt
 
 handler404 = views.custom_404_view
 
 sitemaps = {
     'static': StaticViewSitemap,
+    'consultation_requests': ConsultationRequestSitemap,
 }
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
     path('', include('auth_app.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', robots_txt, name='robots_txt'),
+
 ]
