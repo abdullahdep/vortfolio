@@ -28,7 +28,7 @@ def index(request):
         'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'og_image_alt':'Vortfolio',
         'og_type': 'website',
-        'og_url': request.build_absolute_uri(),
+        'og_url': 'Vortfolio',
 
         #twitter card
         
@@ -37,7 +37,7 @@ def index(request):
         'twitter_description': 'Vortfolio - Your gateway to professional web development and AI solutions. Experience innovation with Vortfolio\'s comprehensive digital services.',
         'twitter_image': 'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'twitter_image_alt': 'Vortfolio',
-        'twitter_url': request.build_absolute_uri(),
+        'twitter_url': 'Vortfolio',
         # 'twitter_card_type': 'summary_large_image',
         
         'twitter_title': 'Vortfolio | Professional Web Development & Digital Solutions',
