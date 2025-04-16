@@ -258,6 +258,7 @@ def robots_txt(request):
         "User-agent: *\n"
         "Disallow: /admin/\n"
         "Allow: /\n"
+        "Sitemap: https://www.vortfolio.icu/sitemap.xml\n"  # Replace with your actual domain
     )
     return HttpResponse(content, content_type="text/plain")
 
