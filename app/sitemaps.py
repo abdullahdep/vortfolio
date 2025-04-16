@@ -8,17 +8,7 @@ class StaticViewSitemap(Sitemap):
     changefreq = 'daily'
 
     def items(self):
-        return ['index', 'about', 'projects', 'services', 'contact', 'portfolio', 'learn']
+        return ['index', 'projects', 'services', 'portfolio', 'learn']
 
     def location(self, item):
         return reverse(item)
-
-class ConsultationRequestSitemap(Sitemap):
-    priority = 0.5
-    changefreq = 'daily'
-
-    def items(self):
-        return ConsultationRequest.objects.all()
-
-    def lastmod(self, obj):
-        return obj.updated_at

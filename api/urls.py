@@ -24,9 +24,7 @@ from app.views import robots_txt
 handler404 = views.custom_404_view
 
 sitemaps = {
-    'static': StaticViewSitemap,
-    'consultation_requests': ConsultationRequestSitemap,
-}
+    'static': StaticViewSitemap}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
