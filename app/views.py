@@ -241,7 +241,10 @@ def portfolio(request):
 def custom_404_view(request, exception):
     return render(request, '404.html', status=404)
 def learn(request):
-   
+    context ={
+        'description':'A comprehensive web development roadmap from beginner to professional level. Learn HTML, CSS, JavaScript, Django, and more.',
+        'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development, Learn Web Development, Learn AI, Learn Digital Solutions',
+    }
     # Fix the template path by using forward slashes and removing the backslash
     return render(request, "Services/learn.html" )
 
