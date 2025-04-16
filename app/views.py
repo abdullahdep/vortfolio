@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 from .models import ConsultationRequest
@@ -249,10 +249,17 @@ def learn(request):
     return render(request, "Services/learn.html" )
 
 
-from django.http import HttpResponse
 def ads_txt(request):
     content = "google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0"
     return HttpResponse(content, content_type='text/plain')
+
+def robots_txt(request):
+    content = (
+        "User-agent: *\n"
+        "Disallow: /admin/\n"
+        "Allow: /\n"
+    )
+    return HttpResponse(content, content_type="text/plain")
 
 def consultation_detail(request, id):
     consultation = get_object_or_404(ConsultationRequest, id=id)
