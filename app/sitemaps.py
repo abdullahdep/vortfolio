@@ -4,7 +4,7 @@ from django.urls import reverse
 from .models import ConsultationRequest
 
 class StaticViewSitemap(Sitemap):
-    priority = 0.8
+    priority = 0.5
     changefreq = 'daily'
 
     def items(self):
