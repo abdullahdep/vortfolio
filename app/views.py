@@ -15,7 +15,7 @@ def global_vars(request):
         'author':'Abdullah',
         'og_site_name':og_site_name,
         'logo':'https://lh3.googleusercontent.com/pw/AP1GczOGutgra7QDYHKh6So_zvBBe7oZ17qLabQT68A4JGpN06fQ__3F47qiBBh_RmU0EhmAOdp-K9j9li5ARd97yh1UvICqt45ATlYcuoskceWPfymdTyq28YN9eK7958crO3UfRDHQE7GktH1d0r0VPzs=w575-h429-s-no-gm?authuser=0',
-        
+        'views':'Subscribers',
     }
 def index(request):
     
@@ -265,3 +265,10 @@ def robots_txt(request):
 def consultation_detail(request, id):
     consultation = get_object_or_404(ConsultationRequest, id=id)
     return render(request, 'consultation_detail.html', {'consultation': consultation})
+
+
+def learning_sd(request):
+    return render(request, 'Services/learn_Software_development.html')
+
+def roadmap(request):
+    return render(request, 'Services/roadmap.html')
