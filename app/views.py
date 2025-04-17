@@ -20,8 +20,8 @@ def global_vars(request):
 def index(request):
     
     context = {
-        'title': 'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'description':'Vortfolio – A premier platform delivering expert web development, cutting-edge AI solutions, and innovative digital services. We also offer tailored learning resources and services for students, empowering the next generation of tech professionals. Discover next-generation technology and educational support with Vortfolio.',
+        'title': 'Vortfolio ',
+        'description':'Vortfolio delivers expert web development, AI solutions, and student-focused tech education in one powerful platform.',
         'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development',
         'og_title':'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
         'og_description':'Vortfolio delivers cutting-edge web development, AI integration, and digital solutions. Transform your digital presence with Vortfolio\'s innovative platform.',
