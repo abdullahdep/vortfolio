@@ -267,7 +267,7 @@ def ads_txt(request):
     content = "google.com, pub-4959773968938981, DIRECT, f08c47fec0942fa0"
     return HttpResponse(content, content_type="text/plain")
 
-# def robots_txt(request):
+def robots_txt(request):
     content = (
         "User-agent: *\n"
         "Disallow: /admin/\n"
