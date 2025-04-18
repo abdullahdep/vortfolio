@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block meta %}
+    <title> {{title}} </title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{description}}">
+    <meta name="keywords" content="{{keywords}}">
+    <meta name="author" content="{{author}}">
+
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{og_title}}">
+    <meta property="og:description" content="{{og_description}}">
+    <meta property="og:image" content="{{og_image}}">
+    <meta property="og:image:alt" content="{{og_image_alt}}">
+    <meta property="og:url" content="https://vortfolio.icu">
+    <meta property="og:site_name" content="{{og_site_name}}">
+    <meta property="og:type" content="{{og_type}}">
+
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="{{twitter_card}}">
+    <meta name="twitter:title" content="{{twitter_title}}">
+    <meta name="twitter:description" content="{{twitter_description}}">
+
+    <meta name="twitter:image:alt" content="{{twitter_image_alt}}">
+    <meta name="twitter:image" content="twitter_image">
+    <meta name="twitter:url" content="{{twitter_url}}">
+
+    {% endblock %}
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 20px;
+        }
+        p, li {
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+        }
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Privacy Policy</h1>
+    </header>
+    <main>
+        <p>
+            At Vortfolio.icu, we are committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://vortfolio.icu" target="_blank">https://vortfolio.icu</a> (the “Site”). Please read this privacy policy carefully. By using our Site, you agree to the collection and use of your information in accordance with this policy.
+        </p>
+
+        <h2>1. Information We Collect</h2>
+        <h3>1.1 Personal Data</h3>
+        <p>We may collect personal data that you provide directly to us when you interact with our Site, such as when you subscribe to our newsletter or contact us. This may include:</p>
+        <ul>
+            <li>Name</li>
+            <li>Email Address</li>
+            <li>Phone Number (if provided)</li>
+        </ul>
+
+        <h3>1.2 Non-Personal Data</h3>
+        <p>We also collect non-personal data automatically as you use our Site, including:</p>
+        <ul>
+            <li>IP Address</li>
+            <li>Browser Type</li>
+            <li>Device Information</li>
+            <li>Referring Website</li>
+            <li>Pages Viewed</li>
+            <li>Time Spent on Pages</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+        <p>We may use the information we collect for various purposes, including:</p>
+        <ul>
+            <li>To provide, maintain, and improve our Site and services.</li>
+            <li>To personalize your experience and respond to your inquiries.</li>
+            <li>To monitor and analyze usage and trends to improve our Site.</li>
+            <li>To serve personalized ads through third-party advertising services such as Google AdSense.</li>
+            <li>To comply with legal obligations or enforce our terms and conditions.</li>
+        </ul>
+
+        <h2>3. Google AdSense & Third-Party Advertising</h2>
+        <p>We use Google AdSense to display advertisements on our Site. Google uses cookies and web beacons to serve ads based on your prior visits to our Site and other websites across the Internet. This process may involve the collection of non-personal data.</p>
+
+        <h3>3.1 Cookie Usage</h3>
+        <p>Google AdSense uses cookies to serve ads based on your previous visits. You can opt out of personalized advertising by visiting Google’s Ads Settings page at: <a href="https://adssettings.google.com" target="_blank">https://adssettings.google.com</a></p>
+
+        <h3>3.2 Third-Party Providers</h3>
+        <p>We may also use other third-party providers (such as Google Analytics) to analyze traffic on our Site. These third parties may also set cookies to help them provide relevant advertising and track performance.</p>
+
+        <h2>4. Data Retention</h2>
+        <p>We retain your personal information only as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+
+        <h2>5. Your Data Protection Rights</h2>
+        <p>Depending on your location, you may have the following data protection rights under applicable laws, including the General Data Protection Regulation (GDPR) if you are a resident of the European Union:</p>
+        <ul>
+            <li><strong>Access:</strong> You can request a copy of your personal data.</li>
+            <li><strong>Rectification:</strong> You have the right to correct any inaccurate or incomplete information.</li>
+            <li><strong>Erasure:</strong> You may request the deletion of your personal data under certain circumstances.</li>
+            <li><strong>Restriction of Processing:</strong> You can ask us to restrict the processing of your personal data in specific situations.</li>
+            <li><strong>Data Portability:</strong> You can request a transfer of your personal data to another service provider.</li>
+            <li><strong>Withdrawal of Consent:</strong> If we are processing your data based on consent, you have the right to withdraw consent at any time.</li>
+        </ul>
+
+        <h2>6. Security of Your Information</h2>
+        <p>We employ industry-standard measures to protect the security of your personal data. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+        <h2>7. Third-Party Links</h2>
+        <p>Our Site may contain links to other websites that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites.</p>
+
+        <h2>8. Children’s Privacy</h2>
+        <p>Our Site is not intended for individuals under the age of 13. We do not knowingly collect personal information from children under the age of 13. If you believe we have collected such information, please contact us immediately, and we will take steps to delete such data.</p>
+
+        <h2>9. Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. We encourage you to review this Privacy Policy periodically for any updates or changes.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or the data we collect, please contact us:</p>
+        <ul>
+            <li><strong>Email:</strong> admin@vortfolio.icu</li>
+            <li><strong>Website:</strong> <a href="https://vortfolio.icu" target="_blank">https://vortfolio.icu</a></li>
+        </ul>
+
+        <h2>11. Consent</h2>
+        <p>By using our Site, you consent to our Privacy Policy and agree to its terms.</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 Vortfolio.icu. All rights reserved.</p>
+    </footer>
+</body>
+</html>

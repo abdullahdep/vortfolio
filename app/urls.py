@@ -9,7 +9,6 @@ urlpatterns = [
     path("contact", views.contact, name="contact"),
     path('portfolio', views.portfolio, name='portfolio'),
     path('learn', views.learn, name='learn'),
-    path('ads.txt', views.ads_txt, name='ads_txt'),
     path('learning_sd', views.learning_sd , name='learning_sd'),
     path('roadmap', views.roadmap, name='roadmap'),
     path('consultation/<int:id>/', views.consultation_detail, name='consultation_detail'),
