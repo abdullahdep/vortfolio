@@ -3,31 +3,35 @@
 
 {% block content %}
 <!-- Add these meta tags at the top of the template -->
+
+
 {% block meta %}
+<title> {{title}} </title>
+<!-- SEO Meta Tags -->
+<meta name="description" content="{{description}}">
+<meta name="keywords" content="{{keywords}}">
+<meta name="author" content="{{author}}">
 
 
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{og_description}}">
+<meta property="og:image" content="{{og_image}}">
+<meta property="og:image:alt" content="{{og_image_alt}}">
+<meta property="og:url" content="https://vortfolio.icu">
+<meta property="og:site_name" content="{{og_site_name}}">
+<meta property="og:type" content="{{og_type}}">
 
-<title> Web Development - Complete Roadmap </title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="{{description}}">
-    <meta name="keywords" content="{{keywords}}">
-    <meta name="author" content="{{author}}">
-
-
-
-
-
-<meta property="og:title" content="Learn Web Development - Complete Roadmap">
-<meta property="og:description" content="A comprehensive web development roadmap from beginner to professional level. Learn HTML, CSS, JavaScript, Django, and more.">
-<meta property="og:image" content="{{logo}}">
-<meta property="og:url" content="https://ai-web-git-testdep3-abdullahs-projects-ce5d92fc.vercel.app/learn">
-<meta property="og:type" content="article">
 
 <!-- Twitter Card Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Learn Web Development - Complete Roadmap">
-<meta name="twitter:description" content="A comprehensive web development roadmap from beginner to professional level. Learn HTML, CSS, JavaScript, Django, and more.">
-<meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0">
+<meta name="twitter:card" content="{{twitter_card}}">
+<meta name="twitter:title" content="{{twitter_title}}">
+<meta name="twitter:description" content="{{twitter_description}}">
+
+<meta name="twitter:image:alt" content="{{twitter_image_alt}}">
+<meta name="twitter:image" content="twitter_image">
+<meta name="twitter:url" content="{{twitter_url}}">
+
 {% endblock %}
 
 <div class="container py-5">

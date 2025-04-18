@@ -20,11 +20,11 @@ def global_vars(request):
 def index(request):
     
     context = {
-        'title': 'Vortfolio ',
-        'description':'Vortfolio delivers expert web development, AI solutions, and student-focused tech education in one powerful platform.',
+        'title': 'Vortfolio – Code. Create. Transform.',
+        'description':'Vortfolio provides professional web development, innovative AI tools, and student-centered tech education—all in one dynamic platform.',
         'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development',
-        'og_title':'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'og_description':'Vortfolio delivers cutting-edge web development, AI integration, and digital solutions. Transform your digital presence with Vortfolio\'s innovative platform.',
+        'og_title':'Vortfolio – Code. Create. Transform.',
+        'og_description':'Vortfolio provides professional web development, innovative AI tools, and student-centered tech education—all in one dynamic platform.',
         'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'og_image_alt':'Vortfolio',
         'og_type': 'website',
@@ -33,24 +33,23 @@ def index(request):
         #twitter card
         
         'twitter_card': 'summary_large_image',
-        'twitter_title': 'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'twitter_description': 'Vortfolio - Your gateway to professional web development and AI solutions. Experience innovation with Vortfolio\'s comprehensive digital services.',
+        'twitter_title': 'Vortfolio – Code. Create. Transform.',
+        'twitter_description': 'Vortfolio provides professional web development, innovative AI tools, and student-centered tech education—all in one dynamic platform..',
         'twitter_image': 'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'twitter_image_alt': 'Vortfolio',
         'twitter_url': 'Vortfolio',
         # 'twitter_card_type': 'summary_large_image',
         
-        'twitter_title': 'Vortfolio | Professional Web Development & Digital Solutions',
 
     }
     return render(request, "index.html" ,context)
 def about(request):
     context = {
         'title': 'About - Vortfolio AI Based Software Development',
-        'description':'Vortfolio – A premier platform delivering expert web development, cutting-edge AI solutions, and innovative digital services. We also offer tailored learning resources and services for students, empowering the next generation of tech professionals. Discover next-generation technology and educational support with Vortfolio.',
+        'description':'Vortfolio delivers expert web development, AI solutions, and tech education for students—empowering future professionals with next-gen digital services.',
         'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development',
-        'og_title':'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'og_description':'Vortfolio delivers cutting-edge web development, AI integration, and digital solutions. Transform your digital presence with Vortfolio\'s innovative platform.',
+        'og_title':'About - Vortfolio AI Based Software Development',
+        'og_description':'Vortfolio delivers expert web development, AI solutions, and tech education for students—empowering future professionals with next-gen digital services.',
         'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'og_image_alt':'Vortfolio',
         'og_type': 'website',
@@ -60,23 +59,22 @@ def about(request):
         
         'twitter_card': 'summary_large_image',
         'twitter_title': 'About Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'twitter_description': 'Vortfolio - Your gateway to professional web development and AI solutions. Experience innovation with Vortfolio\'s comprehensive digital services.',
+        'twitter_description': 'Vortfolio delivers expert web development, AI solutions, and tech education for students—empowering future professionals with next-gen digital services.',
         'twitter_image': 'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'twitter_image_alt': 'Vortfolio',
         'twitter_url': request.build_absolute_uri(),
         # 'twitter_card_type': 'summary_large_image',
         
-        'twitter_title': 'Vortfolio | Professional Web Development & Digital Solutions',
 
     }
     return render(request, "about.html" , context)
 def projects(request):
     context = {
-        'title': 'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'description':'Vortfolio – A premier platform delivering expert web development, cutting-edge AI solutions, and innovative digital services. We also offer tailored learning resources and services for students, empowering the next generation of tech professionals. Discover next-generation technology and educational support with Vortfolio.',
+        'title': 'Projects – Vortfolio | Web Development & AI Solutions Showcase.',
+        'description':'Discover Vortfolio’s real-world projects in web development, AI, and digital solutions. See how we deliver innovation, results, and next-gen tech experiences.',
         'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development',
-        'og_title':'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'og_description':'Vortfolio delivers cutting-edge web development, AI integration, and digital solutions. Transform your digital presence with Vortfolio\'s innovative platform.',
+        'og_title':'Projects – Vortfolio | Web Development & AI Solutions Showcase',
+        'og_description':'Discover Vortfolio’s real-world projects in web development, AI, and digital solutions. See how we deliver innovation, results, and next-gen tech experiences.',
         'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'og_image_alt':'Vortfolio',
         'og_type': 'website',
@@ -85,24 +83,23 @@ def projects(request):
         #twitter card
         
         'twitter_card': 'summary_large_image',
-        'twitter_title': 'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'twitter_description': 'Vortfolio - Your gateway to professional web development and AI solutions. Experience innovation with Vortfolio\'s comprehensive digital services.',
+        'twitter_title': 'Projects – Vortfolio | Web Development & AI Solutions Showcase',
+        'twitter_description': 'Discover Vortfolio’s real-world projects in web development, AI, and digital solutions. See how we deliver innovation, results, and next-gen tech experiences.',
         'twitter_image': 'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'twitter_image_alt': 'Vortfolio',
         'twitter_url': request.build_absolute_uri(),
         # 'twitter_card_type': 'summary_large_image',
         
-        'twitter_title': 'Vortfolio | Professional Web Development & Digital Solutions',
 
     }
-    return render(request, "projects.html",)
+    return render(request, "projects.html",context)
 def services(request):
     context = {
-        'title': 'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'description':'Vortfolio – A premier platform delivering expert web development, cutting-edge AI solutions, and innovative digital services. We also offer tailored learning resources and services for students, empowering the next generation of tech professionals. Discover next-generation technology and educational support with Vortfolio.',
+        'title': 'Services – Vortfolio | Web Development, AI & Digital Solutions',
+        'description':'Explore Vortfolio’s expert services in web development, AI integration, and digital transformation. Scalable tech solutions for businesses and students alike.',
         'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development',
-        'og_title':'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'og_description':'Vortfolio delivers cutting-edge web development, AI integration, and digital solutions. Transform your digital presence with Vortfolio\'s innovative platform.',
+        'og_title':'Services – Vortfolio | Web Development, AI & Digital Solutions',
+        'og_description':'Explore Vortfolio’s expert services in web development, AI integration, and digital transformation. Scalable tech solutions for businesses and students alike.',
         'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'og_image_alt':'Vortfolio',
         'og_type': 'website',
@@ -111,25 +108,24 @@ def services(request):
         #twitter card
         
         'twitter_card': 'summary_large_image',
-        'twitter_title': 'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'twitter_description': 'Vortfolio - Your gateway to professional web development and AI solutions. Experience innovation with Vortfolio\'s comprehensive digital services.',
+        'twitter_title': 'Services – Vortfolio | Web Development, AI & Digital Solutions',
+        'twitter_description': 'Explore Vortfolio’s expert services in web development, AI integration, and digital transformation. Scalable tech solutions for businesses and students alike.',
         'twitter_image': 'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'twitter_image_alt': 'Vortfolio',
         'twitter_url': request.build_absolute_uri(),
         # 'twitter_card_type': 'summary_large_image',
         
-        'twitter_title': 'Vortfolio | Professional Web Development & Digital Solutions',
 
     }
     return render(request, "services.html" , context)
 @csrf_exempt
 def contact(request):
     context = {
-        'title': 'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'description':'Vortfolio – A premier platform delivering expert web development, cutting-edge AI solutions, and innovative digital services. We also offer tailored learning resources and services for students, empowering the next generation of tech professionals. Discover next-generation technology and educational support with Vortfolio.',
+        'title': 'Contact Us – Vortfolio | Get in Touch for Web & AI Solutions',
+        'description':'Have questions or project ideas? Contact Vortfolio for expert web development, AI solutions, and digital services. We\'re here to help you grow online.',
         'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development',
-        'og_title':'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'og_description':'Vortfolio delivers cutting-edge web development, AI integration, and digital solutions. Transform your digital presence with Vortfolio\'s innovative platform.',
+        'og_title':'Contact Us – Vortfolio | Get in Touch for Web & AI Solutions',
+        'og_description':'Have questions or project ideas? Contact Vortfolio for expert web development, AI solutions, and digital services. We\'re here to help you grow online.',
         'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'og_image_alt':'Vortfolio',
         'og_type': 'website',
@@ -138,14 +134,13 @@ def contact(request):
         #twitter card
         
         'twitter_card': 'summary_large_image',
-        'twitter_title': 'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'twitter_description': 'Vortfolio - Your gateway to professional web development and AI solutions. Experience innovation with Vortfolio\'s comprehensive digital services.',
+        'twitter_title': 'Contact Us – Vortfolio | Get in Touch for Web & AI Solutions',
+        'twitter_description': 'Have questions or project ideas? Contact Vortfolio for expert web development, AI solutions, and digital services. We\'re here to help you grow online.',
         'twitter_image': 'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
-        'twitter_image_alt': 'Vortfolio',
+        'twitter_image_alt':'Vortfolio',
         'twitter_url': request.build_absolute_uri(),
         # 'twitter_card_type': 'summary_large_image',
         
-        'twitter_title': 'Vortfolio | Professional Web Development & Digital Solutions',
 
     }
     if request.method == 'GET':
@@ -213,11 +208,11 @@ def contact(request):
 
 def portfolio(request):
     context = {
-        'title': 'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'description':'Vortfolio – A premier platform delivering expert web development, cutting-edge AI solutions, and innovative digital services. We also offer tailored learning resources and services for students, empowering the next generation of tech professionals. Discover next-generation technology and educational support with Vortfolio.',
+        'title': 'Portfolio – Vortfolio | Web Development & AI Projects Showcase',
+        'description':'Browse Vortfolio’s portfolio of custom web development, AI solutions, and digital innovations. Real-world projects that highlight creativity and results.',
         'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development',
-        'og_title':'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'og_description':'Vortfolio delivers cutting-edge web development, AI integration, and digital solutions. Transform your digital presence with Vortfolio\'s innovative platform.',
+        'og_title':'Portfolio – Vortfolio | Web Development & AI Projects Showcase',
+        'og_description':'Browse Vortfolio’s portfolio of custom web development, AI solutions, and digital innovations. Real-world projects that highlight creativity and results.',
         'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'og_image_alt':'Vortfolio',
         'og_type': 'website',
@@ -226,14 +221,13 @@ def portfolio(request):
         #twitter card
         
         'twitter_card': 'summary_large_image',
-        'twitter_title': 'Vortfolio - Professional Web Development, AI & Digital Solutions Platform',
-        'twitter_description': 'Vortfolio - Your gateway to professional web development and AI solutions. Experience innovation with Vortfolio\'s comprehensive digital services.',
+        'twitter_title': 'Portfolio – Vortfolio | Web Development & AI Projects Showcase',
+        'twitter_description': 'Browse Vortfolio’s portfolio of custom web development, AI solutions, and digital innovations. Real-world projects that highlight creativity and results.',
         'twitter_image': 'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
         'twitter_image_alt': 'Vortfolio',
         'twitter_url': request.build_absolute_uri(),
         # 'twitter_card_type': 'summary_large_image',
         
-        'twitter_title': 'Vortfolio | Professional Web Development & Digital Solutions',
 
     }
     return render(request, "portfolio.html" , context)
@@ -241,17 +235,36 @@ def portfolio(request):
 def custom_404_view(request, exception):
     return render(request, '404.html', status=404)
 def learn(request):
-    context ={
-        'description':'A comprehensive web development roadmap from beginner to professional level. Learn HTML, CSS, JavaScript, Django, and more.',
-        'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development, Learn Web Development, Learn AI, Learn Digital Solutions',
-    }
+    context = {
+        'title': 'Learn with Vortfolio – Web, Software & AI Development Courses',
+        'description':'Explore Vortfolio’s learning platform for web development, software engineering, and AI. Access beginner to advanced tutorials, roadmaps, and real-world projects.',
+        'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development',
+        'og_title':'Learn with Vortfolio – Web, Software & AI Development Courses',
+        'og_description':'Explore Vortfolio’s learning platform for web development, software engineering, and AI. Access beginner to advanced tutorials, roadmaps, and real-world projects.',
+        'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'og_image_alt':'Vortfolio',
+        'og_type': 'website',
+        'og_url': request.build_absolute_uri(),
+
+        #twitter card
+        
+        'twitter_card': 'summary_large_image',
+        'twitter_title': 'Learn with Vortfolio – Web, Software & AI Development Courses',
+        'twitter_description': 'Explore Vortfolio’s learning platform for web development, software engineering, and AI. Access beginner to advanced tutorials, roadmaps, and real-world projects.',
+        'twitter_image': 'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'twitter_image_alt': 'Vortfolio',
+        'twitter_url': request.build_absolute_uri(),
+        # 'twitter_card_type': 'summary_large_image',
+        
+
+    } 
     # Fix the template path by using forward slashes and removing the backslash
-    return render(request, "Services/learn.html" )
+    return render(request, "Services/learn.html" , context)
 
 
 def ads_txt(request):
-    content = "google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0"
-    return HttpResponse(content, content_type='text/plain')
+    content = "google.com, pub-4959773968938981, DIRECT, f08c47fec0942fa0"
+    return HttpResponse(content, content_type="text/plain")
 
 def robots_txt(request):
     content = (
@@ -268,7 +281,76 @@ def consultation_detail(request, id):
 
 
 def learning_sd(request):
-    return render(request, 'Services/learn_Software_development.html')
+    context = {
+        'title': 'Learn Software Development – Vortfolio | Courses, Roadmaps & Skills',
+        'description':'Master software development with Vortfolio’s beginner-friendly guides, learning paths, and practical projects. Start coding and build real-world applications today.',
+        'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development, Learn Web Development, Learn AI, Learn Digital Solutions',
+        #og tags
+        'og_title':'Learn Software Development – Vortfolio | Courses, Roadmaps & Skills',
+        'og_description':'Master software development with Vortfolio’s beginner-friendly guides, learning paths, and practical projects. Start coding and build real-world applications today.',
+        'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'og_image_alt':'Vortfolio',
+        'og_type': 'website',
+        'og_url': request.build_absolute_uri(),
+
+        #twitter card
+        
+        'twitter_card': 'summary_large_image',
+        'twitter_title': 'Learn Software Development – Vortfolio | Courses, Roadmaps & Skills',
+        'twitter_description': 'Master software development with Vortfolio’s beginner-friendly guides, learning paths, and practical projects. Start coding and build real-world applications today.',
+        'twitter_image': 'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'twitter_image_alt': 'Vortfolio',
+        'twitter_url': request.build_absolute_uri(),
+        # 'twitter_card_type': 'summary_large_image',
+    }
+    return render(request, 'Services/learn_Software_development.html' , context)
 
 def roadmap(request):
-    return render(request, 'Services/roadmap.html')
+    context = {
+        'title': 'Portfolio – Vortfolio | Web Development & AI Projects Showcase',
+        'description':'Browse Vortfolio’s portfolio of custom web development, AI solutions, and digital innovations. Real-world projects that highlight creativity and results.',
+        'keywords':'Vortfolio, Web Development, AI Solutions, Digital Portfolio, Professional Portfolio, Vortfolio Platform, Full Stack Development',
+        'og_title':'Web Development Roadmap – Vortfolio | Learn & Build Like a Pro',
+        'og_description':'Explore Vortfolio’s complete web development roadmap—from HTML and CSS to advanced frameworks and deployment. Ideal for students, beginners, and aspiring developers.',
+        'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'og_image_alt':'Vortfolio',
+        'og_type': 'website',
+        'og_url': request.build_absolute_uri(),
+
+        #twitter card
+        
+        'twitter_card': 'summary_large_image',
+        'twitter_title': 'Web Development Roadmap – Vortfolio | Learn & Build Like a Pro',
+        'twitter_description': 'Explore Vortfolio’s complete web development roadmap—from HTML and CSS to advanced frameworks and deployment. Ideal for students, beginners, and aspiring developers.',
+        'twitter_image': 'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'twitter_image_alt': 'Vortfolio',
+        'twitter_url': request.build_absolute_uri(),
+        # 'twitter_card_type': 'summary_large_image',
+        
+
+    } 
+    return render(request, 'Services/roadmap.html', context)
+
+def privacy_policy(request):
+    context = {
+        'title': 'Privacy Policy – Vortfolio | Your Data, Our Commitment',
+        'description':'Vortfolio is committed to protecting your privacy. Read our policy to understand how we collect, use, and safeguard your information.',
+        'keywords':'Vortfolio, Privacy Policy, Data Protection, User Privacy, Information Security',
+
+        'og_title':'Privacy Policy – Vortfolio | Your Data, Our Commitment',
+        'og_description':'Vortfolio is committed to protecting your privacy. Read our policy to understand how we collect, use, and safeguard your information.',
+        'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'og_image_alt':'Privacy Policy',
+        'og_type': 'website',
+        'og_url': request.build_absolute_uri(),
+        #twitter card
+        'twitter_card': 'summary_large_image',
+        'twitter_title': 'Privacy Policy – Vortfolio | Your Data, Our Commitment',
+        'twitter_description':'Vortfolio is committed to protecting your privacy. Read our policy to understand how we collect, use, and safeguard your information.',
+        'twitter_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'twitter_image_alt':'Privacy Policy',
+        'twitter_url': request.build_absolute_uri(),
+
+    }
+
+    return render(request, 'privacy_policy.html', context)
