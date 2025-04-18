@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.conf.urls import handler404
 from app import views  # Import the custom 404 view from the app
 from app.sitemaps import StaticViewSitemap
-from app.views import robots_txt , ads_txt ,privacy_policy
+from app.views import  ads_txt ,privacy_policy
 
 handler404 = views.custom_404_view
 
@@ -31,7 +31,7 @@ urlpatterns = [
     path('', include('app.urls')),
     path('', include('auth_app.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-    path('robots.txt', robots_txt, name='robots_txt'),
+    # path('robots.txt', robots_txt, name='robots_txt'),
     path("ads.txt", ads_txt, name="ads_txt"),
     path('privacy-policy', privacy_policy, name='privacy_policy'),
 
