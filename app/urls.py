@@ -1,5 +1,11 @@
 from django.urls import path
+from django.contrib.sitemaps.views import sitemap
+from app.sitemaps import DynamicSitemap
 from . import views
+
+sitemaps = {
+    'dynamic': DynamicSitemap,
+}
 
 urlpatterns = [
     path("", views.index, name="index"),
@@ -13,5 +19,6 @@ urlpatterns = [
     path('roadmap', views.roadmap, name='roadmap'),
     path('consultation/<int:id>/', views.consultation_detail, name='consultation_detail'),
     path('bca6356bcc6f4e32986944a2297de9e7.txt', views.serve_txt_file, name='serve_txt_file'),
-
+    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+    path('sitemap.xml', views.dynamic_sitemap, name='dynamic_sitemap'),
 ]
