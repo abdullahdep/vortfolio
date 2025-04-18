@@ -13,6 +13,8 @@
         gtag('config', 'G-5K583RPRS7');
     </script>
 
+
+
     <!-- canonical -->
     <link rel="canonical" href="{{ request.build_absolute_uri }}">
 
@@ -124,6 +126,66 @@
         .carousel-indicators .active {
             opacity: 1;
             background-color: #fff;
+        }
+
+        /* Breadcrumb Button Styling */
+        #toggle-breadcrumb-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, #007aff, #00d4ff);
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        #toggle-breadcrumb-btn:hover {
+            background: linear-gradient(135deg, #0056b3, #0099cc);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        #toggle-breadcrumb-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            #toggle-breadcrumb-btn {
+                width: 100%;
+                padding: 12px;
+                font-size: 14px;
+                border-radius: 20px;
+            }
+        }
+
+        /* Breadcrumb Container Styling */
+        .breadcrumb-container {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .breadcrumb-container.active {
+            display: block !important;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .breadcrumb-container.hidden {
+            display: none !important;
+            opacity: 0;
+            transform: translateY(-10px);
         }
     </style>
 
@@ -372,6 +434,44 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
             rel="stylesheet">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-container-wrapper">
+            <button id="toggle-breadcrumb-btn" class="btn btn-primary">
+                <i class="fas fa-chevron-down me-2"></i>Navigation 
+            </button>
+            <nav aria-label="breadcrumb" class="breadcrumb-container hidden">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    {% if request.resolver_match.url_name == "about" %}
+                        <li class="breadcrumb-item active" aria-current="page">About</li>
+                    {% elif request.resolver_match.url_name == "portfolio" %}
+                        <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                    {% elif request.resolver_match.url_name == "services" %}
+                        <li class="breadcrumb-item active" aria-current="page">Services</li>
+                    {% elif request.resolver_match.url_name == "contact" %}
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    {% elif request.resolver_match.url_name == "projects" %}
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Projects</li>
+                    {% elif request.resolver_match.url_name == "roadmap" %}
+                        <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
+                        <li class="breadcrumb-item"><a href="learn">Learn</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="learning_sd">Learn Software Development</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Roadmap</li>
+                    {% elif request.resolver_match.url_name == "learning_sd" %}
+                        <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
+                        <li class="breadcrumb-item"><a href="learn">Learn</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Learn Software Development</li>
+                    {% elif request.resolver_match.url_name == "learn" %}
+                        <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Learn</li>
+                    {% else %}
+                        <li class="breadcrumb-item active" aria-current="page">{{ request.resolver_match.url_name|title }}</li>
+                    {% endif %}
+                </ol>
+            </nav>
+        </div>
         <!-- Content Block -->
         {% block content %}
         {% endblock %}
@@ -534,6 +634,21 @@
                         }
                     });
                 });
+            });
+
+            const breadcrumbContainer = document.querySelector('.breadcrumb-container');
+            const toggleButton = document.getElementById('toggle-breadcrumb-btn');
+
+            toggleButton.addEventListener('click', function () {
+                if (breadcrumbContainer.classList.contains('hidden')) {
+                    breadcrumbContainer.classList.remove('hidden');
+                    breadcrumbContainer.classList.add('active');
+                    toggleButton.innerHTML = '<i class="fas fa-chevron-up me-2"></i> Hide Breadcrumb';
+                } else {
+                    breadcrumbContainer.classList.remove('active');
+                    breadcrumbContainer.classList.add('hidden');
+                    toggleButton.innerHTML = '<i class="fas fa-chevron-down me-2"></i> Previous Pages';
+                }
             });
         });
 

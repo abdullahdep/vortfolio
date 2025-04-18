@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link rel="shortcut icon" href="{{logo}}" type="image/x-icon">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'components/header_footer.html' %}
+{% load static %}
+
+{% block content %}
+
 
   {% block meta %}
   <title> {{title}} </title>
@@ -550,4 +549,4 @@
     });
   </script>
 </body>
-</html>
+{% endblock content %}
