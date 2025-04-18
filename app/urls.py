@@ -12,4 +12,6 @@ urlpatterns = [
     path('learning_sd', views.learning_sd , name='learning_sd'),
     path('roadmap', views.roadmap, name='roadmap'),
     path('consultation/<int:id>/', views.consultation_detail, name='consultation_detail'),
+    path('bca6356bcc6f4e32986944a2297de9e7.txt', views.serve_txt_file, name='serve_txt_file'),
+
 ]

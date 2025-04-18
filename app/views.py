@@ -354,3 +354,8 @@ def privacy_policy(request):
     }
 
     return render(request, 'privacy_policy.html', context)
+from django.http import HttpResponse
+
+def serve_txt_file(request):
+    content = "bca6356bcc6f4e32986944a2297de9e7"
+    return HttpResponse(content, content_type="text/plain")
