@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     "template_partials",
     'livereload',
     'django.contrib.sitemaps',
+    'wpfront',
+
 ]
 
 MIDDLEWARE = [
