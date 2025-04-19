@@ -4,4 +4,4 @@ whitenoise
 django-template-partials
 django-livereload-server
 PyMySQL
-
+requests
