@@ -22,4 +22,5 @@ urlpatterns = [
     # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
     path('sitemap.xml', views.dynamic_sitemap, name='dynamic_sitemap'),
     path('robots.txt', views.robots_txt, name='robots_txt'),
+    path('html', views.html, name='html'),
 ]
