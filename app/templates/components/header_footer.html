@@ -15,6 +15,10 @@
 
 
 
+<script src="https://speed-insights.vercel.app/script.js" data-sdkn="next" defer></script>
+
+
+
     <!-- canonical -->
     <link rel="canonical" href="{{ request.build_absolute_uri }}">
 
@@ -187,6 +191,81 @@
             opacity: 0;
             transform: translateY(-10px);
         }
+
+        /* Dropdown menu styling */
+        .dropdown-menu {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #333;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Adjust dropdown for mobile */
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .dropdown-item {
+                padding: 15px;
+                font-size: 16px;
+            }
+        }
+
+        /* General adjustments for mobile screens */
+        @media (max-width: 768px) {
+            .nav1 {
+                width: calc(100% - 20px);
+                margin: 10px 10px;
+                border-radius: 50px;
+            }
+
+            .navbar-collapse {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                right: 0;
+                background: #f8f9fa;
+                padding: 1.5rem;
+                border-radius: 7px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                margin: 0;
+            }
+
+            .breadcrumb-container {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .user-icons-container {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
+            }
+
+            .user-icon {
+                flex: 1;
+                text-align: center;
+            }
+
+            .user-icon .nav-link {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 
 </head>
@@ -286,8 +365,18 @@
                         <a class="nav-link" href="{% url 'portfolio' %}"><i
                                 class="fas fa-briefcase me-1"></i>Portfolio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'services' %}"><i class="fas fa-cogs me-1"></i>Services</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-cogs me-1"></i>Services                            <i class="fa fa-angle-down icon-in-menu"></i>
+
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="{% url 'learn' %}">For Learners</a></li>
+                            <li><a class="dropdown-item" href="/services/ui-ux">UI/UX Designs</a></li>
+                            <li><a class="dropdown-item" href="/services/web-development">Web Development</a></li>
+                            <li><a class="dropdown-item" href="/services/mobile-apps">Mobile Apps</a></li>
+                            <li><a class="dropdown-item" href="/services/consulting">Consulting</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.youtube.com/@aibytestudio" target="_blank">
@@ -438,37 +527,39 @@
         <!-- Breadcrumb -->
         <div class="breadcrumb-container-wrapper">
             <button id="toggle-breadcrumb-btn" class="btn btn-primary">
-                <i class="fas fa-chevron-down me-2"></i>Navigation 
+                <i class="fas fa-chevron-down me-2"></i>Navigation
             </button>
             <nav aria-label="breadcrumb" class="breadcrumb-container hidden">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     {% if request.resolver_match.url_name == "about" %}
-                        <li class="breadcrumb-item active" aria-current="page">About</li>
+                    <li class="breadcrumb-item active" aria-current="page">About</li>
                     {% elif request.resolver_match.url_name == "portfolio" %}
-                        <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                    <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
                     {% elif request.resolver_match.url_name == "services" %}
-                        <li class="breadcrumb-item active" aria-current="page">Services</li>
+                    <li class="breadcrumb-item active" aria-current="page">Services</li>
                     {% elif request.resolver_match.url_name == "contact" %}
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
                     {% elif request.resolver_match.url_name == "projects" %}
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Projects</li>
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Projects</li>
                     {% elif request.resolver_match.url_name == "roadmap" %}
-                        <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
-                        <li class="breadcrumb-item"><a href="learn">Learn</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="learning_sd">Learn Software Development</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Roadmap</li>
+                    <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
+                    <li class="breadcrumb-item"><a href="learn">Learn</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="learning_sd">Learn Software
+                            Development</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Roadmap</li>
                     {% elif request.resolver_match.url_name == "learning_sd" %}
-                        <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
-                        <li class="breadcrumb-item"><a href="learn">Learn</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Learn Software Development</li>
+                    <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
+                    <li class="breadcrumb-item"><a href="learn">Learn</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Learn Software Development</li>
                     {% elif request.resolver_match.url_name == "learn" %}
-                        <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Learn</li>
+                    <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Learn</li>
                     {% else %}
-                        <li class="breadcrumb-item active" aria-current="page">{{ request.resolver_match.url_name|title }}</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ request.resolver_match.url_name|title }}
+                    </li>
                     {% endif %}
                 </ol>
             </nav>
