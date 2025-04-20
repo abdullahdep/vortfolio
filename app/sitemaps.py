@@ -1,18 +1,9 @@
-# filepath: /workspaces/vortfolio/app/sitemaps.py
 from django.contrib.sitemaps import Sitemap
-from django.urls import reverse, get_resolver
+from django.urls import reverse
 
-class DynamicSitemap(Sitemap):
-    priority = 0.8
-    changefreq = 'daily'
-
+class StaticSitemap(Sitemap):
     def items(self):
-        # Fetch all named URLs dynamically
-        url_names = [
-            name for name in get_resolver().reverse_dict.keys()
-            if isinstance(name, str)  # Ensure it's a named URL
-        ]
-        return url_names
-
+        return ['index', 'about', 'projects', 'services', 'contact', 'portfolio', 'learn', 'learning_sd', 'roadmap']
     def location(self, item):
         return reverse(item)
+    

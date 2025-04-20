@@ -361,25 +361,6 @@ def serve_txt_file(request):
     content = "bca6356bcc6f4e32986944a2297de9e7"
     return HttpResponse(content, content_type="text/plain")
 
-def dynamic_sitemap(request):
-    urls = []
-    for name in get_resolver().reverse_dict.keys():
-        if isinstance(name, str):  # Ensure it's a named URL
-            try:
-                # Attempt to reverse the URL
-                url = request.build_absolute_uri(reverse(name))
-                urls.append(f"<url><loc>{url}</loc></url>")
-            except NoReverseMatch:
-                # Skip URLs that require arguments
-                continue
-
-    sitemap_content = (
-        '<?xml version="1.0" encoding="UTF-8"?>'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-        f"{''.join(urls)}"
-        "</urlset>"
-    )
-    return HttpResponse(sitemap_content, content_type="application/xml")
 
 
 def html(request):
