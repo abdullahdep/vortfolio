@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ {% include 'components/head.html' %}
+</head>
+<header>
+{% include 'components/header.html' %}
+</header>
+
+<main>
+    <!-- Header -->
+ {% block content %}
+        {% endblock %}
+    <!-- Footer -->
+
+</main>
+{% include 'components/footer.html' %}
+
+</html>

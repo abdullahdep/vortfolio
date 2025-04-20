@@ -34,6 +34,8 @@ urlpatterns = [
     # path('robots.txt', robots_txt, name='robots_txt'),
     path("ads.txt", ads_txt, name="ads_txt"),
     path('privacy-policy', privacy_policy, name='privacy_policy'),
+    path('pages/', include('wpfront.urls')),
+
 
 
 ]

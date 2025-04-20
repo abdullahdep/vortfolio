@@ -1,37 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {% block meta %}
-    <title> {{title}} </title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="{{description}}">
-    <meta name="keywords" content="{{keywords}}">
-    <meta name="author" content="{{author}}">
-
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="{{og_title}}">
-    <meta property="og:description" content="{{og_description}}">
-    <meta property="og:image" content="{{og_image}}">
-    <meta property="og:image:alt" content="{{og_image_alt}}">
-    <meta property="og:url" content="https://vortfolio.icu">
-    <meta property="og:site_name" content="{{og_site_name}}">
-    <meta property="og:type" content="{{og_type}}">
-
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="{{twitter_card}}">
-    <meta name="twitter:title" content="{{twitter_title}}">
-    <meta name="twitter:description" content="{{twitter_description}}">
-
-    <meta name="twitter:image:alt" content="{{twitter_image_alt}}">
-    <meta name="twitter:image" content="twitter_image">
-    <meta name="twitter:url" content="{{twitter_url}}">
-
-    {% endblock %}
+{% include 'components/head.html' %}
+    
 <style>
         body {
             font-family: Arial, sans-serif;
@@ -169,5 +137,3 @@
     <footer>
         <p>&copy; 2025 Vortfolio.icu. All rights reserved.</p>
     </footer>
-</body>
-</html>
