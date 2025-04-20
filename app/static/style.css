@@ -1539,12 +1539,7 @@ a {
         .project-item h3 { font-size: 1.2rem; }    
     }
 
-main{
-    margin-top: 80px; /* Adjust this value based on your navbar height */
-    padding: none;
-    background-color: #f8f9fa;
-    min-height: calc(100vh - 80px); /* Adjust this value based on your navbar height */
-}
+
 
 .carousel-caption {
     position: absolute;
