@@ -7,7 +7,7 @@ class DynamicSitemap(Sitemap):
     changefreq = 'daily'
 
     def items(self):
-        # Dynamically fetch all named URLs
+        # Fetch all named URLs dynamically
         url_names = [
             name for name in get_resolver().reverse_dict.keys()
             if isinstance(name, str)  # Ensure it's a named URL
