@@ -23,4 +23,8 @@ urlpatterns = [
     path('sitemap_index.xml', views.dynamic_sitemap, name='dynamic_sitemap'),
     path('robots.txt', views.robots_txt, name='robots_txt'),
     path('html', views.html, name='html'),
+    path('appdev', views.appdev, name='appdev'),
+    path('webdev', views.webdev, name='webdev'),
+    path('uiux', views.uiux, name='uiux'),
+    path('aidev', views.aidev, name='aidev'),
 ]

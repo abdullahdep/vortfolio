@@ -404,3 +404,99 @@ def html(request):
 
     }
     return render(request, "Services/html.html", context)
+
+
+def appdev(request):
+    context = {
+        'title': 'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'keywords':'Vortfolio, HTML, Web Development, Coding, Tutorials',
+
+        'og_title':'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'og_description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'og_image_alt':'HTML Guide',
+        'og_type': 'website',
+        'og_url': request.build_absolute_uri(),
+        #twitter card
+        'twitter_card': 'summary_large_image',
+        'twitter_title': 'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'twitter_description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'twitter_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'twitter_image_alt':'HTML Guide',
+        'twitter_url': request.build_absolute_uri(),
+
+    }
+    return render(request, "app-development.html", context)
+
+
+
+def uiux(request):
+    context = {
+        'title': 'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'keywords':'Vortfolio, HTML, Web Development, Coding, Tutorials',
+
+        'og_title':'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'og_description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'og_image_alt':'HTML Guide',
+        'og_type': 'website',
+        'og_url': request.build_absolute_uri(),
+        #twitter card
+        'twitter_card': 'summary_large_image',
+        'twitter_title': 'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'twitter_description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'twitter_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'twitter_image_alt':'HTML Guide',
+        'twitter_url': request.build_absolute_uri(),
+
+    }
+    return render(request, "ui-ux-designs.html", context)
+
+
+def webdev(request):
+    context = {
+        'title': 'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'keywords':'Vortfolio, HTML, Web Development, Coding, Tutorials',
+
+        'og_title':'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'og_description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'og_image_alt':'HTML Guide',
+        'og_type': 'website',
+        'og_url': request.build_absolute_uri(),
+        #twitter card
+        'twitter_card': 'summary_large_image',
+        'twitter_title': 'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'twitter_description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'twitter_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'twitter_image_alt':'HTML Guide',
+        'twitter_url': request.build_absolute_uri(),
+
+    }
+    return render(request, "web-development.html", context)
+
+def aidev(request):
+    context = {
+        'title': 'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'keywords':'Vortfolio, HTML, Web Development, Coding, Tutorials',
+
+        'og_title':'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'og_description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'og_image_alt':'HTML Guide',
+        'og_type': 'website',
+        'og_url': request.build_absolute_uri(),
+        #twitter card
+        'twitter_card': 'summary_large_image',
+        'twitter_title': 'HTML – Vortfolio | Learn HTML Basics and Beyond',
+        'twitter_description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
+        'twitter_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'twitter_image_alt':'HTML Guide',
+        'twitter_url': request.build_absolute_uri(),
+
+    }
+    return render(request, "ai-development.html", context)
