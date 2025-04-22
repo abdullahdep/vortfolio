@@ -1,0 +1,107 @@
+<!-- HTML -->
+<div class="custom-cursor">
+    <div class="cursor-inner"></div>
+    <div class="cursor-outer"></div>
+  </div>
+  
+  <style>
+    body {
+      cursor: none;
+      background: #ebe7e7;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      
+      pointer-events: none;
+      z-index: 9999;
+      width: 0;
+      height: 0;
+    }
+  
+    .cursor-inner, .cursor-outer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+  
+    .cursor-inner {
+      width: 7px;
+      height: 7px;
+      background-color: rgba(10, 209, 116, 0.932);
+      border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+      box-shadow: 0 0 15px rgb(25, 0, 255);
+      mix-blend-mode: difference;
+    }
+  
+    .cursor-outer {
+      width: 25px;
+      height: 25px;
+      border: 2px solid rgb(0, 119, 255);
+      border-radius: 45%;
+      box-shadow: 130px rgba(0, 217, 255, 0.2);
+    }
+  
+    /* Hover effect */
+    .custom-cursor.hovering .cursor-inner {
+      background-color: black;
+      box-shadow: 20px rgba(0, 0, 0, 0.7);
+      border-radius: 50% 40% 60% 40% / 40% 60% 50% 60%;
+    }
+  
+    .custom-cursor.hovering .cursor-outer {
+      border-color: rgba(0, 0, 0, 0.3);
+      box-shadow: 12px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  
+  <!-- Example hover targets -->
+
+  
+  <!-- GSAP Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    const cursor = document.querySelector('.custom-cursor');
+    const inner = document.querySelector('.cursor-inner');
+    const outer = document.querySelector('.cursor-outer');
+    const hoverTargets = document.querySelectorAll('.hover-target');
+  
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+  
+    window.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+  
+    // Remove easing for instant movement
+    gsap.ticker.add(() => {
+      gsap.to(inner, {
+        x: mouseX,
+        y: mouseY,
+        ease: "none" // No easing
+      });
+  
+      gsap.to(outer, {
+        x: mouseX,
+        y: mouseY,
+        ease: "none" // No easing
+      });
+    });
+  
+    // Hover logic
+    hoverTargets.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursor.classList.add("hovering");
+      });
+      el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("hovering");
+      });
+    });
+  </script>
