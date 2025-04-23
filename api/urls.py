@@ -38,6 +38,8 @@ urlpatterns = [
     path("ads.txt", ads_txt, name="ads_txt"),
     path('privacy-policy', privacy_policy, name='privacy_policy'),
     path('pages/', include('wpfront.urls')),
+    path('accounts/', include('allauth.urls')),
+
 
 
 
