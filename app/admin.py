@@ -10,11 +10,3 @@ class ConsultationRequestAdmin(admin.ModelAdmin):
 # Register your models here.
 
 
-
-# myapp/admin.py or any admin.py
-from django.contrib import admin
-from django.contrib.sites.models import Site
-
-@admin.register(Site)
-class SiteAdmin(admin.ModelAdmin):
-    list_display = ('vortfolio.icu', 'Vortfolio')
