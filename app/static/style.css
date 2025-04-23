@@ -1557,7 +1557,6 @@ a {
 }
 .carousel-inner{
     height: 60vh; /* Full height of the viewport */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
     border-radius: 10px; /* Optional: Add rounded corners */
 }
 
