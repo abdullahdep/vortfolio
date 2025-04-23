@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 #    'example',
+    'django.contrib.sites',
+
     "app",
     "auth_app",
     "template_partials",
@@ -61,6 +63,7 @@ INSTALLED_APPS = [
     
 
 ]
+SITE_ID = 1
 
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {

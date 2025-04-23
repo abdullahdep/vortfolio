@@ -8,3 +8,13 @@ class ConsultationRequestAdmin(admin.ModelAdmin):
     search_fields = ('first_name', 'last_name', 'company_email', 'company_name')
     readonly_fields = ('created_at', 'updated_at')
 # Register your models here.
+
+
+
+# myapp/admin.py or any admin.py
+from django.contrib import admin
+from django.contrib.sites.models import Site
+
+@admin.register(Site)
+class SiteAdmin(admin.ModelAdmin):
+    list_display = ('vortfolio.icu', 'Vortfolio')
