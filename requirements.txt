@@ -5,3 +5,5 @@ django-template-partials
 django-livereload-server
 PyMySQL
 requests
+django-allauth[socialaccount]
+django-environ
