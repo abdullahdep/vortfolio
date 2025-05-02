@@ -8,13 +8,15 @@
 {% include 'components/header.html' %}
 </header>
 {% include 'components/cursor.html' %}
-<main>
+<body>
+    {% include 'components/body.html' %}
+
     <!-- Header -->
  {% block content %}
         {% endblock %}
     <!-- Footer -->
 
-</main>
+</body>
 {% include 'components/footer.html' %}
 
 </html>
