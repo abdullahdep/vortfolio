@@ -1,0 +1,741 @@
+{% extends 'components/layout.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Huawei-inspired color palette */
+            --primary: #0078ff;
+            --primary-light: #e0f0ff;
+            --primary-dark: #0055cc;
+            --secondary: #00c3ff;
+            --accent: #ff6b00;
+            
+            /* Neutral colors */
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            
+            /* Base colors */
+            --white: #ffffff;
+            --black: #000000;
+            --background: #f0f5ff;
+            --background-gradient-end: #f9f9ff;
+            
+            /* Material Design elevation */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            
+            /* Border radius */
+            --radius-sm: 0.125rem;
+            --radius: 0.25rem;
+            --radius-md: 0.375rem;
+            --radius-lg: 0.5rem;
+            --radius-xl: 0.75rem;
+            --radius-2xl: 1rem;
+            --radius-3xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Spacing */
+            --spacing-1: 0.25rem;
+            --spacing-2: 0.5rem;
+            --spacing-3: 0.75rem;
+            --spacing-4: 1rem;
+            --spacing-5: 1.25rem;
+            --spacing-6: 1.5rem;
+            --spacing-8: 2rem;
+            --spacing-10: 2.5rem;
+            --spacing-12: 3rem;
+            --spacing-16: 4rem;
+            --spacing-20: 5rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--gray-800);
+            background: linear-gradient(135deg, var(--background), var(--background-gradient-end));
+            min-height: 100vh;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-8) var(--spacing-4);
+        }
+        
+        @media (min-width: 768px) {
+            main {
+                padding: var(--spacing-12) var(--spacing-6);
+            }
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--gray-800);
+        }
+        
+        h1 {
+            font-size: 2.25rem;
+            margin-bottom: var(--spacing-6);
+            color: var(--gray-900);
+            position: relative;
+            padding-bottom: var(--spacing-4);
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: var(--radius-full);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-top: var(--spacing-10);
+            margin-bottom: var(--spacing-4);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--primary);
+            margin-right: var(--spacing-3);
+            border-radius: var(--radius);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            margin-top: var(--spacing-8);
+            margin-bottom: var(--spacing-3);
+            color: var(--gray-700);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-5);
+            color: var(--gray-700);
+        }
+        
+        ul {
+            list-style-position: outside;
+            margin-bottom: var(--spacing-5);
+            padding-left: var(--spacing-6);
+        }
+        
+        li {
+            margin-bottom: var(--spacing-2);
+            color: var(--gray-700);
+        }
+        
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875em;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 0.2em 0.4em;
+            border-radius: var(--radius);
+        }
+        
+        pre {
+            background-color: var(--gray-50);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-4);
+            overflow-x: auto;
+            margin-bottom: var(--spacing-6);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-200);
+        }
+        
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            color: var(--gray-800);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-6) 0;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+        
+        th, td {
+            padding: var(--spacing-3) var(--spacing-4);
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 500;
+        }
+        
+        tr:nth-child(even) {
+            background-color: var(--gray-50);
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--primary-light), transparent);
+            margin: var(--spacing-10) 0;
+        }
+        
+        .section {
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-6);
+            margin-bottom: var(--spacing-6);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .key-difference {
+            background-color: var(--primary-light);
+            padding: var(--spacing-4);
+            border-left: 4px solid var(--primary);
+            margin: var(--spacing-6) 0;
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+        }
+        
+        .summary-table {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .property-category {
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .property-category h3 {
+            color: var(--primary-dark);
+            border-bottom: 1px solid var(--gray-200);
+            padding-bottom: var(--spacing-2);
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: var(--spacing-2);
+        }
+        
+        @media (max-width: 768px) {
+            .property-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: var(--spacing-16);
+            color: var(--gray-500);
+            font-size: 0.9em;
+            padding-bottom: var(--spacing-8);
+        }
+        
+        /* Material Design inspired card hover effect */
+        .section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        
+        .section:hover::after {
+            opacity: 1;
+        }
+        
+        /* Huawei-inspired section numbering */
+        h2 strong {
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+        <h1>What We Learn When Learning CSS</h1>
+        
+        <p>Cascading Style Sheets (CSS) is the design language of the web. While HTML builds the structure, CSS gives it style, form, and beauty. When we learn CSS, we're not just learning how to make a website look nice — we're learning how to create user-friendly, accessible, and responsive experiences. Here's a breakdown of what we typically learn while studying CSS:</p>
+        
+        <hr>
+        
+        <div class="section">
+            <h2>1. <strong>Selectors</strong></h2>
+            
+            <p>Selectors are used to target HTML elements that you want to style. From basic element selectors (<code>p</code>, <code>h1</code>) to class (<code>.class-name</code>), ID (<code>#id-name</code>), group, attribute, and pseudo selectors, CSS offers a wide range of options for applying styles exactly where they're needed.</p>
+        </div>
+        
+        <div class="section">
+            <h2>2. <strong>Attributes and Properties</strong></h2>
+            
+            <p>In CSS, properties (also called attributes in some contexts) define how an element should be styled. Examples include:</p>
+            
+            <ul>
+                <li><code>color</code>: Sets the text color.</li>
+                <li><code>background-color</code>: Changes the background.</li>
+                <li><code>margin</code> and <code>padding</code>: Adjust spacing.</li>
+                <li><code>font-size</code>, <code>font-weight</code>, and <code>font-family</code>: Style text appearance.</li>
+            </ul>
+            
+            <p>Each property modifies a specific aspect of an element's presentation.</p>
+        </div>
+        
+        <div class="section">
+            <h2>3. <strong>The Box Model</strong></h2>
+            
+            <p>The CSS box model explains how every HTML element is a box composed of:</p>
+            
+            <ul>
+                <li><strong>Content</strong> (the actual text/image)</li>
+                <li><strong>Padding</strong> (space inside the border)</li>
+                <li><strong>Border</strong> (the line around the padding)</li>
+                <li><strong>Margin</strong> (space outside the border)</li>
+            </ul>
+            
+            <p>Understanding this model is essential for layout control.</p>
+        </div>
+        
+        <div class="section">
+            <h2>4. <strong>Pseudo-classes vs. Pseudo-elements</strong></h2>
+            
+            <ul>
+                <li>
+                    <p><strong>Pseudo-classes</strong> apply styles based on the <strong>state or condition</strong> of an element. They trigger the <strong>entire selector</strong> (the whole element).</p>
+                    
+                    <p><strong>Example:</strong></p>
+                    
+                    <pre><code>li:hover {
+  background-color: yellow;
+}</code></pre>
+                    
+                    <p>Here, the entire <code>&lt;li&gt;</code> gets highlighted when hovered.</p>
+                </li>
+                
+                <li>
+                    <p><strong>Pseudo-elements</strong> target <strong>only part of the content</strong> within an element, such as the first letter, line, or word.</p>
+                    
+                    <p><strong>Example:</strong></p>
+                    
+                    <pre><code>li::first-line {
+  color: red;
+}</code></pre>
+                    
+                    <p>Only the <strong>first line</strong> of the <code>&lt;li&gt;</code> is affected.</p>
+                </li>
+            </ul>
+            
+            <div class="key-difference">
+                <p><strong>Key Difference:</strong></p>
+                <ul>
+                    <li><code>:pseudo-class</code> → affects the <strong>entire element</strong> based on condition or state</li>
+                    <li><code>::pseudo-element</code> → affects <strong>a specific part</strong> of the element's content</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>5. <strong>Positioning and Layouts</strong></h2>
+            
+            <p>We learn various layout techniques:</p>
+            
+            <ul>
+                <li><code>static</code>, <code>relative</code>, <code>absolute</code>, <code>fixed</code>, and <code>sticky</code> positioning</li>
+                <li><code>float</code> and <code>clear</code> methods</li>
+                <li>Modern layout systems like <strong>Flexbox</strong> and <strong>CSS Grid</strong>, which provide powerful tools to design responsive interfaces.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>6. <strong>@media Queries</strong></h2>
+            
+            <p>Media queries allow us to create <strong>responsive designs</strong> by applying styles based on screen size, resolution, or device type.</p>
+            
+            <p><strong>Example:</strong></p>
+            
+            <pre><code>@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}</code></pre>
+        </div>
+        
+        <div class="section">
+            <h2>7. <strong>@keyframes and Animations</strong></h2>
+            
+            <p>CSS animations bring life to web pages. The <code>@keyframes</code> rule defines the stages of an animation sequence.</p>
+            
+            <p><strong>Example:</strong></p>
+            
+            <pre><code>@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.box {
+  animation: slideIn 1s ease-in-out;
+}</code></pre>
+        </div>
+        
+        <div class="section">
+            <h2>8. <strong>Transitions and Effects</strong></h2>
+            
+            <p>We learn how to smoothly change property values using <code>transition</code>.</p>
+            
+            <p><strong>Example:</strong></p>
+            
+            <pre><code>button {
+  background-color: blue;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darkblue;
+}</code></pre>
+        </div>
+        
+        <div class="section">
+            <h2>9. <strong>Best Practices</strong></h2>
+            
+            <p>While learning CSS, we also pick up techniques that make our code cleaner and more maintainable:</p>
+            
+            <ul>
+                <li>Using semantic class names</li>
+                <li>Applying modular or component-based styles</li>
+                <li>Organizing code logically</li>
+                <li>Avoiding over-specific selectors</li>
+                <li>Following naming conventions like <strong>BEM</strong></li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>10. <strong>CSS Frameworks: Bootstrap vs. Tailwind CSS</strong></h2>
+            
+            <p>As we learn CSS, we often explore <strong>CSS frameworks</strong> to speed up development and follow design best practices. Two of the most popular frameworks are <strong>Bootstrap</strong> and <strong>Tailwind CSS</strong>, but they differ significantly in their approach to styling.</p>
+            
+            <h3><strong>Bootstrap</strong></h3>
+            
+            <ul>
+                <li><strong>Component-Based</strong>: Bootstrap provides pre-designed UI components like buttons, modals, navbars, and grids.</li>
+                
+                <li>
+                    <p><strong>Class Names Represent UI Components or Roles</strong></p>
+                    <p>Example:</p>
+                    
+                    <pre><code>&lt;button class="btn btn-primary"&gt;Click Me&lt;/button&gt;</code></pre>
+                    
+                    <ul>
+                        <li><code>btn</code> is a generic button style</li>
+                        <li><code>btn-primary</code> applies primary theme color</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Abstracted from raw CSS properties</strong>: You use high-level classes, not the exact CSS styles (like <code>color</code> or <code>padding</code>) in the class names.</li>
+            </ul>
+            
+            <h3><strong>Tailwind CSS</strong></h3>
+            
+            <ul>
+                <li><strong>Utility-First</strong>: Tailwind focuses on <strong>utility classes</strong> that map directly to <strong>CSS properties and values</strong>.</li>
+                
+                <li>
+                    <p><strong>Class Names Represent CSS Rules</strong></p>
+                    <p>Example:</p>
+                    
+                    <pre><code>&lt;button class="bg-blue-500 text-white px-4 py-2 rounded"&gt;Click Me&lt;/button&gt;</code></pre>
+                    
+                    <ul>
+                        <li><code>bg-blue-500</code> = <code>background-color</code></li>
+                        <li><code>text-white</code> = <code>color</code></li>
+                        <li><code>px-4</code>, <code>py-2</code> = <code>padding</code></li>
+                        <li><code>rounded</code> = <code>border-radius</code></li>
+                    </ul>
+                </li>
+                
+                <li><strong>Highly Customizable</strong>: Tailwind promotes designing from scratch using low-level utilities, giving more design freedom and consistency.</li>
+            </ul>
+            
+            <h3><strong>Summary:</strong></h3>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Bootstrap</th>
+                        <th>Tailwind CSS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Approach</td>
+                        <td>Component-based</td>
+                        <td>Utility-first</td>
+                    </tr>
+                    <tr>
+                        <td>Class Meaning</td>
+                        <td>Abstract UI roles (<code>btn</code>, <code>card</code>)</td>
+                        <td>CSS properties (<code>bg-red-500</code>, <code>p-4</code>)</td>
+                    </tr>
+                    <tr>
+                        <td>Customization</td>
+                        <td>Limited without overriding</td>
+                        <td>Fully customizable via config</td>
+                    </tr>
+                    <tr>
+                        <td>Design Freedom</td>
+                        <td>Faster with default styles</td>
+                        <td>More control with utility classes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>11. <strong>Commonly Used CSS Properties (Attributes)</strong></h2>
+            
+            <div class="property-category">
+                <h3><strong>Text and Font</strong></h3>
+                
+                <div class="property-grid">
+                    <div><code>color</code></div>
+                    <div><code>font-size</code></div>
+                    <div><code>font-family</code></div>
+                    <div><code>font-weight</code></div>
+                    <div><code>font-style</code></div>
+                    <div><code>text-align</code></div>
+                    <div><code>text-decoration</code></div>
+                    <div><code>text-transform</code></div>
+                    <div><code>letter-spacing</code></div>
+                    <div><code>line-height</code></div>
+                    <div><code>word-spacing</code></div>
+                    <div><code>direction</code></div>
+                    <div><code>white-space</code></div>
+                </div>
+            </div>
+            
+            <div class="property-category">
+                <h3><strong>Box Model</strong></h3>
+                
+                <div class="property-grid">
+                    <div><code>width</code></div>
+                    <div><code>height</code></div>
+                    <div><code>max-width</code></div>
+                    <div><code>max-height</code></div>
+                    <div><code>min-width</code></div>
+                    <div><code>min-height</code></div>
+                    <div><code>margin</code></div>
+                    <div><code>margin-top</code></div>
+                    <div><code>margin-right</code></div>
+                    <div><code>margin-bottom</code></div>
+                    <div><code>margin-left</code></div>
+                    <div><code>padding</code></div>
+                    <div><code>padding-top</code></div>
+                    <div><code>padding-right</code></div>
+                    <div><code>padding-bottom</code></div>
+                    <div><code>padding-left</code></div>
+                    <div><code>border</code></div>
+                    <div><code>border-width</code></div>
+                    <div><code>border-style</code></div>
+                    <div><code>border-color</code></div>
+                    <div><code>box-sizing</code></div>
+                </div>
+            </div>
+            
+            <div class="property-category">
+                <h3><strong>Backgrounds</strong></h3>
+                
+                <div class="property-grid">
+                    <div><code>background-color</code></div>
+                    <div><code>background-image</code></div>
+                    <div><code>background-position</code></div>
+                    <div><code>background-size</code></div>
+                    <div><code>background-repeat</code></div>
+                    <div><code>background-attachment</code></div>
+                    <div><code>background-clip</code></div>
+                </div>
+            </div>
+            
+            <div class="property-category">
+                <h3><strong>Positioning and Layout</strong></h3>
+                
+                <div class="property-grid">
+                    <div><code>position</code></div>
+                    <div><code>top</code></div>
+                    <div><code>right</code></div>
+                    <div><code>bottom</code></div>
+                    <div><code>left</code></div>
+                    <div><code>z-index</code></div>
+                    <div><code>display</code></div>
+                    <div><code>visibility</code></div>
+                    <div><code>overflow</code></div>
+                    <div><code>overflow-x</code></div>
+                    <div><code>overflow-y</code></div>
+                    <div><code>float</code></div>
+                    <div><code>clear</code></div>
+                    <div><code>clip-path</code></div>
+                </div>
+            </div>
+            
+            <div class="property-category">
+                <h3><strong>Flexbox and Grid</strong></h3>
+                
+                <div class="property-grid">
+                    <div><code>display: flex</code></div>
+                    <div><code>flex-direction</code></div>
+                    <div><code>flex-wrap</code></div>
+                    <div><code>justify-content</code></div>
+                    <div><code>align-items</code></div>
+                    <div><code>align-content</code></div>
+                    <div><code>flex-grow</code></div>
+                    <div><code>flex-shrink</code></div>
+                    <div><code>flex-basis</code></div>
+                    <div><code>gap</code></div>
+                    <div><code>display: grid</code></div>
+                    <div><code>grid-template-columns</code></div>
+                    <div><code>grid-template-rows</code></div>
+                    <div><code>grid-gap</code></div>
+                    <div><code>grid-area</code></div>
+                    <div><code>place-items</code></div>
+                </div>
+            </div>
+            
+            <div class="property-category">
+                <h3><strong>Typography and Decoration</strong></h3>
+                
+                <div class="property-grid">
+                    <div><code>list-style</code></div>
+                    <div><code>list-style-type</code></div>
+                    <div><code>list-style-position</code></div>
+                    <div><code>quotes</code></div>
+                </div>
+            </div>
+            
+            <div class="property-category">
+                <h3><strong>Colors and Effects</strong></h3>
+                
+                <div class="property-grid">
+                    <div><code>opacity</code></div>
+                    <div><code>box-shadow</code></div>
+                    <div><code>text-shadow</code></div>
+                    <div><code>filter</code></div>
+                </div>
+            </div>
+            
+            <div class="property-category">
+                <h3><strong>Transitions and Animations</strong></h3>
+                
+                <div class="property-grid">
+                    <div><code>transition</code></div>
+                    <div><code>transition-property</code></div>
+                    <div><code>transition-duration</code></div>
+                    <div><code>transition-timing-function</code></div>
+                    <div><code>animation</code></div>
+                    <div><code>animation-name</code></div>
+                    <div><code>animation-duration</code></div>
+                    <div><code>animation-delay</code></div>
+                    <div><code>animation-iteration-count</code></div>
+                    <div><code>animation-direction</code></div>
+                    <div><code>animation-timing-function</code></div>
+                </div>
+            </div>
+            
+            <div class="property-category">
+                <h3><strong>Transformations</strong></h3>
+                
+                <div class="property-grid">
+                    <div><code>transform</code></div>
+                    <div><code>rotate()</code></div>
+                    <div><code>scale()</code></div>
+                    <div><code>translate()</code></div>
+                    <div><code>skew()</code></div>
+                </div>
+            </div>
+            
+            <div class="property-category">
+                <h3><strong>Media and Responsive</strong></h3>
+                
+                <div class="property-grid">
+                    <div><code>@media</code></div>
+                    <div><code>@supports</code></div>
+                </div>
+            </div>
+            
+            <div class="property-category">
+                <h3><strong>Miscellaneous</strong></h3>
+                
+                <div class="property-grid">
+                    <div><code>cursor</code></div>
+                    <div><code>pointer-events</code></div>
+                    <div><code>visibility</code></div>
+                    <div><code>user-select</code></div>
+                    <div><code>resize</code></div>
+                    <div><code>content</code></div>
+                    <div><code>outline</code></div>
+                    <div><code>outline-offset</code></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Final Thoughts</h2>
+            
+            <p>Learning CSS means gaining control over the <strong>visual language of the web</strong>. It's a blend of logic and creativity — empowering you to build attractive, responsive, and interactive user experiences. Whether you're crafting a simple landing page or a complex web app, CSS is essential for making your content shine.</p>
+        </div>
+
+
+        {% endblock content %}
+     
