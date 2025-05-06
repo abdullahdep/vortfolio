@@ -390,7 +390,7 @@ def html(request):
 
         'og_title':'HTML – Vortfolio | Learn HTML Basics and Beyond',
         'og_description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
-        'og_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'og_image':'https://lh3.googleusercontent.com/pw/AP1GczNQtl4jq0_KvSNForDs2G7k7nurE0k48-4wQBWLJ-fN41WyXur-d_NXnuKer1lLZ8aVKu43M8Bs6uoU5ANoIS0Ce-3Nk8y9PKN8oXjq0I_uwVG0DPYduFFw22tAxC9LDJTdEKnv8vrvL3yOT2pIqNK0=w700-h420-s-no-gm?authuser=0',
         'og_image_alt':'HTML Guide',
         'og_type': 'website',
         'og_url': request.build_absolute_uri(),
@@ -398,7 +398,7 @@ def html(request):
         'twitter_card': 'summary_large_image',
         'twitter_title': 'HTML – Vortfolio | Learn HTML Basics and Beyond',
         'twitter_description':'Master HTML with Vortfolio’s beginner-friendly guides, tutorials, and projects. Start coding your web pages today!',
-        'twitter_image':'https://lh3.googleusercontent.com/pw/AP1GczPbTAZex5suqg2OTqAEB4mUhR2QzwDNSxgzWFuDi5H6GuDk8aI4zSo6JVddIAYzhB7pAwUVtDEF2kGGT_flUpQsB8-Tp2YXRcgYYJhdBg7bPNHdlaI5SgtmrFtPmQnQgPKjN3ZhRszmzyP9VR_6kN0=w575-h429-s-no-gm?authuser=0',
+        'twitter_image':'https://lh3.googleusercontent.com/pw/AP1GczNQtl4jq0_KvSNForDs2G7k7nurE0k48-4wQBWLJ-fN41WyXur-d_NXnuKer1lLZ8aVKu43M8Bs6uoU5ANoIS0Ce-3Nk8y9PKN8oXjq0I_uwVG0DPYduFFw22tAxC9LDJTdEKnv8vrvL3yOT2pIqNK0=w700-h420-s-no-gm?authuser=0',
         'twitter_image_alt':'HTML Guide',
         'twitter_url': request.build_absolute_uri(),
 
