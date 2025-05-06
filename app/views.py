@@ -500,3 +500,31 @@ def aidev(request):
 
     }
     return render(request, "ai-development.html", context)
+
+
+def css(request):
+    
+    context = {
+        'title': 'Mastering CSS: Styling the Web with Precision',
+        'description':'Learn CSS with this complete guide to styling web pages, responsive layouts, and modern web design techniques. Ideal for beginners and developers.',
+        'keywords':'CSS tutorial, learn CSS, what is CSS, CSS for beginners, CSS examples, CSS layout, responsive design CSS, Flexbox CSS, CSS Grid layout, CSS styling, web design CSS, modern CSS techniques, HTML and CSS, Cascading Style Sheets, front-end development, web development, CSS animations, CSS best practices, CSS tips and tricks, CSS selectors',
+        'og_title':'Mastering CSS: Styling the Web with Precision',
+        'og_description':'Learn CSS with this complete guide to styling web pages, responsive layouts, and modern web design techniques. Ideal for beginners and developers.',
+        'og_image':'https://lh3.googleusercontent.com/pw/AP1GczNAu6S1jiu6yEWFCyIFzFsk0t7zw4A1a1Vzxp8otdxDoZnIRX1DGyICFbK46S5BadGqujkZ247_R9P22e-dGZTPmxdeuvW6Yju65olxmeyxUkU1y15mlsMStDXjBZ4o4dK27LAy7b8kNHtWcQeuE7Gh=w607-h250-s-no-gm?authuser=0',
+        'og_image_alt':'Vortfolio',
+        'og_type': 'website',
+        'og_url': 'Vortfolio',
+
+        #twitter card
+        
+        'twitter_card': 'summary_large_image',
+        'twitter_title': 'Mastering CSS: Styling the Web with Precision',
+        'twitter_description': 'Learn CSS with this complete guide to styling web pages, responsive layouts, and modern web design techniques. Ideal for beginners and developers.',
+        'twitter_image': 'https://lh3.googleusercontent.com/pw/AP1GczNAu6S1jiu6yEWFCyIFzFsk0t7zw4A1a1Vzxp8otdxDoZnIRX1DGyICFbK46S5BadGqujkZ247_R9P22e-dGZTPmxdeuvW6Yju65olxmeyxUkU1y15mlsMStDXjBZ4o4dK27LAy7b8kNHtWcQeuE7Gh=w607-h250-s-no-gm?authuser=0',
+        'twitter_image_alt': 'Learn CSS',
+        'twitter_url': 'Vortfolio',
+        # 'twitter_card_type': 'summary_large_image',
+        
+
+    }
+    return render(request, "css.html" ,context)
