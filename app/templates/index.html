@@ -172,11 +172,12 @@
         }
         @media (max-width: 991.98px) {
             .hero-section {
-                padding: 4rem 0 2rem 0;
+                padding: 3rem 0 1.5rem 0;
+                min-height: unset;
             }
             .hero-content {
                 text-align: center;
-                padding: 2rem 0;
+                padding: 1.5rem 0;
             }
             .hero-image {
                 width: 70%;
@@ -205,13 +206,32 @@
             }
             .client-stats {
                 justify-content: center;
-                gap: 2rem;
-                margin-top: 2rem;
+                gap: 1.2rem;
+                margin-top: 1.5rem;
+                flex-wrap: wrap;
             }
             .client-stats > div {
                 text-align: center;
-                flex: 0 0 auto;
-                width: 28%;
+                flex: 0 0 45%;
+                margin-bottom: 1rem;
+            }
+            .badge.bg-primary {
+                font-size: 0.95rem;
+                padding: 0.5em 1em;
+            }
+            .display-4 {
+                font-size: 2rem;
+            }
+            .lead {
+                font-size: 1rem;
+            }
+            .floating-card {
+                min-width: unset;
+                font-size: 0.95rem;
+                padding: 1em 1em;
+            }
+            .position-absolute.d-none.d-lg-block {
+                display: none !important;
             }
         }
         @media (min-width: 992px) {
@@ -411,20 +431,98 @@
             pointer-events: none;
         }
 
-        /* Responsive tweaks */
-        @media (max-width: 767.98px) {
-            .scrollspy-example {
-                padding: 1em 0.5em;
-            }
-            .project-nav {
-                margin-bottom: 2em;
-            }
+        /* Responsive tweaks for accordion and projects */
+        @media (max-width: 991.98px) {
             .section-header h2 {
                 font-size: 1.5rem;
             }
             .divider {
                 width: 40px;
                 height: 3px;
+            }
+            .projects-section {
+                padding: 1.5rem 0;
+            }
+            .project-nav {
+                margin-bottom: 1.5em;
+                position: static !important;
+            }
+            .scrollspy-example {
+                padding: 1em 0.5em;
+                min-height: 200px;
+            }
+            .project-item h3 {
+                font-size: 1.15rem;
+            }
+        }
+
+        /* Make ads responsive */
+        @media (max-width: 1200px) {
+            .adsbygoogle[style] {
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+                height: 50px !important;
+            }
+        }
+
+        /* General improvements */
+        @media (max-width: 575.98px) {
+            .hero-image {
+                width: 95%;
+            }
+            .hero-content {
+                padding: 1rem 0.2rem;
+            }
+            .scrollspy-example {
+                padding: 0.5em 0.2em;
+            }
+            .floating-card {
+                font-size: 0.9rem;
+                padding: 0.8em 0.8em;
+            }
+        }
+
+        /* Mobile Image Container Interactivity */
+        @media (max-width: 991.98px) {
+            .hero-image-wrapper {
+                position: relative;
+                width: 100%;
+                padding: 1rem;
+                perspective: 1000px;
+            }
+
+            .hero-image {
+                width: 70%;
+                margin: 0 auto;
+                transform-style: preserve-3d;
+                transition: transform 0.3s ease;
+            }
+
+            .hero-image img {
+                width: 100%;
+                border-radius: 20px;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+                transition: all 0.3s ease;
+            }
+
+            .hero-image.active img {
+                transform: scale(1.02);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            .floating-card {
+                position: relative !important;
+                width: 85% !important;
+                margin: -30px auto 0 !important;
+                backdrop-filter: blur(10px);
+                background: rgba(255, 255, 255, 0.95);
+                transform: translateY(0);
+                transition: all 0.3s ease;
+            }
+
+            .floating-card.active {
+                transform: translateY(-10px);
             }
         }
     </style>
@@ -477,18 +575,21 @@
             </div>
             <!-- image container-->
             <div class="col-lg-6 order-lg-2 order-1 mb-lg-0 mb-5">
-                <div class="hero-image position-relative">
-                    <img src="https://lh3.googleusercontent.com/pw/AP1GczOC21vN7RWv410xhpnDzvV6cucXeZfp0_ovUCHKz05x1uylXuV7oVGx6JLjtz9pMLtsrToBBumvU8Wnl4MRKCGVig3LJbVYMCN7XpGzJT1wemgQWO1AXBFzyKIOTjmTrJ6c1geyA5VNCxZgK1_Mbi0=w948-h633-s-no-gm" 
-                         class="img-fluid rounded-3 shadow-lg" 
-                         alt="Hero Image">
-                    <div class="floating-card bg-white p-3 rounded shadow-lg position-absolute" style="bottom: 30px; right: -20px">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczOC21vN7RWv410xhpnDzvV6cucXeZfp0_ovUCHKz05x1uylXuV7oVGx6JLjtz9pMLtsrToBBumvU8Wnl4MRKCGVig3LJbVYMCN7XpGzJT1wemgQWO1AXBFzyKIOTjmTrJ6c1geyA5VNCxZgK1_Mbi0=w948-h633-s-no-gm" 
+                             class="img-fluid" 
+                             alt="Hero Image"
+                             >
+                    </div>
+                    <div class="floating-card">
                         <div class="d-flex align-items-center">
                             <div class="icon-circle bg-primary text-white me-3">
                                 <i class="fas fa-code"></i>
                             </div>
                             <div>
                                 <h6 class="mb-1">Modern Tech Stack</h6>
-                                <p class="mb-0 small">React, Django, AI & More</p>
+                                <p class="mb-0 small">React, Django, AI & More </p>
                             </div>
                         </div>
                     </div>
@@ -1049,6 +1150,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', triggerCounters);
     triggerCounters(); // in case already in view
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const heroImage = document.querySelector('.hero-image');
+    const floatingCard = document.querySelector('.floating-card');
+    let touchStartY = 0;
+    let touchStartX = 0;
+
+    // Touch handling for tilt effect
+    heroImage.addEventListener('touchstart', function(e) {
+        touchStartY = e.touches[0].clientY;
+        touchStartX = e.touches[0].clientX;
+        heroImage.classList.add('active');
+        floatingCard.classList.add('active');
+    });
+
+    heroImage.addEventListener('touchmove', function(e) {
+        if (!touchStartY) return;
+
+        const touchY = e.touches[0].clientY;
+        const touchX = e.touches[0].clientX;
+        
+        const deltaY = touchStartY - touchY;
+        const deltaX = touchStartX - touchX;
+        
+        const tiltY = deltaX * 0.1;
+        const tiltX = -deltaY * 0.1;
+
+        heroImage.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    });
+
+    ['touchend', 'touchcancel'].forEach(evt => 
+        heroImage.addEventListener(evt, function() {
+            touchStartY = null;
+            touchStartX = null;
+            heroImage.style.transform = '';
+            heroImage.classList.remove('active');
+            floatingCard.classList.remove('active');
+        })
+    );
+
+    // Add tap highlight effect
+    heroImage.addEventListener('click', function() {
+        heroImage.classList.add('active');
+        floatingCard.classList.add('active');
+        setTimeout(() => {
+            heroImage.classList.remove('active');
+            floatingCard.classList.remove('active');
+        }, 300);
+    });
 });
 </script>
 
