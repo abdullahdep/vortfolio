@@ -1,106 +1,32 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fdjango&demo-title=Django%20%2B%20Vercel&demo-description=Use%20Django%204%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fdjango-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994241/random/django.png)
+# Vortfolio.icu
 
-# Django + Vercel
+Welcome to **Vortfolio.icu**, a sleek and modern portfolio website designed to showcase your skills, projects, and professional journey. Whether you're a developer, designer, or creative professional, this platform offers a clean and intuitive interface to present your work to the world.:contentReference[oaicite:2]{index=2}
 
-This example shows how to use Django 4 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+---
 
-## Demo
+## 🚀 Features
 
-https://django-template.vercel.app/
+- **Responsive Design**: :contentReference[oaicite:4]{index=4}
+- **Project Showcase**: :contentReference[oaicite:7]{index=7}
+- **About Me Section**: :contentReference[oaicite:10]{index=10}
+- **Contact Form**: :contentReference[oaicite:13]{index=13}
+- **Blog Integration**: :contentReference[oaicite:16]{index=16}:contentReference[oaicite:18]{index=18}
 
-## How it Works
+---
 
-Our Django application, `example` is configured as an installed application in `api/settings.py`:
+## 🛠️ Tech Stack
 
-```python
-# api/settings.py
-INSTALLED_APPS = [
-    # ...
-    'example',
-]
-```
+- **Frontend**: :contentReference[oaicite:20]{index=20}
+- **Framework**: :contentReference[oaicite:23]{index=23}
+- **Hosting**: :contentReference[oaicite:26]{index=26}
+- **Version Control**: Git:contentReference[oaicite:30]{index=30}
 
-We allow "\*.vercel.app" subdomains in `ALLOWED_HOSTS`, in addition to 127.0.0.1:
+---
 
-```python
-# api/settings.py
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
-```
+## 📦 Installation
 
-The `wsgi` module must use a public variable named `app` to expose the WSGI application:
+1. **Clone the Repository**:
 
-```python
-# api/wsgi.py
-app = get_wsgi_application()
-```
-
-The corresponding `WSGI_APPLICATION` setting is configured to use the `app` variable from the `api.wsgi` module:
-
-```python
-# api/settings.py
-WSGI_APPLICATION = 'api.wsgi.app'
-```
-
-There is a single view which renders the current time in `example/views.py`:
-
-```python
-# example/views.py
-from datetime import datetime
-
-from django.http import HttpResponse
-
-
-def index(request):
-    now = datetime.now()
-    html = f'''
-    <html>
-        <body>
-            <h1>Hello from Vercel!</h1>
-            <p>The current time is { now }.</p>
-        </body>
-    </html>
-    '''
-    return HttpResponse(html)
-```
-
-This view is exposed a URL through `example/urls.py`:
-
-```python
-# example/urls.py
-from django.urls import path
-
-from example.views import index
-
-
-urlpatterns = [
-    path('', index),
-]
-```
-
-Finally, it's made accessible to the Django server inside `api/urls.py`:
-
-```python
-# api/urls.py
-from django.urls import path, include
-
-urlpatterns = [
-    ...
-    path('', include('example.urls')),
-]
-```
-
-This example uses the Web Server Gateway Interface (WSGI) with Django to enable handling requests on Vercel with Serverless Functions.
-
-## Running Locally
-
-```bash
-python manage.py runserver
-```
-
-Your Django application is now available at `http://localhost:8000`.
-
-## One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fdjango&demo-title=Django%20%2B%20Vercel&demo-description=Use%20Django%204%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fdjango-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994241/random/django.png)
+   ```bash
+   git clone https://github.com/your-username/vortfolio-icu.git
+   cd vortfolio-icu
