@@ -1,5 +1,3 @@
-
-
 <script defer src="https://cdn.vercel-insights.com/script.js" data-token="prj_HWtsm9SO122z7yr8rfJKzOJGheqV"></script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4959773968938981"
@@ -368,7 +366,39 @@
             });
         });
 
-
+        // --- Fix dual-tap issue for Services dropdown on touch devices ---
+        const servicesDropdown = document.getElementById('servicesDropdown');
+        if (servicesDropdown) {
+            let tapped = false;
+            servicesDropdown.addEventListener('touchend', function (e) {
+                const parentLi = servicesDropdown.closest('.dropdown');
+                const menu = parentLi ? parentLi.querySelector('.dropdown-menu') : null;
+                if (!menu) return;
+                if (!menu.classList.contains('show')) {
+                    // First tap: open dropdown, prevent navigation
+                    e.preventDefault();
+                    e.stopPropagation();
+                    // Close other open dropdowns
+                    document.querySelectorAll('.dropdown-menu.show').forEach(m => {
+                        if (m !== menu) m.classList.remove('show');
+                    });
+                    menu.classList.add('show');
+                    tapped = true;
+                } else {
+                    // Second tap: allow navigation
+                    tapped = false;
+                }
+            });
+            // Close dropdown on outside tap
+            document.addEventListener('touchstart', function (e) {
+                if (!servicesDropdown.contains(e.target)) {
+                    const parentLi = servicesDropdown.closest('.dropdown');
+                    const menu = parentLi ? parentLi.querySelector('.dropdown-menu') : null;
+                    if (menu) menu.classList.remove('show');
+                    tapped = false;
+                }
+            });
+        }
 
         function toggleDownsheet(menuId) {
             const menu = document.getElementById(menuId);
