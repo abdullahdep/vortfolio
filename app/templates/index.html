@@ -2,11 +2,6 @@
 {% load static %}
 
 {% block content %}
-
-
-
-
-
     <style>
         
            .carousel-indicators [data-bs-target] {
@@ -468,18 +463,32 @@
 
         /* General improvements */
         @media (max-width: 575.98px) {
-            .hero-image {
-                width: 95%;
+            .hero-section {
+                padding: 0.7rem 0 0.2rem 0 !important;
             }
             .hero-content {
-                padding: 1rem 0.2rem;
+                padding: 0.5rem 0.1rem !important;
+                margin-bottom: 0.5rem !important;
             }
-            .scrollspy-example {
-                padding: 0.5em 0.2em;
+            .hero-image-wrapper {
+                padding: 0.2rem 0 !important;
             }
             .floating-card {
-                font-size: 0.9rem;
-                padding: 0.8em 0.8em;
+                margin: 0.2rem auto !important;
+                padding: 0.5em 0.3em !important;
+            }
+            .projects-section {
+                padding: 0.5rem 0 !important;
+            }
+            .scrollspy-example {
+                padding: 0.3em 0.1em !important;
+                min-height: 120px !important;
+            }
+            .section-header {
+                margin-bottom: 0.3rem !important;
+            }
+            .divider {
+                margin-bottom: 0.5em !important;
             }
         }
 
@@ -525,6 +534,110 @@
                 transform: translateY(-10px);
             }
         }
+
+        /* Improved Mobile Styles */
+        @media (max-width: 991.98px) {
+            .hero-section {
+                padding: 1.5rem 0 0.5rem 0;
+                min-height: unset;
+            }
+            .hero-content {
+                text-align: center;
+                padding: 1rem 0.5rem;
+            }
+            .hero-image-wrapper {
+                padding: 0.5rem 0;
+                width: 100%;
+            }
+            .hero-image {
+                width: 100%;
+                margin: 0 auto 1rem auto;
+            }
+            .hero-image img {
+                width: 100%;
+                border-radius: 16px;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            }
+            .floating-card {
+                width: 100% !important;
+                margin: 0.5rem auto !important;
+                font-size: 1rem;
+                padding: 1em 0.5em;
+                box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.7rem;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                font-size: 1.1rem;
+                padding: 1em 0.5em;
+                margin-bottom: 0.5em;
+            }
+            .client-stats {
+                flex-wrap: wrap;
+                gap: 0.7rem;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+            .client-stats > div {
+                flex: 0 0 48%;
+                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+            .section-header h2 {
+                font-size: 1.3rem;
+                margin-bottom: 0.3em;
+            }
+            .divider {
+                width: 30px;
+                height: 2px;
+                margin-bottom: 1em;
+            }
+            .accordion-item {
+                margin-bottom: 0.7em;
+                border-radius: 0.7em;
+            }
+            .accordion-button {
+                font-size: 1rem;
+                padding: 0.7em 1em;
+                border-radius: 0.5em !important;
+            }
+            .accordion-body {
+                font-size: 0.95rem;
+                padding: 1em 1em;
+            }
+            .projects-section {
+                padding: 1rem 0;
+            }
+            .project-nav {
+                display: none;
+            }
+            .scrollspy-example {
+                padding: 0.7em 0.3em;
+                min-height: 150px;
+                box-shadow: none;
+            }
+            .project-item h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5em;
+            }
+            .project-item ul {
+                padding-left: 1em;
+            }
+            .project-item li {
+                font-size: 0.98rem;
+                margin-bottom: 0.3em;
+            }
+            .loading-overlay .spinner-grow {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
     </style>
     <!-- Add these meta tags in the header -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
