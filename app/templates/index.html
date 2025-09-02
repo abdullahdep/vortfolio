@@ -439,12 +439,38 @@
                 padding: 1.5rem 0;
             }
             .project-nav {
-                margin-bottom: 1.5em;
-                position: static !important;
+                margin: 1rem -0.5rem;
+                position: relative !important;
+                background: #fff;
+                padding: 1rem;
+                border-radius: 1rem;
+                box-shadow: 0 2px 8px rgba(0,102,255,0.1);
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+                display: flex;
+                gap: 0.5rem;
+            }
+            .project-nav .list-group {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+            .project-nav .list-group-item {
+                display: inline-flex;
+                align-items: center;
+                padding: 0.7rem 1rem;
+                border-radius: 0.8rem !important;
+                margin: 0;
+                white-space: nowrap;
+                min-width: auto;
+                flex: 0 0 auto;
             }
             .scrollspy-example {
-                padding: 1em 0.5em;
+                padding: 1rem;
                 min-height: 200px;
+                margin-top: 1rem;
             }
             .project-item h3 {
                 font-size: 1.15rem;
@@ -1047,13 +1073,123 @@ click it
 </script>
 
 <!-- Add these additional styles -->
+<style>
+    /* Enhanced Project Navigation Styles */
+    .projects-section {
+        background: #f8f9fa;
+        padding: 2rem 0;
+    }
+    .project-nav {
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 2px 12px rgba(0,102,255,0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 1.5rem;
+        -webkit-overflow-scrolling: touch;
+    }
+    .project-nav::-webkit-scrollbar {
+        height: 4px;
+    }
+    .project-nav::-webkit-scrollbar-thumb {
+        background: rgba(0,102,255,0.2);
+        border-radius: 2px;
+    }
+    .project-nav .list-group {
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+    .project-nav .list-group-item {
+        border: none !important;
+        border-radius: 0.8em !important;
+        margin: 0 !important;
+        padding: 0.8em 1.2em !important;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+        color: #0066ff !important;
+        background: #e3f2fd !important;
+        transition: all 0.2s ease !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        white-space: nowrap !important;
+        flex: 0 0 auto !important;
+    }
+    .project-nav .list-group-item i {
+        font-size: 1.1rem;
+        margin-right: 0.5rem;
+    }
+    .project-nav .list-group-item.active,
+    .project-nav .list-group-item:hover {
+        background: #0066ff !important;
+        color: #fff !important;
+        transform: translateY(-1px);
+        box-shadow: 0 3px 10px rgba(0,102,255,0.2);
+    }
 
+    /* Mobile Optimizations */
+    @media (max-width: 991.98px) {
+        .project-nav {
+            margin: 1rem -0.5rem;
+            overflow-x: auto;
+            padding: 0.5rem;
+        }
+        .project-nav .list-group {
+            padding: 0.3rem;
+        }
+        .project-nav .list-group-item {
+            padding: 0.6em 1em !important;
+            font-size: 0.9rem !important;
+        }
+    }
+</style>
 
 <!-- Update the existing styles with responsive classes -->
 
 <!-- Add this JavaScript for better mobile experience -->
+    <!-- Add this JavaScript for better mobile experience -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // Initialize horizontal scroll for project navigation on mobile
+        const projectNav = document.querySelector('.project-nav');
+        if (projectNav) {
+            // Smooth scroll for touch devices
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            projectNav.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - projectNav.offsetLeft;
+                scrollLeft = projectNav.scrollLeft;
+            });
+
+            projectNav.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+
+            projectNav.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+
+            projectNav.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - projectNav.offsetLeft;
+                const walk = (x - startX) * 2;
+                projectNav.scrollLeft = scrollLeft - walk;
+            });
+
+            // Active state handling for mobile
+            const listItems = projectNav.querySelectorAll('.list-group-item');
+            listItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    listItems.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+                });
+            });
+        }
+
         // Prevent zoom on double tap for iOS
         let lastTouchEnd = 0;
         document.addEventListener('touchend', function (event) {
@@ -1062,29 +1198,6 @@ click it
                 event.preventDefault();
             }
             lastTouchEnd = now;
-        }, false);
-
-        // Handle scroll position on orientation change
-        window.addEventListener('orientationchange', function () {
-            setTimeout(function () {
-                window.scrollTo(0, window.scrollY);
-            }, 100);
-        });
-
-        // Lazy loading for images
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        if ('loading' in HTMLImageElement.prototype) {
-            images.forEach(img => {
-                img.src = img.dataset.src;
-            });
-        } else {
-            // Fallback for browsers that don't support lazy loading
-            const script = document.createElement('script');
-            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-            document.body.appendChild(script);
-        }
-    });
-</script>
 
 <!-- Add this script before the closing body tag -->
 <script>
