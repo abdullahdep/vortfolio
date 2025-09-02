@@ -51,11 +51,22 @@ a {
     /* Search Bar Enhancement */
     .search-form {
         width: 300px;
+        display: flex;
+        align-items: center;
     }
 
     .search-form .form-control {
         border-radius: 20px 0 0 20px;
         border: 2px solid #e0e0e0;
+        border-right: none;
+        padding-left: 1rem;
+        transition: all 0.3s ease;
+        height: 40px;
+    }
+
+    .search-form .form-control:focus {
+        box-shadow: none;
+        border-color: var(--primary-color);
     }
 
     .search-form .btn {
@@ -63,6 +74,47 @@ a {
         background: var(--primary-color);
         color: white;
         border: none;
+        height: 40px;
+        width: 45px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .search-form .btn:hover {
+        background: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .search-form .btn i {
+        font-size: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .search-form .btn:hover i {
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 991px) {
+        .search-form {
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+        
+        .search-form .form-control,
+        .search-form .btn {
+            height: 38px;
+        }
+
+        .search-form .btn {
+            width: 42px;
+        }
+
+        .search-form .btn i {
+            font-size: 0.9rem;
+        }
     }
 
     /* Dropdown Styling */
@@ -70,14 +122,16 @@ a {
         border: none;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
-        transition: max-height 0.3s ease;
-        max-height: 0;
-        overflow: hidden;
-        display: block;
+        display: none;
         opacity: 0;
         transform: translateY(-10px);
-        transition: all 0.3s ease;
-        
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .dropdown-item:hover {
@@ -228,17 +282,30 @@ a {
         transition: all 0.3s ease;
     }
 
-    .navbar-toggler {
-        border: none;
-        padding: 0.5rem;
-    }
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+            background-color: transparent;
+            position: relative;
+            z-index: 1000;
+            margin-right: 0;
+        }
 
-    .navbar-toggler:focus {
-        box-shadow: none;
-        outline: 2px solid var(--primary-color);
-    }
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: none;
+        }
 
-    /* Smooth height transition for dropdowns */
+        .navbar-toggler-icon {
+            width: 1.5em;
+            height: 1.5em;
+            background-size: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+            transform: rotate(90deg);
+        }    /* Smooth height transition for dropdowns */
     
 
     .dropdown-menu.show {
@@ -1885,13 +1952,36 @@ a {
         @media (max-width: 768px) {
             .dropdown-menu {
                 width: 100%;
-                border-radius: 0;
-                box-shadow: none;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background-color: #fff;
+                margin-top: 5px;
+                position: static;
             }
 
             .dropdown-item {
-                padding: 15px;
-                font-size: 16px;
+                padding: 12px 20px;
+                font-size: 15px;
+                color: var(--dark-color);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            .dropdown-item:last-child {
+                border-bottom: none;
+            }
+
+            .dropdown-toggle::after {
+                float: right;
+                margin-top: 8px;
+            }
+
+            .nav-item.dropdown {
+                position: relative;
+            }
+
+            .navbar-nav .dropdown-menu {
+                max-height: none;
+                overflow: visible;
             }
         }
 

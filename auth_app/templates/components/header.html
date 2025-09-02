@@ -24,10 +24,10 @@
 
         <div class="collapse navbar-collapse" id="navbarContent">
             <!-- Search form moves here on mobile -->
-            <form class="search-form d-lg-none mb-3">
+            <form class="search-form d-lg-none mb-3 d-block d-sm-none">
                 <div class="input-group">
                     <input type="search" class="form-control" placeholder="Search...">
-                    <button class="btn btn-outline-secondary" type="submit">
+                    <button class="btn" type="submit">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
@@ -366,37 +366,46 @@
             });
         });
 
-        // --- Fix dual-tap issue for Services dropdown on touch devices ---
+        // Enhanced Services dropdown functionality for both touch and click
         const servicesDropdown = document.getElementById('servicesDropdown');
         if (servicesDropdown) {
-            let tapped = false;
-            servicesDropdown.addEventListener('touchend', function (e) {
-                const parentLi = servicesDropdown.closest('.dropdown');
-                const menu = parentLi ? parentLi.querySelector('.dropdown-menu') : null;
-                if (!menu) return;
-                if (!menu.classList.contains('show')) {
-                    // First tap: open dropdown, prevent navigation
+            // Handle both click and touch events
+            ['click', 'touchend'].forEach(eventType => {
+                servicesDropdown.addEventListener(eventType, function (e) {
                     e.preventDefault();
                     e.stopPropagation();
+                    
+                    const parentLi = this.closest('.dropdown');
+                    const menu = parentLi ? parentLi.querySelector('.dropdown-menu') : null;
+                    
+                    if (!menu) return;
+
                     // Close other open dropdowns
                     document.querySelectorAll('.dropdown-menu.show').forEach(m => {
                         if (m !== menu) m.classList.remove('show');
                     });
-                    menu.classList.add('show');
-                    tapped = true;
-                } else {
-                    // Second tap: allow navigation
-                    tapped = false;
-                }
+
+                    // Toggle current dropdown
+                    menu.classList.toggle('show');
+                });
             });
-            // Close dropdown on outside tap
-            document.addEventListener('touchstart', function (e) {
+
+            // Close dropdown when clicking/touching outside
+            document.addEventListener('click', function (e) {
                 if (!servicesDropdown.contains(e.target)) {
                     const parentLi = servicesDropdown.closest('.dropdown');
                     const menu = parentLi ? parentLi.querySelector('.dropdown-menu') : null;
                     if (menu) menu.classList.remove('show');
-                    tapped = false;
                 }
+            });
+
+            // Ensure dropdown items work on mobile
+            const dropdownItems = servicesDropdown.closest('.dropdown').querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('touchend', function(e) {
+                    e.stopPropagation();
+                    window.location.href = this.href;
+                });
             });
         }
 
