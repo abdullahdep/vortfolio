@@ -117,12 +117,32 @@ TEMPLATES = [
 WSGI_APPLICATION = 'api.wsgi.app'
  
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+import os
+
+# Use environment variables for database configuration
+if os.environ.get('VERCEL_ENV') == 'production':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.environ.get('MYSQL_DATABASE', 'test'),
+            'USER': os.environ.get('MYSQL_USER', '3TJFdzBsW6BQcdA.root'),
+            'PASSWORD': os.environ.get('MYSQL_PASSWORD', '3xv6bY5a4oHNEUhh'),
+            'HOST': os.environ.get('MYSQL_HOST', 'gateway01.ap-northeast-1.prod.aws.tidbcloud.com'),
+            'PORT': os.environ.get('MYSQL_PORT', '4000'),
+            'OPTIONS': {
+                'ssl': {
+                    'ca': '/var/task/certs/isrgrootx1.pem'
+                }
+            }
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Note: Django modules for using databases are not support in serverless
