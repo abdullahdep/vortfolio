@@ -2,7 +2,7 @@ from django.shortcuts import render
 import requests
 
 def wp_page(request, slug='home'):
-    page_url = f"http://localhost:8001/{slug}"  # Fetch the full rendered page
+    page_url = f"http://vortfolio.icu/{slug}"  # Fetch the full rendered page
     try:
         res = requests.get(page_url)
         if res.status_code == 200:
