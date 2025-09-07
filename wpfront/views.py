@@ -1,17 +1,13 @@
 from django.shortcuts import render
-import requests
+from django.http import Http404
+from .models import Page
 
 def wp_page(request, slug='home'):
-    page_url = f"http://localhost:8001/{slug}"  # Fetch the full rendered page
     try:
-        res = requests.get(page_url)
-        if res.status_code == 200:
-            full_page_content = res.text  # Get the full HTML content
-        else:
-            full_page_content = "<p>Page not found.</p>"
-    except Exception as e:
-        full_page_content = f"<p>Error fetching page: {e}</p>"
-
-    return render(request, "wpfront/page.html", {
-        "full_page_content": full_page_content,
-    })
+        page = Page.objects.get(slug=slug)
+        return render(request, "wpfront/page.html", {
+            "content": page.content,
+            "title": page.title
+        })
+    except Page.DoesNotExist:
+        return render(request, "404.html", status=404)

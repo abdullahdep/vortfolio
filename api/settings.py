@@ -119,17 +119,8 @@ WSGI_APPLICATION = 'api.wsgi.app'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',  # Database name
-        'USER': '3TJFdzBsW6BQcdA.root',  # Username
-        'PASSWORD': '3xv6bY5a4oHNEUhh',  # Password
-        'HOST': 'gateway01.ap-northeast-1.prod.aws.tidbcloud.com',  # Host
-        'PORT': '4000',  # Port
-        'OPTIONS': {
-            'ssl': {
-                'ca': BASE_DIR / 'certs/isrgrootx1.pem',  # Path to the CA certificate
-            },
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
