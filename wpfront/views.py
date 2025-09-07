@@ -2,22 +2,15 @@ from django.shortcuts import render
 import requests
 
 def wp_page(request, slug='home'):
-    # Use your WordPress site URL 
-    wp_url = "http://wordpress.vortfolio.icu"  # Update this to your actual WordPress URL
-    page_url = f"{wp_url}/{slug}"
-    
+    page_url = f"http://localhost:8001/{slug}"  # Fetch the full rendered page
     try:
         res = requests.get(page_url)
         if res.status_code == 200:
-            full_page_content = res.text
+            full_page_content = res.text  # Get the full HTML content
         else:
-            # Return a proper 404 page
-            return render(request, "app/404.html", status=404)
-            
+            full_page_content = "<p>Page not found.</p>"
     except Exception as e:
-        return render(request, "app/404.html", {
-            "error_message": f"Error connecting to WordPress: {str(e)}"
-        }, status=500)
+        full_page_content = f"<p>Error fetching page: {e}</p>"
 
     return render(request, "wpfront/page.html", {
         "full_page_content": full_page_content,

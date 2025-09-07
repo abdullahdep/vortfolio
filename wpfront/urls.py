@@ -1,8 +1,8 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('wp/', include('wpfront.urls')),  # Make sure this is included
-    path('<str:slug>/', views.wp_page, name='wp_page'),
-    path('', views.wp_page, name='wp_home'),
+    path('<slug:slug>/', views.wp_page, name='wp_page'),  # Dynamic slug-based routing
+    path('', views.wp_page, {'slug': 'home'}, name='wp_home'),  # Default to 'home'
 ]
+zz
