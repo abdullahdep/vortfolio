@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WordPress Page</title>
+    {% load static %}
 </head>
 <body>
-    {{ full_page_content|safe }}
+    {% extends 'components/layout.html' %}
+
+    {% block content %}
+        {% if error_message %}
+            <div class="alert alert-danger">
+                {{ error_message }}
+            </div>
+        {% else %}
+            {{ full_page_content|safe }}
+        {% endif %}
+    {% endblock %}
 </body>
 </html>
