@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     "template_partials",
     'livereload',
     'django.contrib.sitemaps',
-    'wpfront',
+    # 'wpfront',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
