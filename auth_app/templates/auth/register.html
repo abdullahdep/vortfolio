@@ -1,59 +1,54 @@
 {% extends 'layouts/app.html' %}
 
 {% block content %}
-<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light">
-    <div class="row justify-content-center w-100">
-        <div class="col-sm-4">
-            <div class="card border-0 shadow-sm rounded-3">
-                <div class="card-body p-5">
-                    <div class="text-center mb-4">
-                        <h1 class="h3 mb-3 fw-normal">Create account</h1>
-                        <p class="text-muted">to continue to the application</p>
-                    </div>
 
-                    <form method="POST" action="{% url 'register' %}">
-                        {% csrf_token %}
-                        <div class="form-floating mb-3">
-                            <input type="text" name="{{ form.username.name }}" class="form-control rounded-3" 
-                                id="{{ form.username.id_for_label}}" placeholder="Username" value="{{ form.username.value}}">
-                            <label for="{{ form.username.id_for_label}}">Username</label>
-                            {% if form.username.errors %}
-                            <small class="text-danger">{{ form.username.errors }}</small>
-                            {% endif %}
-                        </div>
-                        
-                        <div class="form-floating mb-3">
-                            <input type="password" name="{{ form.password1.name }}" class="form-control rounded-3" 
-                                id="{{ form.password1.id_for_label}}" placeholder="Password" value="{{ form.password1.value}}">
-                            <label for="{{ form.password1.id_for_label}}">Password</label>
-                            {% if form.password1.errors %}
-                            <small class="text-danger">{{ form.password1.errors }}</small>
-                            {% endif %}
-                        </div>
 
-                        <div class="form-floating mb-4">
-                            <input type="password" name="{{ form.password2.name }}" class="form-control rounded-3" 
-                                id="{{ form.password2.id_for_label}}" placeholder="Confirm Password" value="{{ form.password2.value}}">
-                            <label for="{{ form.password2.id_for_label}}">Confirm Password</label>
-                            {% if form.password2.errors %}
-                            <small class="text-danger">{{ form.password2.errors }}</small>
-                            {% endif %}
-                        </div>
-<p>
-    By registering, you agree to our <a href="{% url 'privacy_policy' %}">Privacy Policy</a>.
-</p>
-                        <div class="d-grid gap-3">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-3 py-3">Create account</button>
-                            <div class="text-center">
-                                <small class="text-muted">Already have an account?</small>
-                                <a href="{% url 'login' %}" class="text-primary text-decoration-none ms-1">Sign in</a>
-                            </div>
-                            {% include 'components/social_login.html' %}
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<div class="card-body p-5">
+    <div class="text-center mb-4">
+        <h1 class="h3 mb-3 fw-normal">Create account</h1>
+        <p class="text-muted">to continue to the application</p>
     </div>
+
+    <form method="POST" action="{% url 'register' %}">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+            <input type="text" name="{{ form.username.name }}" class="form-control rounded-3" 
+                id="{{ form.username.id_for_label}}" placeholder="Username" value="{{ form.username.value}}">
+            <label for="{{ form.username.id_for_label}}">Username</label>
+            {% if form.username.errors %}
+            <small class="text-danger">{{ form.username.errors }}</small>
+            {% endif %}
+        </div>
+        
+        <div class="form-floating mb-3">
+            <input type="password" name="{{ form.password1.name }}" class="form-control rounded-3" 
+                id="{{ form.password1.id_for_label}}" placeholder="Password" value="{{ form.password1.value}}">
+            <label for="{{ form.password1.id_for_label}}">Password</label>
+            {% if form.password1.errors %}
+            <small class="text-danger">{{ form.password1.errors }}</small>
+            {% endif %}
+        </div>
+
+        <div class="form-floating mb-4">
+            <input type="password" name="{{ form.password2.name }}" class="form-control rounded-3" 
+                id="{{ form.password2.id_for_label}}" placeholder="Confirm Password" value="{{ form.password2.value}}">
+            <label for="{{ form.password2.id_for_label}}">Confirm Password</label>
+            {% if form.password2.errors %}
+            <small class="text-danger">{{ form.password2.errors }}</small>
+            {% endif %}
+        </div>
+<p>
+By registering, you agree to our <a href="{% url 'privacy_policy' %}">Privacy Policy</a>.
+</p>
+        <div class="d-grid gap-3">
+            <button type="submit" class="btn btn-primary btn-lg rounded-3 py-3">Create account</button>
+            <div class="text-center">
+                <small class="text-muted">Already have an account?</small>
+                <a href="{% url 'login' %}" class="text-primary text-decoration-none ms-1">Sign in</a>
+            </div>
+            {% include 'components/social_login.html' %}
+        </div>
+    </form>
 </div>
+           
 {% endblock %}
