@@ -119,8 +119,17 @@ WSGI_APPLICATION = 'api.wsgi.app'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'vortfolio',  # Database name
+        'USER': '3TJFdzBsW6BQcdA.root',  # Username
+        'PASSWORD': 'FcuHmsVgzsXf1Bwz',  # Password
+        'HOST': 'gateway01.us-west-2.prod.aws.tidbcloud.com',  # Host
+        'PORT': '4000',  # Port
+        'OPTIONS': {
+            'ssl': {
+                'ca': BASE_DIR / 'certs/isrgrootx1.pem',  # Path to the CA certificate
+            },
+        },
     }
 }
 
