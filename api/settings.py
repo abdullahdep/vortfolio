@@ -123,7 +123,7 @@ DATABASES = {
         'NAME': 'vortfolio',  # Database name
         'USER': '3TJFdzBsW6BQcdA.root',  # Username
         'PASSWORD': 'FcuHmsVgzsXf1Bwz',  # Password
-        'HOST': 'gateway01.us-west-2.prod.aws.tidbcloud.com',  # Host
+        'HOST': 'gateway01.ap-northeast-1.prod.aws.tidbcloud.com',  # Host
         'PORT': '4000',  # Port
         'OPTIONS': {
             'ssl': {
