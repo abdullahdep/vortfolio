@@ -2,48 +2,47 @@
 
 {% block content %}
 <div class="card-body p-5">
-                    <div class="text-center mb-4">
-                        <h1 class="h3 mb-3 fw-normal">Welcome</h1>
-                        <p class="text-muted">Use your account</p>
-                    </div>
+    <div class="text-center mb-4">
+        <h1 class="h3 mb-3 fw-bold">Welcome</h1>
+        <p class="text-muted">Use your account</p>
+    </div>
 
-                    {% if form.non_field_errors %}
-                    <div class="alert alert-danger rounded-3">
-                        {{ form.non_field_errors.as_ul }}
-                    </div>
-                    {% endif %}
+    {% if form.non_field_errors %}
+    <div class="alert alert-danger rounded-3">
+        {{ form.non_field_errors.as_ul }}
+    </div>
+    {% endif %}
 
-                    <form method="POST" action="{% url 'login' %}">
-                        {% csrf_token %}
-                        <div class="form-floating mb-3">
-                            <input type="text" name="{{ form.username.name }}" class="form-control rounded-3" 
-                                id="{{ form.username.id_for_label}}" placeholder="Username" value="{{ form.username.value}}">
-                            <label for="{{ form.username.id_for_label}}">Username</label>
-                            {% if form.username.errors %}
-                            <small class="text-danger">{{ form.username.errors }}</small>
-                            {% endif %}
-                        </div>
-                        
-                        <div class="form-floating mb-4">
-                            <input type="password" name="{{ form.password.name }}" class="form-control rounded-3" 
-                                id="{{ form.password.id_for_label}}" placeholder="Password" value="{{ form.password.value}}">
-                            <label for="{{ form.password.id_for_label}}">Password</label>
-                            {% if form.password.errors %}
-                            <small class="text-danger">{{ form.password.errors }}</small>
-                            {% endif %}
-                        </div>
-<p>
-    By logging in, you agree to our <a href="{% url 'privacy_policy' %}">Privacy Policy</a>.
-</p>
-                        <div class="d-grid gap-3">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-3 py-3">Login</button>
-                            <div class="text-center">
-                                <small class="text-muted">Don't have an account?</small>
-                                <a href="{% url 'register' %}" class="text-primary text-decoration-none ms-1">Create account</a>
-                            </div>
-                            {% include 'components/social_login.html' %}
-
-                        </div>
-                    </form>
-                </div>
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="form-floating mb-3 border border-dark box-shadow-inset rounded">
+            <input type="text" name="{{ form.username.name }}" class="form-control rounded-3" 
+                id="{{ form.username.id_for_label}}" placeholder="Username" value="{{ form.username.value}}">
+            <label for="{{ form.username.id_for_label}}">Username</label>
+            {% if form.username.errors %}
+            <small class="text-danger">{{ form.username.errors }}</small>
+            {% endif %}
+        </div>
+        
+        <div class="form-floating mb-4 border border-dark box-shadow-inset rounded">
+            <input type="password" name="{{ form.password.name }}" class="form-control rounded-3" 
+                id="{{ form.password.id_for_label}}" placeholder="Password" value="{{ form.password.value}}">
+            <label for="{{ form.password.id_for_label}}">Password</label>
+            {% if form.password.errors %}
+            <small class="text-danger">{{ form.password.errors }}</small>
+            {% endif %}
+        </div>
+        <p>
+            By logging in, you agree to our <a href="{% url 'privacy_policy' %}">Privacy Policy</a>.
+        </p>
+        <div class="d-grid gap-3">
+            <button type="submit" class="btn btn-primary btn-lg rounded-3 py-3">Login</button>
+            <div class="text-center">
+                <small class="text-muted">Don't have an account?</small6>
+                <a href="{% url 'register' %}" class="text-primary text-decoration-none ms-1">Create account</a>
+            </div>
+            {% include 'components/social_login.html' %}
+        </div>
+    </form>
+</div>
 {% endblock %}
