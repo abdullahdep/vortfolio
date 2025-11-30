@@ -58,13 +58,34 @@
                         <i class="fas fa-cogs me-1"></i>Services                            <i class="fa fa-angle-down icon-in-menu"></i>
 
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                        <li><a class="dropdown-item" href="{% url 'learn' %}">For Learners</a></li>
-                        <li><a class="dropdown-item" href="{% url 'uiux' %}">UI/UX Designs</a></li>
-                        <li><a class="dropdown-item" href="{% url 'webdev' %}">Web Development</a></li>
-                        <li><a class="dropdown-item" href="{% url 'appdev' %}">Mobile Apps</a></li>
-                        <li><a class="dropdown-item" href="{% url 'aidev' %}">AI Development</a></li>
-                    </ul>
+                   <ul class="dropdown-menu mb-4 shadow-sm rounded-3" aria-labelledby="servicesDropdown">
+    <li>
+        <a class="dropdown-item d-flex align-items-center" href="{% url 'learn' %}">
+            <i class="bi bi-book me-2"></i> For Learners
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item d-flex align-items-center fw-bold" href="{% url 'uiux' %}">
+            <i class="bi bi-brush me-2"></i> UI/UX Designs & Creative Services
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item d-flex align-items-center" href="{% url 'webdev' %}">
+            <i class="bi bi-code-slash me-2"></i> Web Development
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item d-flex align-items-center" href="{% url 'appdev' %}">
+            <i class="bi bi-phone me-2"></i> Mobile Apps
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item d-flex align-items-center" href="{% url 'aidev' %}">
+            <i class="bi bi-robot me-2"></i> AI Development
+        </a>
+    </li>
+</ul>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.youtube.com/@aibytestudio" target="_blank">

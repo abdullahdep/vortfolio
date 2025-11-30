@@ -1,57 +1,32 @@
 {% extends 'layouts/app.html' %}
 
 {% block content %}
+
 {% if user.is_superuser %}
 You are super user
 {% endif %}
 
+
 {% if not user.is_superuser %}
-<!-- <div class="d-none"> -->
 
-  <div class="m-5 mt-4 fst-italic">
+<!-- {% include 'dashboard/user_purchase_data.html' %} -->
 
-    <h1 class="fw-bold  ">Welcome to Vortfolio "{{ request.user.username }}"</h1>
-    <h5>How's Your Day Going So Far Today</h5>
-  </div>
-  <div>
+<div class="w-25 border rounded m-5">
+ <h5  class="fw-bold">Design & Creative Services</h5>
+ <img src="jsdlk" alt="image" class ="border img-fluid rounded w-25 h-25 m-5">
+ <ul>
+  <li>UI/UX Design</li>
+  <li>Product Design</li>
+  <li>Brand Designing</li>
+  <li>Creative Content & Visual Assets</li>
+  <li>Prototyping & Wireframing</li>
+  <li>Etc.</li>
+ </ul>
+</div>
 
-    <div class="d-flex justify-content-center ">
-      <h3 class="fw-bold">Services You Have</h3>
-    </div>
 
-    <div class="table-responsive">
-      <table class="table table-striped text-center mt-4">
-        <tr>
-          <th>No.</th>
-          <th>Services</th>
-          <th>Issued Chalan No.</th>
-          <th>Paid Status</th>
-          <th>Order Date</th>
-          <th>No. of Revisions</th>
-          <th>Delivery Date</th>
-        </tr>
-
-        <style>
-          table td {
-            padding: 0 30px;
-          }
-        </style>
-
-        <tr>
-          <td>Right Now No</td>
-          <td>Right Now No</td>
-          <td>Right Now No</td>
-          <td>Right Now No</td>
-          <td>Right Now No</td>
-          <td>Right Now No</td>
-          <td>Right Now No</td>
-        </tr>
-      </table>
-    </div>
-  <!-- </div> -->
-
-  {% endif %}
+{% endif %}
 
 
 
-  {% endblock %}
+{% endblock %}
